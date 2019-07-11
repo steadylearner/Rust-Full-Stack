@@ -1,6 +1,10 @@
 #![recursion_limit="512"]
 #![feature(rustc_private)]
 
+#[macro_use]
+extern crate stdweb;
+use stdweb::js;
+
 extern crate yew;
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 use yew::services::{ConsoleService};
@@ -42,7 +46,11 @@ impl Component for Model {
                 self.state.value = val
             }
             Msg::Exit => {
-                self.console.log("The user wants to leave this.")
+                // self.console.log("The user wants to leave this.")
+                // or 
+                js! {
+                    console.log("The user wants to leave this.")
+                }
             }
         }
         true
