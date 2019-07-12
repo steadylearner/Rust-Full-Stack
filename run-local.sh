@@ -21,6 +21,9 @@ cp web/static/favicon.ico server/web/favicon.ico
 cp web/static/normalize.css server/web/normalize.css
 cp web/static/steadylearner.css server/web/steadylearner.css
 
+cp web/static/bundle.js server/web/bundle.js
+cp -R web/static/node_modules server/web/node_moduels
+
 (
   echo "running server"
   cd server

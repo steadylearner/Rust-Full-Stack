@@ -1,5 +1,6 @@
 use std::io;
-use rocket::response::NamedFile;
+use std::path::{Path, PathBuf};
+use rocket::response::{NamedFile};
 
 #[get("/web")]
 pub fn web() -> io::Result<NamedFile> {
@@ -36,6 +37,17 @@ pub fn normalize_css() -> io::Result<NamedFile> {
     NamedFile::open("web/normalize.css")
 }
 
+// For browserify and NPM to work and it is optional
+
+#[get("/bundle.js")]
+pub fn browserify() -> io::Result<NamedFile> {
+    NamedFile::open("web/bundle.js")
+}
+
+#[get("/node_modules/<file..>")]
+pub fn npm(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("web/node_modules/").join(file)).ok()
+}
 
 
 

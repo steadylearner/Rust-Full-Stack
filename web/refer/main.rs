@@ -46,16 +46,15 @@ fn main() {
 // 3. window to scroll when user type - Done with js! macro
 // 4. Include NPM package - Done
 // 5. Find how to remove value from input - Done with impl Model instead of component
-// 6. !clear and !clearall for server and client, !exit for client - Done
+// 6. !clear and !clearall for server and client, !exit for client - Done 
 // 7. Render image - Done
 
 // Read the documentation and code from others
 
 // Separate project for blog post and write it
-
 // 1. Type for messages
-// 2. Before connection and after close connection
-// 3. Edit server parts with database
+// 2. Before connection and after close connection 
+// 3. Edit server parts with database 
 // 4. enable wss for https with ws-rs documentation
 // 5. Security with hashed messages
 // 6. Use every variables(no unused variable)

@@ -3,21 +3,27 @@
 
 #[macro_use]
 extern crate stdweb;
-use stdweb::js;
+// use stdweb::js;
 
 extern crate yew;
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 use yew::services::{ConsoleService};
 
 mod state;
+mod npm;
 	
 use self::{
     state::State,
+
+    npm::{
+        emoji::EmojiService, 
+    },
 };
 
 pub struct Model {
     console: ConsoleService,
     state: State,
+    emoji: EmojiService,
 }
 
 pub enum Msg {
@@ -37,20 +43,28 @@ impl Component for Model {
         Model {
             console: ConsoleService::new(),
             state,
+
+            // NPM
+            emoji: EmojiService::new()
         }
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
             Msg::Update(val) => {
-                self.state.value = val
+                let before = format!("{}", &val);
+                let emojified = self.emoji.emojify(before.to_string());
+
+                // or use js! here
+                
+                self.state.value = emojified
             }
             Msg::Exit => {
-                // self.console.log("The user wants to leave this.")
+                self.console.log("The user wants to leave this.")
                 // or 
-                js! {
-                    console.log("The user wants to leave this.")
-                }
+                // js! {
+                //     console.log("The user wants to leave this.")
+                // }
             }
         }
         true
