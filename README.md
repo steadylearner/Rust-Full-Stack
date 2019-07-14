@@ -1,6 +1,6 @@
 <!--
     Post{
-        subtitle: "Have minimal files to be a fullstack Rust developer.",
+        subtitle: "Learn to inlcude JavaScript modules in your Rust Frontend",
         image: "post/web/full-stack-rust-with-yew.png",
         image_decription: "Image by Steadylearner",
         tags: "How Rust Yew code",
@@ -16,6 +16,10 @@
 [stdweb]: https://github.com/koute/stdweb
 [Yew]: https://github.com/DenisKolodin/yew
 [Yew Documenation]: https://docs.rs/yew/0.6.0/yew/
+[Yew Service]: https://github.com/DenisKolodin/yew/tree/master/src/services
+[Yew Examples]: https://github.com/DenisKolodin/yew/tree/master/examples
+[Yew NPM example]: https://github.com/DenisKolodin/yew/tree/master/examples/npm_and_rest
+
 [Build a rust frontend with Yew]: https://dev.to/deciduously/lets-build-a-rust-frontend-with-yew---part-2-1ech
 [rollupjs]: https://github.com/rollup/rollup
 
@@ -23,13 +27,14 @@
 [Web completely in Rust]: https://medium.com/@saschagrunert/a-web-application-completely-in-rust-6f6bdb6c4471
 
 [Rocket]: https://rocket.rs/
-
 [Bash for beginners]: http://www.tldp.org/LDP/Bash-Beginners-Guide/html/
-
 [Rust Full Stack]: https://github.com/steadylearner/Rust-Full-Stack
+[Browserify]: https://github.com/browserify/browserify
+[unpkg]: https://unpkg.com/
+[The C programming language]: https://www.google.com/search?q=the+c+programming+language
 
-[Yew Service]: https://github.com/DenisKolodin/yew/tree/master/src/services
-[Yew Examples]: https://github.com/DenisKolodin/yew/tree/master/examples
+[node-emoji]: https://www.npmjs.com/package/node-emoji
+[actix]: [https://actix.rs/]
 
 <!-- / -->
 
@@ -48,34 +53,23 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use Rust Yew]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Yew
 [How to deploy Rust Web App]: https://www.steadylearner.com/blog/read/How-to-deploy-Rust-Web-App
 [How to start Rust Chat App]: https://www.steadylearner.com/blog/read/How-to-start-Rust-Chat-App
+[Fullstack Rust with Yew]: https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew
+
+[How to use Python in JavaScript]: https://www.steadylearner.com/blog/read/How-to-use-Python-in-JavaScript
 
 <!-- / -->
 
-In the previous post [How to use Rust Yew], we learnt how to prepare minimal files to build webassembly files with Yew for **Rust frontend**.
+In the previous post [Fullstack Rust with Yew], we learnt how to prepare minimal files to build full stack Rust web app.
 
-We will advance it with some Rust server side code and bash file to automate the process.
+You can build whatever Rust allows with it.
 
-If you are competent in **Rust** and other programming, you may use the commands below to save your time.
+But, what if there are no crates or examples in Rust for what you want to build yet? I know that you can eventually make it work and Rust language and its community will help you.
 
-```console
-$git clone https://github.com/steadylearner/Rust-Full-Stack.git
-```
+That is important but it will take you some time to make it happen. So in this post we will learn how to use NPM packages directly in your Rust frontend web app. Here, we will use [Yew], [stdweb] but you may use whatever Rust modules relevant to webassembly and JavaScript.
 
-then inside **Web** folder
+You can think that this post is just [the previous post][Fullstack Rust with Yew] and [browserify] to serve **NPM** files for your Rust [Yew] frontend webassembly.
 
-```console
-$yarn
-$rustup default set nightly
-$cargo install cargo-web
-```
-
-and
-
-1. **$yarn watch:rs** to test Rust frontend with [Yew] or use $cargo run** also in **server** folder for server side code.
-
-2. For production files before you [deploy][How to deploy Rust Web App] them, use **./run-local.sh**.
-
-Then, write more Rust codes.
+If you want to save your time, you may clone [Rust Full Stack] and spend time to find what it does.
 
 <br />
 
@@ -83,250 +77,300 @@ Then, write more Rust codes.
 
 1. [How to install Rust]
 2. [Yew]
-3. [Rocket]
-4. [How to use Rust Yew]
-5. [Rocket Yew starter pack]
-6. [Bash for beginners]
+3. [How to use Rust Yew]
+4. [Fullstack Rust with Yew]
+5. [How to use Python in JavaScript]
+6. [How to deploy Rust Web App]
 7. [How to start Rust Chat App]
 
 ---
 
-I want you already have Rust installed in your machine. The blog post [How to install Rust] will help you to learn how to do that or visit [Rust Website] for more information.
+I want you already have Rust installed in your machine. The blog post [How to install Rust] will help you for that.
 
-If you haven't setup development environment for [Yew], please read the previous post [How to use Rust Yew].
+If you haven't setup development environment for [Yew], please read the previous post [How to use Rust Yew]. Then, you may read [Fullstack Rust with Yew].
 
-We will use [Rocket] for our Rust backend. What we will do is just **copy and paste** but reading documents from it will hep you and there are many examples.
+The main point in this post is how to use **FFI**(foreign function interface) between **Rust** and **JavaScript**. I already wrote [How to use Python in JavaScript] for JavaScript and Python and it may help you for this post. You may also read the what **js!** does in [stdweb].
 
-What you will get here is just modified version of [Rocket Yew starter pack]. So you may read its code first if you want.
-
-We will use bash commands to automize the process to copy static files made from Yew and will serve it with routes in [Rocket].
-
-Having a little experience in [Bash][Bash for beginners] or Linux commands will help you.(Whenever you have doubts, you can use **$man** command.)
+When your full stack Rust app is ready, you can deploy it with [How to deploy Rust Web App].
 
 The **HTML and CSS** files we will use in this post is based on [How to start Rust Chat App].
 
 You may read it and will help you in this post and others later for Rust full stack app we will build later.
 
-<br />
-
 <h2 class="blue">Table of Contents</h2>
 
-1. Frontend with Yew
-2. Backend with Rocket
-3. **Conclusion**
+1. What happens when you include JavaScript files in html
+2. Browserify to use NPM modules in Rust Frontend
+3. Rust Frotend code to use them
+4. Edit Rust server side
+5. **Conclusion**
 
 ---
 
-You can skip first part if you are already familar with [Yew] or what you want is just to find how to have a minimal [Rust Full Stack] project.
+You may skip first and second part you already know JavaScript and browserify well.
+
+If you spend some time in Rust and webassembly, you will find that there is no difference between using **Rust and JavaScript** for frontend. What you make are just static files.
+
+You may apply what you learn here when you use JavaScript to build web app also.
 
 <br />
 
-## 1. Frontend with Yew
+## 1. What happens when you include JavaScript files in html
 
-I hope you already read [How to use Rust Yew] and read the source code of [Rust Full Stack] repository.
+If you read the documentations from [Yew], you should have found that it already has the example for [NPM][Yew NPM example].
 
-You can easily find that the major differences between them are only **lib.rs and state.rs** file.
+It shows you can use NPM packages with it. But, you will find that it is not a perfect solution for every NPM modules and there was no documentation for that yet.
 
-First, you may separate state of the entire app with **state.rs**.
-
-For the app used is here is very simple, you may not need them. But it will help you as your app grows.
-
-It will be similar to
+I hope you tested it in your machine and invested it. You will find that its payload is
 
 ```rust
-#[derive(Debug)]
-pub struct State {
-  pub value: String,
+use stdweb::Value;
+use stdweb::unstable::TryInto;
+
+#[derive(Default)]
+pub struct CcxtService(Option<Value>);
+
+impl CcxtService {
+    // 1.
+    pub fn new() -> Self {
+        let lib = js! {
+            return ccxt;
+        };
+        CcxtService(Some(lib))
+    }
+
+    // 2.
 }
 ```
 
-and you will not care much for it except that you will use it with **self.state.value** later in **lib.rs** file or refer to example files in [Yew] documenation.
+and
 
-Then, **lib.rs** will be similar to and
+```html
+<!-- /static/index.html -->
+<script type="text/javascript" src="https://unpkg.com/ccxt"></script>
+```
 
-```rust
-#![recursion_limit="512"]
-#![feature(rustc_private)]
+If you read the previous post [Fullstack Rust with Yew], you know that those modules with name **Service** are just made from authors to help and you can do the same with **js!** macro from [stdweb].
 
-// #[macro_use]
-// extern crate stdweb;
-// use stdweb::js;
+You will find that you can **copy and paste** the major part of Rust code there.
 
-extern crate yew;
-use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
-use yew::services::{ConsoleService}; // 1.
+The important points here are
 
-mod state;
-use self::{
-    state::State,
-};
+1. **pub fn new()** is used to start to use **NPM** modules in Rust(lib.rs).
 
-pub struct Model {
-    console: ConsoleService,
-    state: State,
-}
+2. Then, you define methods only what you want to use from it in Rust.
 
-pub enum Msg {
-    Update(String),
-    Exit
-}
+You can see that what really work is **js!** and you can do the same without those **Service**. They are there just to make them reusable as it is in other **Service** modules in [Yew].
 
-impl Component for Model {
-    type Message = Msg;
-    type Properties = ();
+We will take care of it later with more details.
 
-    fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        let state = State {
-            value: "".to_string(),
-        };
+and You can easily suppose that **https://unpkg.com/ccxt"** in **index.html** help you to use the NPM modules in the global scope of **JavaScript** in browser.
 
-        Model {
-            console: ConsoleService::new(),
-            state,
-        }
-    }
+It is not sufficient to find what happens here.
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
-        match msg {
-            Msg::Update(val) => {
-                self.state.value = val
-            }
-            Msg::Exit => {
-                self.console.log("The user wants to leave this.")
-                // or
-                // js! {
-                //     console.log("The user wants to leave this.")
-                // }
-            }
-        }
-        true
-    }
-}
+So you may visit the https://unpkg.com/ccxt and you will find that it relocates you to **ccxt.browser.js** file and there are parts
 
-// should write more components to remove this part
-impl Renderable<Model> for Model {
-    fn view(&self) -> Html<Self> {
-        html! {
-            <section>
-                <nav id="nav", class=("nav", "flex", "center"), >
-                    <a
-                        class=("flex", "no-text-decoration", "hover", "cursor-pointer", "transition-half", "right-auto"),
-                        href="https://www.steadylearner.com/blog",
-                        title="Click it to learn how to code this.",
-                    >
-                        <span class=("white", "bold"), >{ "© Rust Chat App" }</span>
-                    </a>
-                    <button
-                        id="connect",
-                        class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
-                    >
-                       { "Enter" }
-                    </button>
-                    <button
-                        id="exit",
-                        class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
-                        onclick=|_| Msg::Exit,
-                    >
-                       { "Exit" }
-                    </button>
-                </nav>
-                <ul
-                    id="messages",
-                >
-                    { self.view_message() }
-                </ul>
-                <section
-                    id="form",
-                    class=("chat-input", "flex", "center"),
-                >
-                    <img
-                        id="code",
-                        class=("flex", "center", "rust-icon", "hover", "cursor-pointer", "transition-half"),
-                        title="Use this for whatever you want",
-                        src="https://www.steadylearner.com/static/images/code/Rust.svg",
-                    />
-                    { self.view_input() }
-                </section>
-            </section>
-        }
-    }
-}
+```js
+/*  A entry point for the browser bundle version. This gets compiled by:
+    browserify --debug ./ccxt.browser.js > ./dist/ccxt.browser.js
+*/
+window.ccxt = require ('./ccxt')
+```
+
+and you can see this is payload to make everything work.
+
+It may not easy to find what it does. You may test it in your browser with these files
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>What happens when you include js files in your html file</title>
+</head>
+
+<body>
+  <h1>Open your browser and hello(); or window.hello();</h1>
+  <script src="index.js"></script>
+</body>
+
+</html>
+```
+
+<br />
+
+```js
+console.log("Hello from Steadylearner(www.steadylearner.com)")
+
+const hello = () => console.log("Thank for using JavaScript in html. You can use it easily in browser with 'window.code = code' syntax");
+
+window.hello = hello;
+
+// Test hello(); in your console after you open index.html with your browser
+```
+
+You will see that those JavaScript files included in index.html will be executed when you open it and you can use variables defined there in your **window**(browser JavaScript global scope).
+
+You may test with your JavaScript code also and test it in your console.
+
+## 2. Browserify to use NPM modules in Rust Frontend
+
+In the previous part, there was **browserify --debug ./ccxt.browser.js > ./dist/ccxt.browser.js**. You can find that [Browserify] was there to help modules in [unpkg] work only with its link.
+
+Having spent some time with [it][unpkg], I found that not every module in it has **browserify** relevant code to make the Rust Frotnend code we read before work.
+
+So we will write code to use [Browserify] on our own instead of using [unpkg]. That will be **payload** your Rust frontend to work.
+
+If you haven't used [Browserify] yet, read [How to start Rust Chat App] or [its documentation][Browserify].
+
+First, start with installing it in your machine.
+
+```console
+$npm install -g browserify
+```
+
+Then, install NPM modules you want to use. For example,
+
+```console
+$yarn add node-emoji
+```
+
+We will use **node-emoji** here because we used it in [How to start Rust Chat App] and also visually easy to verify this work.
+
+It will help you find that those **NPM packages** with name **node** or only seem to be useful for **node** environment can also be used in browser for your frontend app.
+
+then write in **/web/static/npm.js**
+
+```js
+const emoji = require("node-emoji");
+
+// 1.
+window.emoji = emoji;
 
 // 2.
-impl Model {
-    fn view_message(&self) -> Html<Model> {
-        if !(&self.state.value.is_empty()) {
-            html! {
-                <li>
-                    <span> { format!("You: {}", &self.state.value) }</span>
-                </li>
-            }
-        } else {
-            html! {
-                { "" }
-            }
-        }
+// console.log(emoji);
+// console.log(emoji.emojify);
+// console.log(emoji.emojify("I :heart: Rust - or use whatever you want"));
+```
+
+and in **index.html** to link **node_modules** folder to your **Rust Frontend** code later
+
+```html
+<head>
+    <script src="bundle.js"></script>
+</head>
+```
+
+then you can end this whole process for **static** files with **browserify npm.js > bundle.js**.
+
+You can see that **1.** was the payload and uncomment codes in **2.** and test it with your browser console.
+
+<br />
+
+If you want to use more **NPM** moduels later, just **copy and paste** those syntax with more modules.
+
+<br />
+
+## 3. Rust Frontend code to use them
+
+If you haven't read previous post [Fullstack Rust with Yew], please read that first. Otherwise, you may read code of [Rust Full Stack].
+
+We will first build **web/npm/EmojiService.rs** file to follow the rule of [Yew] framework.
+
+```rust
+use stdweb::Value;
+use stdweb::unstable::TryInto;
+
+#[derive(Default)]
+pub struct EmojiService(Option<Value>);
+
+impl EmojiService {
+    pub fn new() -> Self {
+        let lib = js! {
+            return emoji;
+        };
+        EmojiService(Some(lib))
     }
 
-    fn view_input(&self) -> Html<Model> {
-        html! {
-            <input
-                id="msg",
-                type="text",
-                placeholder="Type here to start to talk with others and enter to submit",
-                title="You should enter the chat before you type.",
-                autocomplete="off",
-                value=&self.state.value,
-                oninput=|e| Msg::Update(e.value),
-            />
-        }
+    pub fn emojify(&mut self, message: String) -> String {
+        let lib = self.0.as_ref().expect("node-emoji library object lost");
+        let v: Value = js! {
+            // 1.
+            var emoji = @{lib};
+            console.log(emoji);
+            return emoji.emojify(@{message});
+        };
+        // 2.
+        let v: String = v.try_into().expect("can't convert to emoji");
+        v
     }
 }
 ```
 
-and payloads will be
+You may use **/web/service** folder instead. You can also use **js!** wherever you want to use in your Rust file instead of writing specific folder and file for them.
 
-**1.** In [Yew], there are prebuilt modules called [Service][Yew Service] to help you and you can use them for JavaScript codes not relevant to render and update components.
+What is important here is **js!** macro. You can see that **pub fn new()** part will be always similar. Then, in **1.** only difference is module name and its methods.
 
-When you can't solve the problem with them, think that you may not need them and can do the same with **js!** from [stdweb].
+If you testsed previous examples here, you can find that you just modifed JavaScript code you used for **Rust**.
 
-For example, there is no **Widnow Serivce** in [Yew] yet. So you may be confused and want to find the module or documenation for that from framework first.
+**Value**, **String** etc are to use **JavaScript values in Rust** and **@** in **@{lib}** syntax is used to pass value from **Rust to JavaScript**.
 
-But you can just write
+If you want more information for them, read the documenation from [its author][stdweb].
+
+Then in **lib.rs**
 
 ```rust
-js! {
-    setTimeout(() => window.scrollTo({ top: window.innerHeight, behavior: "auto" }), 10);
-};
+fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    match msg {
+        Msg::Update(val) => {
+            self.state.value = val
+        }
+    true
+}
 ```
 
-It is also important to find that Rust Yew code will be used at browser and it will be better to use **console** instead of macros such as println!, println! etc from Rust.
+to
 
-**2.** If you have experience in frontend framework, You will already know that finding how to use a form on your own is not easy.
+```rust
+fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    match msg {
+        Msg::Update(val) => {
+            let before = format!("{}", &val);
+            let emojified = self.emoji.emojify(before.to_string());
 
-Fortunately, [Yew] already has [examples][Yew examples] for that and the code snippet above shows you how to get value from input and use it to render other parts of the Yew app.
+            // or use js! here
 
-You can also see that **Model** here has its own methods to render components with **impl**.
+            self.state.value = emojified
+        }
+    true
+}
+```
 
-You can use them here or find how to extract them as separate components with [documenation][Yew examples].
+then **$yarn watch:rs** and test it with **I :heart: Rust** or [node-emoji][whatever you want]. You will find that your input and your message are emojified.
 
-<br />
+That was all to use **NPM packages** in **Rust Frontend**.
 
-## 2. Backend with Rocket
+## 4. Edit Rust server side for that
 
-If you spent some time to read codes from [Rocket Yew starter pack], you will find that its payload is **run-local.bash**.
+We already prepared all the code for Rust frontend part. We should write more server side code for them to make it a full stack Rust project.
 
-It helps you to move static files made from frontend to bakcend and easily serve those files with [Rocket].
+We will edit **run-local.sh** first.
 
-For its frontend used in it is different from [How to use Rust Yew], we have to modify **run-local.bash** to
+We made **bundle.js** to use **node_modules** in Rust Frontend. So we write code for them in it.
+
+It will be similar to
 
 ```sh
 #!/bin/bash
 
-set -e #$help set 1.
+set -e #$help set
 
 # build frontend assets and put them in a place the Rocket server
 # expects
+
 
 echo "building web"
 pushd web #$help pushd
@@ -334,7 +378,6 @@ yarn build
 popd #$help popd
 echo "web build complete"
 
-# 2.
 cp web/target/wasm32-unknown-unknown/release/index.js server/web/index.js
 cp web/target/wasm32-unknown-unknown/release/index.wasm server/web/index.wasm
 cp web/static/index.html server/web/index.html
@@ -344,97 +387,103 @@ cp web/static/favicon.ico server/web/favicon.ico
 cp web/static/normalize.css server/web/normalize.css
 cp web/static/steadylearner.css server/web/steadylearner.css
 
+cp web/static/bundle.js server/web/bundle.js
+cp -R web/static/node_modules server/web/node_moduels
+
 (
   echo "running server"
   cd server
   cargo run --release
 )
-
 ```
 
-It will be easy to find what they do if you already know how to use POSIX system. But a little help will be useful.
+and you can find that
 
-1. **set -e** make the bash file fail when there is a problem.(You will not want your entire website break just to automate the process to copy files and run the files with a few commands.)
+```sh
+cp web/static/bundle.js server/web/bundle.js
+cp -R web/static/node_modules server/web/node_moduels
+```
 
-2. Commands to copy production static files to server automatically.
+are used to copy **bundle.js** file and **node_moduels** directory.
 
-Then, we should also build correspondent routes to serve those copied files with [Rocket].
+Then, write more codes to serve them for **web.rs** we made before similar to
 
-It will be similar to
-
-```rust
-// web.rs
+```rs
 use std::io;
+use std::path::{Path, PathBuf};
+use rocket::response::{NamedFile};
+
+// For browserify and NPM to work and it is optional
+
+#[get("/bundle.js")]
+pub fn browserify() -> io::Result<NamedFile> {
+    NamedFile::open("web/bundle.js")
+}
+
+#[get("/node_modules/<file..>")]
+pub fn npm(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("web/node_modules/").join(file)).ok()
+}
+```
+
+and if you already read the code to serve every files in **static** folder with [Rocket]
+
+```rs
+// static_files.rs
+use std::path::{Path, PathBuf};
 use rocket::response::NamedFile;
 
-#[get("/web")]
-pub fn web() -> io::Result<NamedFile> {
-    NamedFile::open("web/index.html")
-}
-
-#[get("/index.js")]
-pub fn web_index_js() -> io::Result<NamedFile> {
-    NamedFile::open("web/index.js")
-}
-
-#[get("/index.wasm")]
-pub fn web_wasm() -> io::Result<NamedFile> {
-    NamedFile::open("web/index.wasm")
-}
-
-#[get("/index.css")]
-pub fn web_index_css() -> io::Result<NamedFile> {
-    NamedFile::open("web/index.css")
-}
-
-#[get("/favicon.ico")]
-pub fn web_favicon() -> io::Result<NamedFile> {
-    NamedFile::open("web/favicon.ico")
-}
-
-#[get("/steadylearner.css")]
-pub fn steadylearner_css() -> io::Result<NamedFile> {
-    NamedFile::open("web/steadylearner.css")
-}
-
-#[get("/normalize.css")]
-pub fn normalize_css() -> io::Result<NamedFile> {
-    NamedFile::open("web/normalize.css")
+#[get("/static/<file..>")]
+pub fn file(file: PathBuf) -> Option<NamedFile> {
+    NamedFile::open(Path::new("static/").join(file)).ok()
 }
 ```
 
-Once you define those routes to serve production static files from Yew, you will not need to care for them anymore.
+It is just the variation of the codes you already had.
 
-Then, other parts will be just a matter of **copy and paste**.
+Then, you may find how it is easy to serve all the files in directory with Rust [Rocket]. It is just matter of **copy and paste**.
 
-You had to think the entire project as a whole. Then, you wrote corresponding codes to make other parts work.
+If you want more, you can learn how pointers work with [The C programming language].
 
-## 3. Conclusion
+and include those routes you made in **main.rs**
 
-If you read the previous post [How to use Rust yew], following this post would be easy.
+```rs
+fn rocket() -> rocket::Rocket {
+    let rocket_routes = routes![
+        static_files::file,
+        //
+        get::index,
+        //
+        web::web,
+        web::web_index_js,
+        web::web_wasm,
+        web::web_index_css,
+        web::web_favicon,
+        web::steadylearner_css,
+        web::normalize_css,
+        // npm
+        web::browserify,
+        web::npm,
+    ];
 
-What we need for our [Rust Full Stack] project to work are
+    rocket::ignite()
+        .mount("/", rocket_routes)
+}
+```
 
-1. [Yew] to write Frotnend code with webassembly and other static files
+You can test it work with **./run-local.sh** or **cargo c** in server directory.
 
-2. [Rocket] or other Rust framework to serve those files and bash file to automate the process.
+If you want to use other web frameworks with Rust or other language for server side, just find the [equivalent code](https://actix.rs/docs/static-files/).
 
-The Yew code used here is very simple but if you read the **src** and **examples** form [Yew] and [stdweb]. You can apply it to the Frontend code used at [How to start Rust chat app]. Then, you may build the full stack Rust chat app.
+## 5. Conclusion
 
-I want you to spend some time to practice [Yew] with it or your previous frontend code. You will find that it is not so difficult.
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
-The benefits of using [Yew] you may find are
+In this post, we learnt how to use NPM modules in Rust frontend. You can use your **JavaScript** code also. You are already [Rust Full Stack] developer and just write more Rust code to support the term.
 
-1. It is **Rust** code and you do not need **lint** to find errors in your code and compiler will help you how to correct them also.
+If you want to use the code used at [How to start Rust Chat App] and layout of the [Rust Full Stack], you may refer to **main.rs**.
+in it. You can follow the process left there and write your full stack Rust chat app.
 
-2. It is difficult to write error prone code because it won't compile if there is any.
+You can also **copy and paste** codes from [websocket example](https://github.com/DenisKolodin/yew/tree/master/examples/dashboard) and [form example](https://github.com/DenisKolodin/yew/tree/master/examples/todomvc).
 
-3. It takes long when you compile at first. But you don't have to wait a lot after you make your project compile once after you modify them.
-
-4. You can easily use NPM packages if you can't find Rust crates to make your project work.
-
-You can see that many of them are the same from using **Rust** for your project.
-
-We will find how to use **NPM** package in **Rust** Yew frontend in [the next post][Rust blog posts].
-
-**Thanks and please share this post with other**
+You can also read [actix] documentation and its [chat example][https://github.com/actix/actix/tree/master/examples/chat] and will help you learn how socket-client and server communicate.

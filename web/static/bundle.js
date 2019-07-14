@@ -1191,4 +1191,9 @@ console.log(emoji);
 console.log(emoji.emojify);
 console.log(emoji.emojify("I :heart: Rust - or use whatever you want"));
 
+const hello = () => console.log("Thank for using JavaScript in html. You can use it easily in browser with 'window.code = code' syntax");
+hello();
+
+window.hello = hello;
+
 },{"node-emoji":2}]},{},[5]);
