@@ -1,9 +1,9 @@
 <!--
     Post{
-        subtitle: "Learn to inlcude JavaScript modules in your Rust Frontend",
-        image: "post/web/full-stack-rust-with-yew.png",
+        subtitle: "Learn to use JavaScript with Rust Frontend",
+        image: "post/web/npm-and-rust-by-Steadylearner.png",
         image_decription: "Image by Steadylearner",
-        tags: "How Rust Yew code",
+        tags: "How NPM Rust Yew",
     }
 -->
 
@@ -59,17 +59,19 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 <!-- / -->
 
+[![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
+
 In the previous post [Fullstack Rust with Yew], we learnt how to prepare minimal files to build full stack Rust web app.
 
 You can build whatever Rust allows with it.
 
-But, what if there are no crates or examples in Rust for what you want to build yet? I know that you can eventually make it work and Rust language and its community will help you.
+But, what if there are no crates or examples in Rust for what you want to build yet?
 
-That is important but it will take you some time to make it happen. So in this post we will learn how to use NPM packages directly in your Rust frontend web app. Here, we will use [Yew], [stdweb] but you may use whatever Rust modules relevant to webassembly and JavaScript.
+You can eventually make it work and Rust language and its community will help you. That is important but it will take you some time to make it happen.
 
-You can think that this post is just [the previous post][Fullstack Rust with Yew] and [browserify] to serve **NPM** files for your Rust [Yew] frontend webassembly.
+So in this post we will learn how to use NPM packages directly in your Rust frontend web app. We will use [Yew], [stdweb] but you may use whatever Rust crates relevant to webassembly and JavaScript.
 
-If you want to save your time, you may clone [Rust Full Stack] and spend time to find what it does.
+If you want to save your time, you may clone [Rust Full Stack] and spend time to find what it does. You can think that this post is just [the previous post][Fullstack Rust with Yew] and [browserify] to serve **NPM** files for your Rust [Yew] frontend webassembly.
 
 <br />
 
@@ -87,7 +89,7 @@ If you want to save your time, you may clone [Rust Full Stack] and spend time to
 
 I want you already have Rust installed in your machine. The blog post [How to install Rust] will help you for that.
 
-If you haven't setup development environment for [Yew], please read the previous post [How to use Rust Yew]. Then, you may read [Fullstack Rust with Yew].
+If you haven't setup development environment for [Yew], please read the previous post [How to use Rust Yew]. Then, you may vist [Fullstack Rust with Yew].
 
 The main point in this post is how to use **FFI**(foreign function interface) between **Rust** and **JavaScript**. I already wrote [How to use Python in JavaScript] for JavaScript and Python and it may help you for this post. You may also read the what **js!** does in [stdweb].
 
@@ -97,6 +99,8 @@ The **HTML and CSS** files we will use in this post is based on [How to start Ru
 
 You may read it and will help you in this post and others later for Rust full stack app we will build later.
 
+<br />
+
 <h2 class="blue">Table of Contents</h2>
 
 1. What happens when you include JavaScript files in html
@@ -104,6 +108,7 @@ You may read it and will help you in this post and others later for Rust full st
 3. Rust Frotend code to use them
 4. Edit Rust server side
 5. **Conclusion**
+6. Personal Note
 
 ---
 
@@ -113,6 +118,8 @@ If you spend some time in Rust and webassembly, you will find that there is no d
 
 You may apply what you learn here when you use JavaScript to build web app also.
 
+**Personal Note** may be deleted.
+
 <br />
 
 ## 1. What happens when you include JavaScript files in html
@@ -121,7 +128,7 @@ If you read the documentations from [Yew], you should have found that it already
 
 It shows you can use NPM packages with it. But, you will find that it is not a perfect solution for every NPM modules and there was no documentation for that yet.
 
-I hope you tested it in your machine and invested it. You will find that its payload is
+I hope you tested it in your machine. You will find that its payload is
 
 ```rust
 use stdweb::Value;
@@ -160,15 +167,9 @@ The important points here are
 
 2. Then, you define methods only what you want to use from it in Rust.
 
-You can see that what really work is **js!** and you can do the same without those **Service**. They are there just to make them reusable as it is in other **Service** modules in [Yew].
+If you read the source code, you can easily suppose that **unpkg** in **index.html** help you to use the NPM modules in the global scope of **JavaScript** in browser.
 
-We will take care of it later with more details.
-
-and You can easily suppose that **https://unpkg.com/ccxt"** in **index.html** help you to use the NPM modules in the global scope of **JavaScript** in browser.
-
-It is not sufficient to find what happens here.
-
-So you may visit the https://unpkg.com/ccxt and you will find that it relocates you to **ccxt.browser.js** file and there are parts
+It is not sufficient to find what happens here. So you may visit the https://unpkg.com/ccxt and you will find that it relocates you to **ccxt.browser.js** file. Then, there are parts
 
 ```js
 /*  A entry point for the browser bundle version. This gets compiled by:
@@ -177,7 +178,7 @@ So you may visit the https://unpkg.com/ccxt and you will find that it relocates 
 window.ccxt = require ('./ccxt')
 ```
 
-and you can see this is payload to make everything work.
+and you can see this is a **payload** to make everything work.
 
 It may not easy to find what it does. You may test it in your browser with these files
 
@@ -200,7 +201,7 @@ It may not easy to find what it does. You may test it in your browser with these
 </html>
 ```
 
-<br />
+and with JavaScript file
 
 ```js
 console.log("Hello from Steadylearner(www.steadylearner.com)")
@@ -216,13 +217,15 @@ You will see that those JavaScript files included in index.html will be executed
 
 You may test with your JavaScript code also and test it in your console.
 
+<br />
+
 ## 2. Browserify to use NPM modules in Rust Frontend
 
 In the previous part, there was **browserify --debug ./ccxt.browser.js > ./dist/ccxt.browser.js**. You can find that [Browserify] was there to help modules in [unpkg] work only with its link.
 
 Having spent some time with [it][unpkg], I found that not every module in it has **browserify** relevant code to make the Rust Frotnend code we read before work.
 
-So we will write code to use [Browserify] on our own instead of using [unpkg]. That will be **payload** your Rust frontend to work.
+So we will write code to use [Browserify] on our own instead of using [unpkg]. That will help you to use Rust frontend with NPM whenever you want.
 
 If you haven't used [Browserify] yet, read [How to start Rust Chat App] or [its documentation][Browserify].
 
@@ -242,7 +245,7 @@ We will use **node-emoji** here because we used it in [How to start Rust Chat Ap
 
 It will help you find that those **NPM packages** with name **node** or only seem to be useful for **node** environment can also be used in browser for your frontend app.
 
-then write in **/web/static/npm.js**
+then write **/web/static/npm.js**
 
 ```js
 const emoji = require("node-emoji");
@@ -256,7 +259,7 @@ window.emoji = emoji;
 // console.log(emoji.emojify("I :heart: Rust - or use whatever you want"));
 ```
 
-and in **index.html** to link **node_modules** folder to your **Rust Frontend** code later
+and in **index.html** to link **node_modules** folder to your **Rust Frontend** code later.
 
 ```html
 <head>
@@ -264,11 +267,9 @@ and in **index.html** to link **node_modules** folder to your **Rust Frontend** 
 </head>
 ```
 
-then you can end this whole process for **static** files with **browserify npm.js > bundle.js**.
+Then, you can end this whole process for **static** files with **browserify npm.js > bundle.js**.
 
-You can see that **1.** was the payload and uncomment codes in **2.** and test it with your browser console.
-
-<br />
+You can see that **1.** was the last process to use NPM in Rust frontend in JavaScript file and uncomment codes in **2.** and test it with your browser console.
 
 If you want to use more **NPM** moduels later, just **copy and paste** those syntax with more modules.
 
@@ -310,7 +311,7 @@ impl EmojiService {
 }
 ```
 
-You may use **/web/service** folder instead. You can also use **js!** wherever you want to use in your Rust file instead of writing specific folder and file for them.
+You may use **/web/service** folder instead. You can also use **js!** instead of writing specific folder and file for them.
 
 What is important here is **js!** macro. You can see that **pub fn new()** part will be always similar. Then, in **1.** only difference is module name and its methods.
 
@@ -349,9 +350,11 @@ fn update(&mut self, msg: Self::Message) -> ShouldRender {
 }
 ```
 
-then **$yarn watch:rs** and test it with **I :heart: Rust** or [node-emoji][whatever you want]. You will find that your input and your message are emojified.
+then **$yarn watch:rs** and test it with **I :heart: Rust** or refer to [node-emoji]. You will find that your input and your message are emojified.
 
 That was all to use **NPM packages** in **Rust Frontend**.
+
+<br />
 
 ## 4. Edit Rust server side for that
 
@@ -370,7 +373,6 @@ set -e #$help set
 
 # build frontend assets and put them in a place the Rocket server
 # expects
-
 
 echo "building web"
 pushd web #$help pushd
@@ -462,8 +464,8 @@ fn rocket() -> rocket::Rocket {
         web::steadylearner_css,
         web::normalize_css,
         // npm
-        web::browserify,
         web::npm,
+        web::browserify,
     ];
 
     rocket::ignite()
@@ -474,6 +476,8 @@ fn rocket() -> rocket::Rocket {
 You can test it work with **./run-local.sh** or **cargo c** in server directory.
 
 If you want to use other web frameworks with Rust or other language for server side, just find the [equivalent code](https://actix.rs/docs/static-files/).
+
+<br />
 
 ## 5. Conclusion
 
@@ -486,4 +490,18 @@ in it. You can follow the process left there and write your full stack Rust chat
 
 You can also **copy and paste** codes from [websocket example](https://github.com/DenisKolodin/yew/tree/master/examples/dashboard) and [form example](https://github.com/DenisKolodin/yew/tree/master/examples/todomvc).
 
-You can also read [actix] documentation and its [chat example][https://github.com/actix/actix/tree/master/examples/chat] and will help you learn how socket-client and server communicate.
+You can also read [actix] documentation and its [chat example](https://github.com/actix/actix/tree/master/examples/chat) and will help you learn how socket-client and server communicate.
+
+<br />
+
+## 6. Personal Note
+
+This was the response to "You know HTML, CSS, JavaScript, Node and other frontend framework" from a person who already visited [Steadylearner] some of my NPM packages "You are not ready to work because we need expert of other frontend framework".
+
+I am ok that it is difficult to get programming jobs without degree in computer scienece and previous working experiecne in IT companies and reading blog posts that "Some companies gives several months for a developer in a new project".
+
+I wanted to tell that "it is not a problem of programming languages and type of frameworks", "it is just Programmer and hardware and code is just instruction and it is not impossibile to learn new frameworks if you already have experience in others".
+
+Instead, I wrote these posts for Rust Frontend. It will be easy for you to start your [Rust Full Stack] project with them and I hope you can find their values.
+
+I think that it is time to end my frontend journey for a while. It may be a problem of "Who you know and where you live" and not "What you know" and I will write more blog posts because that is only thing I can do at this point.
