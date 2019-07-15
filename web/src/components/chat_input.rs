@@ -62,7 +62,7 @@ impl Component for Input {
 impl Renderable<Input> for Input {
     fn view(&self) -> Html<Self> {
         html! {
-            <input
+            <Input
                 id="msg",
                 type="text",
                 placeholder="Type here to start to talk with others and enter to submit",

@@ -7,6 +7,7 @@ use crate::Model;
 use super::{
     image::view_image,
     video::view_video,
+    code::view_code,
     text::view_text,
 };
 
@@ -19,12 +20,12 @@ pub fn view_message(value: &str, message_type: &str) -> Html<Model> {
             "video" => {
                 view_video(&value)
             }
+            "code" => {
+                view_code(&value)
+            }
             _ => {
                 view_text(&value)
             }
-            // "code" => {
-                // code(&value)
-            // }
         };
 
         html! {

@@ -2,6 +2,6 @@ pub mod message;
 pub mod text;
 pub mod image;
 pub mod video;
-// pub mod code;
+pub mod code;
 
-pub mod input;
+pub mod chat_input;

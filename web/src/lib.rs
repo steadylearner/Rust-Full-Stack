@@ -17,7 +17,7 @@ use self::{
     state::State,
 
     components::{
-        input::Input,
+        chat_input::Input,
         message::{view_message}
     },
     npm::{
@@ -120,6 +120,7 @@ impl Renderable<Model> for Model {
                         class=("flex", "center", "rust-icon", "hover", "cursor-pointer", "transition-half"),
                         title="Use this for whatever you want",
                         src="https://www.steadylearner.com/static/images/code/Rust.svg",
+                        onclick=|_| Msg::Type("code".to_string()),
                     />
                     <Input: value=&self.state.value, onsignal=Msg::Update, />
                     <i
@@ -136,8 +137,10 @@ impl Renderable<Model> for Model {
     }
 }
 
-// 1. Organize App
-// 2. Write CSS for image
-// 3. Write blog post "How to use components in Rust" with, video, text and image
+// 1. Read more documentation
+// 2. Write CSS for image, video and use button instead of <i> and <img> here and make them disabled when they are on
+
+// 3. Organize code
+// 4. Write blog post "How to use components in Rust" with, video, text and image
 //    (code with marked in JavaScript or with Rust)
-// 4. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default
+// 5. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default
