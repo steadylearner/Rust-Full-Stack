@@ -10,13 +10,17 @@ use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 use yew::services::{ConsoleService};
 
 mod state;
+mod components;
 mod npm;
-	
+
 use self::{
     state::State,
 
+    components::{
+        message::{view_message}
+    },
     npm::{
-        emoji::EmojiService, 
+        emoji::EmojiService,
     },
 };
 
@@ -38,6 +42,7 @@ impl Component for Model {
     fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let state = State {
             value: "".to_string(),
+            message_type: "text".to_string(),
         };
 
         Model {
@@ -101,7 +106,7 @@ impl Renderable<Model> for Model {
                 <ul
                     id="messages",
                 >
-                    { self.view_message() }
+                    { view_message(&self.state.value, &self.state.message_type) }
                 </ul>
                 <section
                     id="form",
@@ -121,19 +126,19 @@ impl Renderable<Model> for Model {
 }
 
 impl Model {
-    fn view_message(&self) -> Html<Model> {
-        if !(&self.state.value.is_empty()) {
-            html! {
-                <li>
-                    <span> { format!("You: {}", &self.state.value) }</span>
-                </li>
-            }
-        } else {
-            html! {
-                { "" }
-            }
-        }
-    }
+    // fn view_message(&self) -> Html<Model> {
+    //     if !(&self.state.value.is_empty()) {
+    //         html! {
+    //             <li>
+    //                 <span> { format!("You: {}", &self.state.value) }</span>
+    //             </li>
+    //         }
+    //     } else {
+    //         html! {
+    //             { "" }
+    //         }
+    //     }
+    // }
 
     fn view_input(&self) -> Html<Model> {
         html! {
