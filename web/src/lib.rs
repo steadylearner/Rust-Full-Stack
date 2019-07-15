@@ -17,6 +17,7 @@ use self::{
     state::State,
 
     components::{
+        input::Input,
         message::{view_message}
     },
     npm::{
@@ -32,6 +33,7 @@ pub struct Model {
 
 pub enum Msg {
     Update(String),
+    Type(String), // use enum later?
     Exit
 }
 
@@ -64,6 +66,9 @@ impl Component for Model {
                 
                 self.state.value = emojified
             }
+            Msg::Type(val) => {
+                self.state.message_type = val
+            }
             Msg::Exit => {
                 self.console.log("The user wants to leave this.")
                 // or 
@@ -82,6 +87,7 @@ impl Renderable<Model> for Model {
         // descturture state before you use it here?
         html! {
             <section>
+                // Nav
                 <nav id="nav", class=("nav", "flex", "center"), >
                     <a
                         class=("flex", "no-text-decoration", "hover", "cursor-pointer", "transition-half", "right-auto"),
@@ -104,11 +110,13 @@ impl Renderable<Model> for Model {
                        { "Exit" }
                     </button>
                 </nav>
+                // 
                 <ul
                     id="messages",
                 >
                     { view_message(&self.state.value, &self.state.message_type) }
                 </ul>
+                // Input
                 <section
                     id="form",
                     class=("chat-input", "flex", "center"),
@@ -119,7 +127,8 @@ impl Renderable<Model> for Model {
                         title="Use this for whatever you want",
                         src="https://www.steadylearner.com/static/images/code/Rust.svg",
                     />
-                    { self.view_input() }
+                    <Input: value=&self.state.value, onsignal=Msg::Update, />
+                    // { self.view_input() }
                 </section>
             </section>
         }
@@ -128,33 +137,25 @@ impl Renderable<Model> for Model {
 
 // Should remove code here as much as possible with Yew components and functions
 impl Model {
-    // Use this instead if view_message from component doesn't work
-
-    // fn view_message(&self) -> Html<Model> {
-    //     if !(&self.state.value.is_empty()) {
-    //         html! {
-    //             <li>
-    //                 <span> { format!("You: {}", &self.state.value) }</span>
-    //             </li>
-    //         }
-    //     } else {
-    //         html! {
-    //             { "" }
-    //         }
+    // Let this here before you completely find how components work
+    // fn view_input(&self) -> Html<Model> {
+    //     html! {
+    //         <input
+    //             id="msg",
+    //             type="text",
+    //             placeholder="Type here to start to talk with others and enter to submit",
+    //             title="You should enter the chat before you type.",
+    //             autocomplete="off",
+    //             value=&self.state.value,
+    //             oninput=|e| Msg::Update(e.value),
+    //         />
     //     }
     // }
-
-    fn view_input(&self) -> Html<Model> {
-        html! {
-            <input
-                id="msg",
-                type="text",
-                placeholder="Type here to start to talk with others and enter to submit",
-                title="You should enter the chat before you type.",
-                autocomplete="off",
-                value=&self.state.value,
-                oninput=|e| Msg::Update(e.value),
-            />
-        }
-    }
 }
+
+// 1. input to component - Done
+// 2. Write more component and view part for video and image
+// 3. Test it work with Type and write CSS for them
+// 4. Write blog post "How to use components in Rust" with, video, text and image
+//    (code with marked in JavaScript or with Rust)
+// 5. Use this to chat app in separate project or make it to chat app?
