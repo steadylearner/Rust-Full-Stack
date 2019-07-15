@@ -2,23 +2,28 @@ use yew::{html, Html};
 
 use crate::Model;
 
-// find how to include text, image, video and use match
+// super here is mod.rs in this folder(components), you should write pub mod <name> first
+use super::{
+    image::view_image,
+    video::view_video,
+    text::view_text,
+};
 
 pub fn view_message(value: &str, message_type: &str) -> Html<Model> {
     if !(&value.is_empty()) {
         let message = match message_type {
             "image" => {
-                image(&value)
+                view_image(&value)
             }
             "video" => {
-                video(&value)
+                view_video(&value)
+            }
+            _ => {
+                view_text(&value)
             }
             // "code" => {
                 // code(&value)
             // }
-            _ => {
-                text(&value)
-            }
         };
 
         html! {
