@@ -74,3 +74,8 @@ I update this repository with new features. For files relevant to previous posts
 4. [How to use NPM packages with Rust Frontend]
 5. [How to deploy Rust Web App]
 
+## What can you learn to use instantly with it
+
+1. HTML and CSS(Text, Image, Video, Markdown etc)
+
+2. JavaScript module and NPM packages
