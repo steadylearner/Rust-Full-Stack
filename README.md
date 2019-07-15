@@ -62,7 +62,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 # How to be a full stack Rust Developer
 
-The whole project will be updated with interval. So you may refer to **reference_for_blog_posts** in each directory and its **README.md** file.
+I update this repository with new features. For files relevant to previous posts, You may refer to **reference_for_blog_posts** in each directory and its **README.md** file.
 
 [![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
 
@@ -74,8 +74,3 @@ The whole project will be updated with interval. So you may refer to **reference
 4. [How to use NPM packages with Rust Frontend]
 5. [How to deploy Rust Web App]
 
-## The current state of this repository
-
-You can learn how to structure simple Rust full stack app with [Yew] and [Rocket]. You can also use **NPM packages** with it and components also.
-
-In the next posts, we will learn how to use websocket, database, json web service etc and project will grow with them.

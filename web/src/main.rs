@@ -59,3 +59,4 @@ fn main() {
 // 4. enable wss for https with ws-rs documentation
 // 5. Security with hashed messages
 // 6. Use every variables(no unused variable)
+

@@ -1,3 +1,5 @@
+// https://github.com/DenisKolodin/yew/blob/master/examples/inner_html/src/lib.rs with marked
+
 // Use NPM or Rust code in util.rs if necessary
 
 // https://github.com/steadylearner/react-easy-md/blob/master/src/api.js
