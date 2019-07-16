@@ -24,7 +24,7 @@ pub fn view_code(value: &str) -> Html<Model> {
             tables: true,
             breaks: false,
             pedantic: false,
-            sanitize: true,
+            sanitize: false, // true when you don't want to allow HTML
             smartLists: true,
             smartypants: false,
             langPrefix: "hljs ",

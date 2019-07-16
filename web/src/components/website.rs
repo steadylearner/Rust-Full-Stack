@@ -10,6 +10,8 @@ pub fn steadylarner_blog() -> Html<Model> {
             class=("flex", "no-text-decoration", "hover", "cursor-pointer", "transition-half", "right-auto"),
             href="https://www.steadylearner.com/blog/search/Rust",
             title="Click it to learn how to code this.",
+            target="_blank",
+            rel="noopener noreferrer",
         >
             <span 
                 class=("white", "bold", "flex", "center"), 

@@ -14,6 +14,7 @@ pub fn view_video(value: &str) -> Html<Model> {
             width="100%",
             height="360",
             frameborder="0",
+            class=("flex", "margin-top-one-and-a-half", "max-width-half"),
         />
     }
 }

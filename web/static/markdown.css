@@ -2,6 +2,9 @@
 .markdown>* {
   line-height: 1.6;
   text-rendering: optimizelegibility;
+  /* Use your custom CSS here to control max-width of images and videos etc */
+  max-width: 50%;
+  /* */
 }
 
 .markdown>*:first-child {

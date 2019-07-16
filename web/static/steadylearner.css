@@ -813,6 +813,10 @@ SOFTWARE.
   max-width: 100%;
 }
 
+.max-width-half {
+  max-width: 50%;
+}
+
 .max-width-sixty-four {
   max-height: 64rem;
 }
