@@ -18,7 +18,15 @@ use self::{
 
     components::{
         chat_input::Input,
-        message::{view_message}
+        message::{view_message},
+        buttons::{
+            use_image::UseImage,
+            use_video::UseVideo,
+            use_code::UseCode,
+        },
+        website::{
+            steadylarner_blog,
+        }
     },
     npm::{
         emoji::EmojiService,
@@ -50,7 +58,7 @@ impl Component for Model {
         Model {
             state,
 
-            // Yew Service
+            // Yew
             console: ConsoleService::new(),
 
             // NPM
@@ -80,18 +88,11 @@ impl Component for Model {
 // Make Enter and Exit components later
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
-        // descturture state before you use it here?
-        // use String and variable for the class name later
+        let State { value, message_type } = &self.state;
         html! {
             <section>
                 <nav id="nav", class=("nav", "flex", "center"), >
-                    <a
-                        class=("flex", "no-text-decoration", "hover", "cursor-pointer", "transition-half", "right-auto"),
-                        href="https://www.steadylearner.com/blog",
-                        title="Click it to learn how to code this.",
-                    >
-                        <span class=("white", "bold"), >{ "© Rust Chat App" }</span>
-                    </a>
+                    { steadylarner_blog() }
                     <button
                         id="connect",
                         class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
@@ -109,38 +110,23 @@ impl Renderable<Model> for Model {
                 <ul
                     id="messages",
                 >
-                    { view_message(&self.state.value, &self.state.message_type) }
+                    { view_message(value, message_type) }
                 </ul>
                 <section
                     id="form",
                     class=("chat-input", "flex", "center"),
                 >
-                    <img
-                        id="code",
-                        class=("flex", "center", "rust-icon", "hover", "cursor-pointer", "transition-half"),
-                        title="Use this for whatever you want",
-                        src="https://www.steadylearner.com/static/images/code/Rust.svg",
-                        onclick=|_| Msg::Type("code".to_string()),
-                    />
-                    <Input: value=&self.state.value, onsignal=Msg::Update, />
-                    <i
-                        class=("flex", "text-center", "fas", "fa-file-image", "white", "width-five", "hover", "cursor-pointer", "transition-half"),
-                        onclick=|_| Msg::Type("image".to_string()),
-                    />
-                    <i
-                        class=("flex", "text-center", "fab", "fa-youtube", "white", "width-two", "margin-right-one", "hover", "cursor-pointer", "transition-half"),
-                        onclick=|_| Msg::Type("video".to_string()),
-                    />
+                    <UseCode: disabled={message_type != "code"}, onsignal=Msg::Type, />
+                    <Input: value=value, onsignal=Msg::Update, />
+                    <UseImage: disabled={message_type != "image"}, onsignal=Msg::Type, />
+                    <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
                 </section>
             </section>
         }
     }
 }
 
-// 1. Read more documentation
-// 2. Write CSS for image, video and use button instead of <i> and <img> here and make them disabled when they are on
-
-// 3. Organize code
-// 4. Write blog post "How to use components in Rust" with, video, text and image
+// 1. Read more documentation and organize code
+// 2. Write blog post "How to use components in Rust" with, video, text and image
 //    (code with marked in JavaScript or with Rust)
-// 5. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default
+// 3. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default

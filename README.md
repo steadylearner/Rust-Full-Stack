@@ -76,6 +76,8 @@ I update this repository with new features. For files relevant to previous posts
 
 ## What can you learn to use instantly with it
 
-1. HTML and CSS(Text, Image, Video, Markdown etc)
+1. HTML, CSS, JavaScript for texts, images, videos 
 
-2. JavaScript module and NPM packages
+2. NPM packages
+
+3. Markdown

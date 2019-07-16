@@ -472,6 +472,14 @@ SOFTWARE.
   text-shadow: 0 0 1rem yellow;
 }
 
+.link--active-blue {
+  text-shadow: 0 0 1rem #08c;
+}
+
+.link--active-red {
+  text-shadow: 0 0 1rem #ff7676;
+}
+
 .thumbnail {
   transition: transform 1s ease;
   :hover {
