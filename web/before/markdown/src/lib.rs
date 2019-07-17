@@ -127,6 +127,6 @@ impl Renderable<Model> for Model {
 }
 
 // 1. Read more documentation and organize code
-// 2. Write blog post "How to use markdown in Rust Frontned"
+// 2. Write blog post "How to use components in Rust" with, video, text and image
 //    (code with marked in JavaScript or with Rust)
 // 3. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default

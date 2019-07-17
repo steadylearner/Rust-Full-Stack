@@ -45,7 +45,6 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 <!-- Steadylearner Post -->
 
-[Rust blog posts]: https://www.steadylearnerc.om/blog/search/Rust
 [How to install Rust]: https://www.steadylearner.com/blog/read/How-to-install-Rust
 [Rust Chat App]: https://www.steadylearner.com/blog/read/How-to-start-Rust-Chat-App
 [Steadylearner Rust Blog Posts]: https://www.steadylearner.com/blog/search/Rust
@@ -62,7 +61,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 # How to be a full stack Rust Developer
 
-I update this repository with new features. For files relevant to previous posts, You may refer to **reference_for_blog_posts** in each directory and its **README.md** file.
+It will be updated with the latest blog post. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
 [![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
 
@@ -73,11 +72,14 @@ I update this repository with new features. For files relevant to previous posts
 3. [Fullstack Rust with Yew]
 4. [How to use NPM packages with Rust Frontend]
 5. [How to deploy Rust Web App]
+6. [Steadylearner Rust Blog Posts]
 
-## What can you learn to use instantly with it
+## What can you learn to use with it
 
-1. HTML, CSS, JavaScript for texts, images, videos 
+1. HTML, CSS, JavaScript for texts, images, videos etc
 
 2. NPM packages
 
 3. Markdown
+
+4. How to make components in Rust [Yew]
