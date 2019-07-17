@@ -78,17 +78,16 @@ First, clone this repository with
 $git clone https://github.com/steadylearner/Rust-Full-Stack.git
 ```
 
-and **yarn** in **web** and **web/static** folder for NPM packages.
-
 Prepare Rust development environment with [How to install Rust] if you haven't yet.
 
 Then, run **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
 
-When you made it work, **./run-local.sh** for full stack Rust app and you will see the app similar to this.
+(**$yarn** in **web** and **web/static** folder to install NPM packages and **$rustup default nightly** and
+**$cargo install cargo-web** for Rust web development.)
 
-[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
+When you made it work, **./run-local.sh** for a full stack Rust web app.
 
-## What can you learn with it
+## What you will learn with it
 
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
@@ -97,6 +96,8 @@ When you made it work, **./run-local.sh** for full stack Rust app and you will s
 5. How to deploy it
 
 ## Full Stack Rust Web App Development
+
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
 1. [How to install Rust]
 2. [Rust Chat App]
