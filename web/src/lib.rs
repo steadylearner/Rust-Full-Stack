@@ -26,6 +26,7 @@ use self::{
         },
         website::{
             steadylarner_blog,
+            social,
         }
     },
     npm::{
@@ -90,38 +91,41 @@ impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         let State { value, message_type } = &self.state;
         html! {
-            <section>
-                <nav id="nav", class=("nav", "flex", "center"), >
-                    { steadylarner_blog() }
-                    <button
-                        id="connect",
-                        class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
+            <>
+                { social() }
+                <section>
+                    <nav id="nav", class=("nav", "flex", "center"), >
+                        { steadylarner_blog() }
+                        <button
+                            id="connect",
+                            class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
+                        >
+                            { "Enter" }
+                        </button>
+                        <button
+                            id="exit",
+                            class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
+                            onclick=|_| Msg::Exit,
+                        >
+                            { "Exit" }
+                        </button>
+                    </nav>
+                    <ul
+                        id="messages",
                     >
-                        { "Enter" }
-                    </button>
-                    <button
-                        id="exit",
-                        class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
-                        onclick=|_| Msg::Exit,
+                        { view_message(value, message_type) }
+                    </ul>
+                    <section
+                        id="form",
+                        class=("chat-input", "flex", "center"),
                     >
-                        { "Exit" }
-                    </button>
-                </nav>
-                <ul
-                    id="messages",
-                >
-                    { view_message(value, message_type) }
-                </ul>
-                <section
-                    id="form",
-                    class=("chat-input", "flex", "center"),
-                >
-                    <UseCode: disabled={message_type != "code"}, onsignal=Msg::Type, />
-                    <ChatInput: value=value, onsignal=Msg::Update, />
-                    <UseImage: disabled={message_type != "image"}, onsignal=Msg::Type, />
-                    <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
+                        <UseCode: disabled={message_type != "code"}, onsignal=Msg::Type, />
+                        <ChatInput: value=value, onsignal=Msg::Update, />
+                        <UseImage: disabled={message_type != "image"}, onsignal=Msg::Type, />
+                        <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
+                    </section>
                 </section>
-            </section>
+            </>
         }
     }
 }
