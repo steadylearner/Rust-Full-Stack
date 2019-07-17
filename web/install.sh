@@ -5,11 +5,11 @@ set -e #$help set
 # build frontend assets and put them in a place the Rocket server
 # expects
 
-echo "install NPM pacakages to Browserify work"
+echo "install NPM pacakages for Browserify to work"
 pushd static #$help pushd
 yarn
 popd #$help popd
-echo "ready to use Browserify to use JavaScript in Rust frontend"
+echo "ready to use Browserify to use JavaScript modules in Rust frontend"
 
 echo "install NPM packages to use live Rust yew editor"
 
