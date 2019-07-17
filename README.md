@@ -57,29 +57,56 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 [How to use Python in JavaScript]: https://www.steadylearner.com/blog/read/How-to-use-Python-in-JavaScript
 
+[How to build a static sitemap.xml with Rust]: https://www.steadylearner.com/blog/read/Static-sitemap.xml-with-Rust
+[How to build a sitemap.xml with dynamic contents in Rust]: https://www.steadylearner.com/blog/read/How-to-make-sitemap-with-dynamic-contents-in-Rust
+[How to build a sitemap for images with Rust]: https://www.steadylearner.com/blog/read/How-to-build-sitemap-for-images-with-Rust
+[How to automate building sitemaps with Rust]: https://www.steadylearner.com/blog/read/How-to-automate-building-sitemaps-with-Rust
+
 <!-- / -->
 
 # How to be a full stack Rust Developer
 
-It will be updated with the latest blog post. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
+It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
 [![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
 
-## Blog Posts
+## Install
+
+First, clone this repository with
+
+```console
+$git clone https://github.com/steadylearner/Rust-Full-Stack.git
+```
+
+and **yarn** in **web** and **web/static** folder for NPM packages.
+
+Prepare Rust development environment with [How to install Rust] if you haven't yet.
+
+Then, **./run-local.sh** and you will see the app similar to this.
+
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
+
+## What can you learn to use with it with Rust
+
+1. HTML, CSS and Markdown
+2. NPM packages and JavaScript modules
+3. How to use [Yew]
+4. How to build complete **Rust Web app**
+5. How to deploy it
+
+## Full Stack Rust App Development
 
 1. [How to install Rust]
-2. [How to use Rust Yew]
-3. [Fullstack Rust with Yew]
-4. [How to use NPM packages with Rust Frontend]
-5. [How to deploy Rust Web App]
-6. [Steadylearner Rust Blog Posts]
+2. [Rust Chat App]
+3. [How to use Rust Yew]
+4. [Fullstack Rust with Yew]
+5. [How to use NPM packages with Rust Frontend]
 
-## What can you learn to use with it
+## Deployment, metadata, sitemap
 
-1. HTML, CSS, JavaScript for texts, images, videos etc
+1. [How to deploy Rust Web App]
+2. [How to build a static sitemap.xml with Rust]
+3. [How to build a sitemap.xml with dynamic contents in Rust]
+4. [How to build a sitemap for images with Rust]
+5. [How to automate building sitemaps with Rust]
 
-2. NPM packages
-
-3. Markdown
-
-4. How to make components in Rust [Yew]
