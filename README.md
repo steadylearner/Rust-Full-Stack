@@ -82,7 +82,9 @@ and **yarn** in **web** and **web/static** folder for NPM packages.
 
 Prepare Rust development environment with [How to install Rust] if you haven't yet.
 
-Then, **./run-local.sh** and you will see the app similar to this.
+Then, run **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
+
+When you made it work, **./run-local.sh** for full stack Rust app and you will see the app similar to this.
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
@@ -91,7 +93,7 @@ Then, **./run-local.sh** and you will see the app similar to this.
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
 3. How to use Rust [Yew]
-4. How to build complete **Rust Web app**
+4. How to build complete **Full Stack Rust Web Application**
 5. How to deploy it
 
 ## Full Stack Rust Web App Development
