@@ -86,15 +86,15 @@ Then, **./run-local.sh** and you will see the app similar to this.
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
-## What can you learn to use with it with Rust
+## What can you learn with it
 
-1. HTML, CSS and Markdown
-2. NPM packages and JavaScript modules
-3. How to use [Yew]
+1. How to use HTML, CSS and Markdown in Rust Frontend
+2. How to include NPM packages and JavaScript modules in it
+3. How to use Rust [Yew]
 4. How to build complete **Rust Web app**
 5. How to deploy it
 
-## Full Stack Rust App Development
+## Full Stack Rust Web App Development
 
 1. [How to install Rust]
 2. [Rust Chat App]
@@ -102,11 +102,10 @@ Then, **./run-local.sh** and you will see the app similar to this.
 4. [Fullstack Rust with Yew]
 5. [How to use NPM packages with Rust Frontend]
 
-## Deployment, metadata, sitemap
+## How to deploy and build sitemaps for it
 
 1. [How to deploy Rust Web App]
 2. [How to build a static sitemap.xml with Rust]
 3. [How to build a sitemap.xml with dynamic contents in Rust]
 4. [How to build a sitemap for images with Rust]
 5. [How to automate building sitemaps with Rust]
-
