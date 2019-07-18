@@ -8,6 +8,8 @@ body {
   font: 16px Helvetica, Arial;
 }
 
+/* should remove id and use class name instead for the entire app */
+
 .nav {
   top: 0;
   background: #000;
@@ -18,7 +20,7 @@ body {
   margin-bottom: 2rem;
 }
 
-.chat-input {
+.chat-form {
   background: #000;
   padding: 0.6rem;
   /* position: fixed; */
@@ -26,18 +28,18 @@ body {
   width: 100%;
 }
 
-.chat-input input {
+.chat-form input {
   border: 0;
   padding: 1.1rem;
   width: 100vw;
   color: inherit;
 }
 
-.chat-input input:focus {
+.chat-form input:focus {
   color: #121212;
 }
 
-.chat-input button {
+.chat-form button {
   background: black;
   border: none;
   padding: none;

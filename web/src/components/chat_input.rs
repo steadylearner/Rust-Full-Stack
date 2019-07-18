@@ -1,6 +1,8 @@
 // https://github.com/DenisKolodin/yew/tree/master/examples/custom_components/src
 
+use yew::events::IKeyboardEvent;
 use yew::{html, Callback, Component, ComponentLink, Html, Renderable, ShouldRender};
+use stdweb::js;
 
 pub struct ChatInput {
     value: String,
@@ -9,6 +11,8 @@ pub struct ChatInput {
 
 pub enum Msg {
     Update(String),
+    Submit,
+    Nope,
 }
 
 #[derive(PartialEq, Clone)]
@@ -33,19 +37,30 @@ impl Component for ChatInput {
 
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
         ChatInput {
-            value: "".into(),
+            value: "".to_string(),
             onsignal: props.onsignal,
         }
     }
 
-    // this is for methods
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
             Msg::Update(val) => {
+                self.value = val;
+            }
+            Msg::Submit => {
                 if let Some(ref callback) = self.onsignal { // use this syntax just to use None at the beginning
-                    callback.emit(val); // callback is async so shows problem here?
+                    let message = self.value.clone();
+                    callback.emit(message); 
+                    // self.value.clear(); does not work here(callback is async so shows problem here?)
+                    js! {
+                        setTimeout(() => {
+                            document.querySelector("#chat-input").value = "";
+                            window.scrollTo({ top: window.innerHeight, behavior: "auto" });
+                        }, 50);
+                    }
                 }
             }
+            Msg::Nope => {}
         }
         false
     }
@@ -63,13 +78,16 @@ impl Renderable<ChatInput> for ChatInput {
     fn view(&self) -> Html<Self> {
         html! {
             <input
-                id="msg",
+                id="chat-input",
                 type="text",
                 placeholder="Type here to start to talk with others and enter to submit",
                 title="You should enter the chat before you type.",
                 autocomplete="off",
                 value=&self.value,
                 oninput=|e| Msg::Update(e.value),
+                onkeypress=|e| {
+                    if e.key() == "Enter" { Msg::Submit } else { Msg::Nope }
+                }, 
             />
         }
     }

@@ -4,6 +4,7 @@ use crate::Model;
 // s7TVVyTyReU - verified and need CSS
 // consider test with Self and Component method later?
 pub fn view_video(value: &str) -> Html<Model> {
+    // conditional here to help users
     let src = format!("https://www.youtube.com/embed/{}", &value);
     html! {
         // wrapper with class here or modify width and height to minimum size

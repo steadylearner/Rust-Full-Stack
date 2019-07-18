@@ -32,7 +32,8 @@ pub fn steadylarner_blog() -> Html<Model> {
 pub fn social() -> Html<Model> {
     html! {
         <>
-            <title>{ "Full Stack Rust Chat App by Steadylearner" }</title>
+            // index.html value(Full Stack Rust Chat App by Steadylearner) will used when there are common parts 
+            <title>{ "Full Stack Rust Chat App" }</title>
             <meta name="description", content="Rust Full Stack Website by Steadylearner", />
             <meta name="thumbnail", content="https://avatars0.githubusercontent.com/u/32325099?s=460&v=4", />
             <meta property="og:title", content="Full Stack Rust Chat App by Steadylearner", />

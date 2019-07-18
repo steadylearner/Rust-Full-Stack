@@ -41,9 +41,10 @@ pub struct Model {
 }
 
 pub enum Msg {
-    Update(String),
+    Submit(String),
     Type(String), // use enum later?
-    Exit
+    Exit,
+    Nope,
 }
 
 impl Component for Model {
@@ -52,7 +53,7 @@ impl Component for Model {
 
     fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let state = State {
-            value: "".to_string(),
+            response: "".to_string(),
             message_type: "text".to_string(),
         };
 
@@ -69,11 +70,15 @@ impl Component for Model {
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
         match msg {
-            Msg::Update(val) => {
+            Msg::Submit(val) => {
                 let before = format!("{}", &val);
                 let emojified = self.emoji.emojify(before.to_string());
 
-                self.state.value = emojified
+                self.state.response = emojified;
+
+                if &self.state.message_type != "text" {
+                    self.state.message_type = "text".to_string();
+                }
             }
             Msg::Type(val) => {
                 self.state.message_type = val
@@ -81,6 +86,7 @@ impl Component for Model {
             Msg::Exit => {
                 self.console.log("The user wants to leave this.")
             }
+            Msg::Nope => {}
         }
         true
     }
@@ -89,7 +95,8 @@ impl Component for Model {
 // Make Enter and Exit components later
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
-        let State { value, message_type } = &self.state;
+        // let State { value, response, message_type } = &self.state;
+        let State { response, message_type } = &self.state;
         html! {
             <>
                 { social() }
@@ -113,14 +120,15 @@ impl Renderable<Model> for Model {
                     <ul
                         id="messages",
                     >
-                        { view_message(value, message_type) }
+                        { view_message(response, message_type) }
                     </ul>
                     <section
                         id="form",
-                        class=("chat-input", "flex", "center"),
+                        class=("chat-form", "flex", "center"),
                     >
                         <UseCode: disabled={message_type != "code"}, onsignal=Msg::Type, />
-                        <ChatInput: value=value, onsignal=Msg::Update, />
+                        <ChatInput: onsignal=Msg::Submit, />
+                        // or { self.chat_input() } - refer to /before/component/chat_input_compare folder
                         <UseImage: disabled={message_type != "image"}, onsignal=Msg::Type, />
                         <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
                     </section>
@@ -129,8 +137,3 @@ impl Renderable<Model> for Model {
         }
     }
 }
-
-// 1. Read more documentation and organize code
-// 2. Write blog post "How to use markdown in Rust Frontned"
-//    (code with marked in JavaScript or with Rust)
-// 3. Use this to chat app in separate project or make it to chat app? and whenever they submit back to test default
