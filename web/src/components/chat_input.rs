@@ -27,7 +27,7 @@ impl Default for Props {
     fn default() -> Self {
         Props {
             value: "".to_string(),
-            disabled: true,
+            disabled: false,
             onsignal: None,
         }
     }
@@ -41,7 +41,7 @@ impl Component for ChatInput {
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
         ChatInput {
             value: "".to_string(),
-            disabled: true,
+            disabled: false,
             onsignal: props.onsignal,
         }
     }

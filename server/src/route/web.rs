@@ -37,6 +37,11 @@ pub fn normalize_css() -> io::Result<NamedFile> {
     NamedFile::open("web/normalize.css")
 }
 
+#[get("/markdown.css")]
+pub fn markdown_css() -> io::Result<NamedFile> {
+    NamedFile::open("web/markdown.css")
+}
+
 // For browserify and NPM to work and it is optional
 
 #[get("/bundle.js")]

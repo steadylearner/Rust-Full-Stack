@@ -567,14 +567,20 @@ Module.STDWEB_PRIVATE.acquire_tmp = function( dummy ) {
             "__cargo_web_snippet_199d5eb25dfe761687bcd487578eb7e636bd9650": function($0) {
                 $0 = Module.STDWEB_PRIVATE.to_js($0);console.log(($0));
             },
-            "__cargo_web_snippet_29b6f36d08a72ea43620febc7240dfb09872f88c": function($0, $1, $2) {
-                $1 = Module.STDWEB_PRIVATE.to_js($1);$2 = Module.STDWEB_PRIVATE.to_js($2);Module.STDWEB_PRIVATE.from_js($0, (function(){var emoji=($1);console.log(emoji);return emoji.emojify(($2));})());
+            "__cargo_web_snippet_23639371cb88eaf0e4e3ff14ba63d1e5b5cea0b2": function($0, $1) {
+                $1 = Module.STDWEB_PRIVATE.to_js($1);Module.STDWEB_PRIVATE.from_js($0, (function(){return($1).key;})());
+            },
+            "__cargo_web_snippet_32a9f24143922980fdf3a2480554197b574d4a76": function($0, $1, $2) {
+                $1 = Module.STDWEB_PRIVATE.to_js($1);$2 = Module.STDWEB_PRIVATE.to_js($2);Module.STDWEB_PRIVATE.from_js($0, (function(){const emoji=($1);console.log(emoji);return emoji.emojify(($2));})());
             },
             "__cargo_web_snippet_351b27505bc97d861c3914c20421b6277babb53b": function($0) {
                 var o = Module.STDWEB_PRIVATE.acquire_js_reference( $0 );return (o instanceof Node) | 0;
             },
             "__cargo_web_snippet_352943ae98b2eeb817e36305c3531d61c7e1a52b": function($0) {
                 var o = Module.STDWEB_PRIVATE.acquire_js_reference( $0 );return (o instanceof Element) | 0;
+            },
+            "__cargo_web_snippet_442c95c2e43bb2a4bd0521fa37f2973a5ac02e48": function($0, $1) {
+                $1 = Module.STDWEB_PRIVATE.to_js($1);Module.STDWEB_PRIVATE.from_js($0, (function(){const div=document.createElement("div");div.className="markdown";const code=($1);const options={gfm:true,tables:true,breaks:false,pedantic:false,sanitize:false,smartLists:true,smartypants:false,langPrefix:"hljs ",};marked.setOptions(options);div.innerHTML=marked(code);return div;})());
             },
             "__cargo_web_snippet_46518012593da937dd5f35c2fc1c5e1dcade260b": function($0, $1, $2, $3) {
                 $1 = Module.STDWEB_PRIVATE.to_js($1);$2 = Module.STDWEB_PRIVATE.to_js($2);$3 = Module.STDWEB_PRIVATE.to_js($3);Module.STDWEB_PRIVATE.from_js($0, (function(){try{return{value:function(){return($1).insertBefore(($2),($3));}(),success:true};}catch(error){return{error:error,success:false};}})());
@@ -654,6 +660,9 @@ Module.STDWEB_PRIVATE.acquire_tmp = function( dummy ) {
             "__cargo_web_snippet_cb392b71162553130760deeb3964fa828c078f74": function($0) {
                 var o = Module.STDWEB_PRIVATE.acquire_js_reference( $0 );return (o instanceof HTMLInputElement) | 0;
             },
+            "__cargo_web_snippet_cbb3802c5c7bb1f216d212b6e4b87f46e2964a02": function() {
+                setTimeout(()=>{document.querySelector("#chat-input").value="";window.scrollTo({top:window.innerHeight,behavior:"auto"});},10);
+            },
             "__cargo_web_snippet_cd41a77d0178ae27c833ef2950e5f1a48a1455c1": function($0, $1, $2) {
                 $1 = Module.STDWEB_PRIVATE.to_js($1);$2 = Module.STDWEB_PRIVATE.to_js($2);Module.STDWEB_PRIVATE.from_js($0, (function(){try{return{value:function(){return($1).removeChild(($2));}(),success:true};}catch(error){return{error:error,success:false};}})());
             },
@@ -671,6 +680,9 @@ Module.STDWEB_PRIVATE.acquire_tmp = function( dummy ) {
             },
             "__cargo_web_snippet_e9638d6405ab65f78daf4a5af9c9de14ecf1e2ec": function($0) {
                 $0 = Module.STDWEB_PRIVATE.to_js($0);Module.STDWEB_PRIVATE.unregister_raw_value(($0));
+            },
+            "__cargo_web_snippet_e98a190b90a0407769c281524cb2eda822eee6c8": function($0) {
+                var o = Module.STDWEB_PRIVATE.acquire_js_reference( $0 );return (o instanceof KeyboardEvent && o.type === "keypress") | 0;
             },
             "__cargo_web_snippet_ec62bad51093fd25faa38be3170e100862e191f3": function($0, $1) {
                 $0 = Module.STDWEB_PRIVATE.to_js($0);$1 = Module.STDWEB_PRIVATE.to_js($1);($0).remove(($1));

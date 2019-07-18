@@ -21,6 +21,7 @@ fn rocket() -> rocket::Rocket {
         web::web_favicon,
         web::steadylearner_css,
         web::normalize_css,
+        web::markdown_css,
         // npm
         web::browserify,
         web::npm,
