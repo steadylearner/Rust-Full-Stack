@@ -93,10 +93,11 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
 3. How to use Rust [Yew]
-4. How to build complete **Full Stack Rust Web Application**
-5. How to deploy it
-6. How to write dynamic metatags for it
-7. How to wrie sitemaps for it
+4. How to write components and organize the Rust project
+5. How to build complete **Full Stack Rust Web Application**
+6. How to deploy it
+7. How to write dynamic metatags for it
+8. How to wrie sitemaps for it
 
 ## Full Stack Rust Web App Development
 
