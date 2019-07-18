@@ -53,10 +53,16 @@ fn main() {
 
 // Separate project for blog post and write it
 
-// 1. Type for messages
+// 1. Write post for "How to use components in Rust Yew" - Not Yet
+// 2. Write post for "How to use JSON in Rust frontend" - Not Yet
+// 3. Write code for server side and web for chat app with ws-rs
+// 4. Write blog post "Fullstack Rust Chat App"
+// 5. End the "Fullstack Rust Web App" series
+
+// 1. Type for messages - Done
 // 2. Before connection and after close connection
 // 3. Edit server parts with database
 // 4. enable wss for https with ws-rs documentation
 // 5. Security with hashed messages
-// 6. Use every variables(no unused variable)
+// 6. Use every variables(no unused variable) - Done
 

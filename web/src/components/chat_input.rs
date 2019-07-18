@@ -6,6 +6,7 @@ use stdweb::js;
 
 pub struct ChatInput {
     value: String,
+    disabled: bool,
     onsignal: Option<Callback<(String)>>,
 }
 
@@ -18,6 +19,7 @@ pub enum Msg {
 #[derive(PartialEq, Clone)]
 pub struct Props {
     pub value: String,
+    pub disabled: bool,
     pub onsignal: Option<Callback<(String)>>,
 }
 
@@ -25,6 +27,7 @@ impl Default for Props {
     fn default() -> Self {
         Props {
             value: "".to_string(),
+            disabled: true,
             onsignal: None,
         }
     }
@@ -38,6 +41,7 @@ impl Component for ChatInput {
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
         ChatInput {
             value: "".to_string(),
+            disabled: true,
             onsignal: props.onsignal,
         }
     }
@@ -56,7 +60,8 @@ impl Component for ChatInput {
                         setTimeout(() => {
                             document.querySelector("#chat-input").value = "";
                             window.scrollTo({ top: window.innerHeight, behavior: "auto" });
-                        }, 50);
+                        }, 10);
+                        // temporary solution, use number you like or find other ways
                     }
                 }
             }
@@ -69,6 +74,7 @@ impl Component for ChatInput {
 
     fn change(&mut self, props: Self::Properties) -> ShouldRender {
         self.value = props.value;
+        self.disabled = props.disabled;
         self.onsignal = props.onsignal;
         true
     }
@@ -83,6 +89,7 @@ impl Renderable<ChatInput> for ChatInput {
                 placeholder="Type here to start to talk with others and enter to submit",
                 title="You should enter the chat before you type.",
                 autocomplete="off",
+                disabled=self.disabled,
                 value=&self.value,
                 oninput=|e| Msg::Update(e.value),
                 onkeypress=|e| {
