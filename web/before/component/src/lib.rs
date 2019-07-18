@@ -13,8 +13,6 @@ mod state;
 mod components;
 mod npm;
 
-mod http_model;
-
 use self::{
     state::State,
 
@@ -31,13 +29,8 @@ use self::{
             social,
         }
     },
-
     npm::{
         emoji::EmojiService,
-    },
-
-    http_model::{
-        websocket_json::WebSocketRequest,
     },
 };
 
@@ -60,7 +53,7 @@ impl Component for Model {
 
     fn create(_: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let state = State {
-            responses: Vec::new(),
+            response: "".to_string(),
             message_type: "text".to_string(),
         };
 
@@ -81,18 +74,7 @@ impl Component for Model {
                 let before = format!("{}", &val);
                 let emojified = self.emoji.emojify(before.to_string());
 
-                let message_type = self.state.message_type.clone(); 
-
-                let request = WebSocketRequest {
-                    value: emojified,
-                    message_type,
-                };
-
-                // Convert the WebSocketRequest to a JSON string.
-                // When you send, use it
-                let serialized = serde_json::to_string(&request).unwrap();
-
-                self.state.responses.push(serialized);
+                self.state.response = emojified;
 
                 if &self.state.message_type != "text" {
                     self.state.message_type = "text".to_string();
@@ -113,7 +95,8 @@ impl Component for Model {
 // Make Enter and Exit components later
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
-        let State { responses, message_type } = &self.state;
+        // let State { value, response, message_type } = &self.state;
+        let State { response, message_type } = &self.state;
         html! {
             <>
                 { social() }
@@ -137,17 +120,7 @@ impl Renderable<Model> for Model {
                     <ul
                         id="messages",
                     >
-                        // { view_message(response, message_type) } // use for here instead
-                        { 
-                            for responses
-                            .iter()
-                            .enumerate()
-                            .map(|(_idx, response)| {  // use idx later
-                                // use it before you use, other names for them later not to be confused
-                                let deserialized: WebSocketRequest = serde_json::from_str(&response).unwrap();
-                                view_message(&deserialized.value, &deserialized.message_type) }
-                            ) 
-                        }
+                        { view_message(response, message_type) }
                     </ul>
                     <section
                         id="form",
