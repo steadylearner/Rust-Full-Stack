@@ -137,3 +137,9 @@ impl Renderable<Model> for Model {
         }
     }
 }
+
+// 1. Write post for "How to use components in Rust Yew"
+// 2. Update response to Vec<String> or Vec<Option<String>> and write echo chat app without websocket connection with index
+// 3. Write code for server side and web for chat app with ws-rs
+// 4. Write blog post "Fullstack Rust Chat App"
+// 5. End the "Fullstack Rust Web App" series

@@ -54,6 +54,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to start Rust Chat App]: https://www.steadylearner.com/blog/read/How-to-start-Rust-Chat-App
 [Fullstack Rust with Yew]: https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew
 [How to use NPM packages with Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend
+[How to use markdown with Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-markdown-with-Rust-Frontend
 
 [How to use Python in JavaScript]: https://www.steadylearner.com/blog/read/How-to-use-Python-in-JavaScript
 
@@ -80,7 +81,7 @@ $git clone https://github.com/steadylearner/Rust-Full-Stack.git
 
 Prepare Rust development environment with [How to install Rust] if you haven't yet.
 
-Then, run **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
+Then, **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
 
 (**$yarn** in **web** and **web/static** folder to install NPM packages and **$rustup default nightly** and
 **$cargo install cargo-web** for Rust web development.)
@@ -94,6 +95,8 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 3. How to use Rust [Yew]
 4. How to build complete **Full Stack Rust Web Application**
 5. How to deploy it
+6. How to write dynamic metatags for it
+7. How to wrie sitemaps for it
 
 ## Full Stack Rust Web App Development
 
@@ -104,6 +107,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 3. [How to use Rust Yew]
 4. [Fullstack Rust with Yew]
 5. [How to use NPM packages with Rust Frontend]
+6. [How to use markdown with Rust Frontend]
 
 ## How to deploy and build sitemaps for it
 
