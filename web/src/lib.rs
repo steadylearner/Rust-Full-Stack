@@ -25,6 +25,8 @@ use self::{
             use_image::UseImage,
             use_video::UseVideo,
             use_code::UseCode,
+            connect::Connect,
+            disconnect::Disconnect,
         },
         website::{
             steadylarner_blog,
@@ -137,24 +139,8 @@ impl Renderable<Model> for Model {
                 <section>
                     <nav id="nav", class=("nav", "flex", "center"), >
                         { steadylarner_blog() }
-                        <button
-                            id="connect",
-                            class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
-                            onclick=|_| Msg::Connect,
-                            disabled={*connection},
-                            title="Click this to connect to Rust chat app.",
-                        >
-                            { "Enter" }
-                        </button>
-                        <button
-                            id="exit",
-                            class=("margin-right-one", "white", "cursor-pointer", "hover", "transition", "theme-black"),
-                            onclick=|_| Msg::Disconnect,
-                            disabled={!*connection},
-                            title="Click this to disconnect from the Rust chat app.",
-                        >
-                            { "Exit" }
-                        </button>
+                        <Connect: disabled={*connection}, onsignal=|_| Msg::Connect, />
+                        <Disconnect: disabled={!*connection}, onsignal=|_| Msg::Disconnect, />
                     </nav>
                     <ul
                         id="messages",
