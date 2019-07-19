@@ -55,6 +55,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [Fullstack Rust with Yew]: https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew
 [How to use NPM packages with Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend
 [How to use markdown with Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-markdown-with-Rust-Frontend
+[How to modulize your Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-modulize-your-Rust-Frontend
 
 [How to use Python in JavaScript]: https://www.steadylearner.com/blog/read/How-to-use-Python-in-JavaScript
 
@@ -95,9 +96,9 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 3. How to use Rust [Yew]
 4. How to write components and organize the Rust project
 5. How to build complete **Full Stack Rust Web Application**
-6. How to deploy it
-7. How to write dynamic metatags for it
-8. How to wrie sitemaps for it
+6. How to modulize your Rust project
+7. How to deploy it
+8. How to wrie sitemaps and metatags for it
 
 ## Full Stack Rust Web App Development
 
@@ -109,6 +110,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 4. [Fullstack Rust with Yew]
 5. [How to use NPM packages with Rust Frontend]
 6. [How to use markdown with Rust Frontend]
+7. [How to modulize your Rust Frontend]
 
 ## How to deploy and build sitemaps for it
 
