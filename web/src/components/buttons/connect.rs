@@ -63,7 +63,7 @@ impl Renderable<Connect> for Connect {
                 disabled={self.disabled},
                 title="Click this to connect to Rust chat app.",
             >
-                { "Connect" }
+                { "Enter" }
             </button>
         }
     }

@@ -29,7 +29,7 @@ impl EmojiService {
         let lib = self.0.as_ref().expect("node-emoji library object lost");
         let v: Value = js! {
             const emoji = @{lib};
-            console.log(emoji);
+            // console.log(emoji);
             return emoji.emojify(@{message});
         };
         let v: String = v.try_into().expect("can't convert to emoji");

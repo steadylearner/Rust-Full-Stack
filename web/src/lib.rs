@@ -89,6 +89,9 @@ impl Component for Model {
                     "!clear" => {
                         self.state.responses.clear();
                     }
+                    "!exit" => {
+                        self.state.connection = false;
+                    }
                     _ => {
                         let before = format!("{}", &val);
                         let emojified = self.emoji.emojify(before.to_string());
@@ -150,7 +153,7 @@ impl Renderable<Model> for Model {
                             for responses
                             .iter()
                             .enumerate()
-                            .map(|(idx, response)| {  // use idx later
+                            .map(|(idx, response)| {
                                     // https://serde.rs/, use it before you use data, other names for them later not to be confused
                                     let deserialized: WebSocketRequest = serde_json::from_str(&response).unwrap();
                                     view_message(
