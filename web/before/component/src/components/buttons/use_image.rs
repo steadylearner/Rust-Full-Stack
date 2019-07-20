@@ -70,7 +70,7 @@ impl Renderable<UseImage> for UseImage {
             <UseImage
                 onclick=|_| Msg::Type("image".to_string()),
                 disabled={self.disabled},
-                title="Use this to send images.",
+                title="Use this to send images.(https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)",
             >
                 <i
                     class=class,

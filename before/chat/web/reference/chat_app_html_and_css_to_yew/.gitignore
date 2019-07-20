@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+/node_modules
+yarn-*.log
+/css
+/static/*.css
+/release

@@ -73,7 +73,7 @@ impl Renderable<UseVideo> for UseVideo {
             <UseVideo
                 onclick=|_| Msg::Type("video".to_string()),
                 disabled={self.disabled},
-                title="Use this to send videos.",
+                title="Use this to send videos with YouTube video id(s7TVVyTyReU)",
             >
                 <i
                     class=class,

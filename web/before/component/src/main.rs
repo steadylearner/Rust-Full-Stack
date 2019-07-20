@@ -45,7 +45,7 @@ fn main() {
 // 2. CSS for messages from the user, others and (server with id None) - Done(but use database and user later)
 // 3. window to scroll when user type - Done with js! macro
 // 4. Include NPM package - Done
-// 5. Find how to remove value from input - Done with impl Model instead of component
+// 5. Find how to remove value from input - Done with impl Model or instead use component with js!
 // 6. !clear and !clearall for server and client, !exit for client - Done
 // 7. Render image - Done
 
@@ -53,10 +53,18 @@ fn main() {
 
 // Separate project for blog post and write it
 
-// 1. Type for messages
+// 1. Write post for "How to modulize Rust Frontend" - Not Yet
+// 2. Write code for server side and web for chat app with ws-rs - already have code for it
+// 3. Write blog post "Fullstack Rust Chat App" - Not Yet
+// 4. End the "Fullstack Rust Web App" series
+
+// Separate it to side project 
+
+// 1. Type for messages - Done
 // 2. Before connection and after close connection
-// 3. Edit server parts with database
+// 3. Edit server parts with database and local storage
 // 4. enable wss for https with ws-rs documentation
 // 5. Security with hashed messages
-// 6. Use every variables(no unused variable)
+// 6. Login part, form and page for that
+// 7. Use every variables(no unused variable) - Done
 

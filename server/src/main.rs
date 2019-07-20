@@ -8,6 +8,13 @@ extern crate serde_derive;
 mod route;
 use crate::route::{static_files, get, web};
 
+use std::thread;
+
+mod chat;
+use crate::chat::ws_rs;
+
+mod http_model; // should be here to use super::super::http_model in chat/ws_rs.rs
+
 fn rocket() -> rocket::Rocket {
     let rocket_routes = routes![
         static_files::file,
@@ -32,6 +39,14 @@ fn rocket() -> rocket::Rocket {
 }
 
 fn main() {
+        thread::Builder::new()
+        .name("Thread for Rust Chat with ws-rs".into())
+        // .stack_size(83886 * 1024) // 80mib in killobytes
+        .spawn(|| {
+            ws_rs::websocket();
+        })
+        .unwrap();
+
     rocket().launch();
 }
 

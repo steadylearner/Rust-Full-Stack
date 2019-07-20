@@ -84,8 +84,11 @@ Prepare Rust development environment with [How to install Rust] if you haven't y
 
 Then, **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
 
-(**$yarn** in **web** and **web/static** folder to install NPM packages and **$rustup default nightly** and
-**$cargo install cargo-web** for Rust web development.)
+or
+
+```console
+$**$yarn** in **web** and **web/static** folder
+$**$rustup default nightly** && **$cargo install cargo-web**
 
 When you made it work, **./run-local.sh** for a full stack Rust web app.
 
@@ -98,7 +101,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 5. How to build complete **Full Stack Rust Web Application**
 6. How to modulize your Rust project
 7. How to deploy it
-8. How to wrie sitemaps and metatags for it
+8. How to write sitemaps and metatags for it
 
 ## Full Stack Rust Web App Development
 

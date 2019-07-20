@@ -11,7 +11,7 @@ use super::{
     text::view_text,
 };
 
-pub fn view_message(value: &str, message_type: &str) -> Html<Model> {
+pub fn view_message(idx: &usize, value: &str, message_type: &str) -> Html<Model> {
     if !(&value.is_empty()) {
         let message = match message_type {
             "image" => {
@@ -28,11 +28,21 @@ pub fn view_message(value: &str, message_type: &str) -> Html<Model> {
             }
         };
 
-        html! {
-            <li>
-                <span> { "You: " }</span>
-                { message }
-            </li>
+        // Remove this when you use real chat app
+        if idx % 2 != 0 {
+            html! {
+                <li class="red-white", >
+                    <span> { "Steadylearner: " }</span>
+                    { message }
+                </li>
+            }
+        } else {
+            html! {
+                <li>
+                    <span> { "You: " }</span>
+                    { message }
+                </li>
+            }
         }
     } else {
         html! {

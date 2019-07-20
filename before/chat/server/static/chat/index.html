@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>JavaScript and Rust Chat App by Steadylearner</title>
+  <link rel=icon href="https://www.steadylearner.com/static/images/code/Rust_b.png" />
+
+  <link rel="stylesheet" href="/static/css/normalize.css" />
+  <link rel="stylesheet" href="/static/css/steadylearner.css" />
+  <link rel="stylesheet" href="/static/chat/index.css" />
+</head>
+
+<body>
+  <section>
+    <nav id="nav" class="nav flex center">
+      <a
+        href="https://www.steadylearner.com/blog"
+        title="Click it to learn how to code this."
+        class="flex no-text-decoration hover cursor-pointer transition-half right-auto"
+      >
+        <span class="white bold" >© Rust Chat App</span>
+      </a>
+      <button
+        id="exit"
+        class="margin-right-one white cursor-pointer hover transition theme-black"
+      >
+        Exit
+      </span>
+    </nav>
+    <ul
+      id="messages"
+    >
+      <!-- JavaScript will make <li> messages here -->
+    </ul>
+    <form id="form" class="chat-input flex center">
+      <img
+        id="code"
+        class="flex center rust-icon hover cursor-pointer transition-half"
+        title="Click this to use markdown or not"
+        src="/static/images/Rust.svg"
+      />
+      <input
+        id="msg"
+        type="text"
+        placeholder="Type here to start to talk with others."
+        autocomplete="off"
+      >
+      <button class="blue cursor-pointer" >Send</button>
+      <button
+        id="clear"
+        type="button"
+        class="margin-left-one red-white cursor-pointer"
+      >
+        Clear
+      </button>
+    </form>
+  </section>
+  <script
+    src="/static/chat/bundle.js"
+    type="text/javascript"
+  >
+  </script>
+</body>
+</html>

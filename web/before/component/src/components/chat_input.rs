@@ -6,6 +6,7 @@ use stdweb::js;
 
 pub struct ChatInput {
     value: String,
+    disabled: bool,
     onsignal: Option<Callback<(String)>>,
 }
 
@@ -17,14 +18,14 @@ pub enum Msg {
 
 #[derive(PartialEq, Clone)]
 pub struct Props {
-    pub value: String,
+    pub disabled: bool,
     pub onsignal: Option<Callback<(String)>>,
 }
 
 impl Default for Props {
     fn default() -> Self {
         Props {
-            value: "".to_string(),
+            disabled: false,
             onsignal: None,
         }
     }
@@ -38,6 +39,7 @@ impl Component for ChatInput {
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
         ChatInput {
             value: "".to_string(),
+            disabled: false,
             onsignal: props.onsignal,
         }
     }
@@ -50,13 +52,14 @@ impl Component for ChatInput {
             Msg::Submit => {
                 if let Some(ref callback) = self.onsignal { // use this syntax just to use None at the beginning
                     let message = self.value.clone();
-                    callback.emit(message); 
+                    callback.emit(message);
                     // self.value.clear(); does not work here(callback is async so shows problem here?)
                     js! {
                         setTimeout(() => {
                             document.querySelector("#chat-input").value = "";
                             window.scrollTo({ top: window.innerHeight, behavior: "auto" });
-                        }, 50);
+                            // temporary solution, use number you like or find other ways
+                        }, 10);
                     }
                 }
             }
@@ -68,7 +71,7 @@ impl Component for ChatInput {
     // This is for props
 
     fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        self.value = props.value;
+        self.disabled = props.disabled;
         self.onsignal = props.onsignal;
         true
     }
@@ -83,6 +86,7 @@ impl Renderable<ChatInput> for ChatInput {
                 placeholder="Type here to start to talk with others and enter to submit",
                 title="You should enter the chat before you type.",
                 autocomplete="off",
+                disabled=self.disabled,
                 value=&self.value,
                 oninput=|e| Msg::Update(e.value),
                 onkeypress=|e| {

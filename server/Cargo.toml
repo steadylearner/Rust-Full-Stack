@@ -1,5 +1,6 @@
 [package]
-name = "chat_app_with_rust_by_steadylearner"
+authors = ["htttps://www.steadylearner.com"]
+name = "fullstack_chat_app_server_by_steadylearner"
 version = "0.1.0"
 edition = "2018"
 
