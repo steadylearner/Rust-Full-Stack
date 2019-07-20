@@ -11,6 +11,8 @@ fn main() {
   yew::run_loop();
 }
 
+// <Before/Chat>
+
 // WebSocket
 // refer to dashboard example in Yew
 
@@ -51,20 +53,35 @@ fn main() {
 
 // Read the documentation and code from others
 
+// </Before/Chat>
+
 // Separate project for blog post and write it
 
-// 1. Write post for "How to modulize Rust Frontend" - Not Yet
-// 2. Write code for server side and web for chat app with ws-rs - already have code for it
-// 3. Write blog post "Fullstack Rust Chat App" - Not Yet
+// <Rust Full Stack>
+
+// 1. Write post for "How to modulize Rust Frontend" - Done
+// 2. Write code for server side and web for chat app with ws-rs - Done
+
+// Payload to send message to web socket in JSON
+// WebSocketResponse {
+//     value: "This is test",
+//     message_type: "text",
+// }
+// serialized = {"value":"This is test","message_type":"text", number_of_connection":1}
+
+// 3. Write blog post "How to write full stack - Not Yet
 // 4. End the "Fullstack Rust Web App" series
+
+// </Rust Full Stack>
+
+
+
 
 // Separate it to side project 
 
-// 1. Type for messages - Done
-// 2. Before connection and after close connection
-// 3. Edit server parts with database and local storage in client
-// 4. enable wss for https with ws-rs documentation
-// 5. Security with hashed messages
-// 6. Login part, form and page for that
-// 7. Use every variables(no unused variable) - Done
+// 1. Before connection and after close connection
+// 2. Edit server parts with database and local storage in client
+// 3. enable wss for https with ws-rs documentation
+// 4. Security with hashed messages
+// 5. Login part, form and page for that
 

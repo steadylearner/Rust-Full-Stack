@@ -31,14 +31,14 @@ use self::{
     ws_rs::{WebSocket, WebSocketAction},
 
     components::{
-        // chat_input::ChatInput,
+        chat_input::ChatInput,
         message::{view_message},
         buttons::{
             use_image::UseImage,
             use_video::UseVideo,
             use_code::UseCode,
-            // connect::Connect,
-            // disconnect::Disconnect,
+            connect::Connect,
+            disconnect::Disconnect,
         },
         website::{
             steadylarner_blog,
@@ -73,19 +73,17 @@ pub struct Model {
 }
 
 pub enum Msg {
-    // Websocket
-
     WebSocketAction(WebSocketAction),
     WebSocketReady(Result<WebSocketResponse, Error>),
     Ignore,
 
     // Client
-
     Submit(String),
     Type(String),
 }
 
-impl From<WebSocketAction> for Msg {
+// For into in WebSocketAction::Connect.into() and others to work
+impl From<WebSocketAction> for Msg { 
     fn from(action: WebSocketAction) -> Self {
         Msg::WebSocketAction(action)
     }
@@ -150,7 +148,7 @@ impl Component for Model {
                 }
             }
 
-            Msg::WebSocketReady(response) => { // payload, should edit here
+            Msg::WebSocketReady(response) => { // payload, should edit here most of the time
                 self.console.log("Websocket is ready. Start to chat with others.");
                 let ws_response = response.map(|data| data).ok();
 
@@ -233,42 +231,46 @@ impl Component for Model {
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         let State { ws_responses, message_type, client: _ } = &self.state;
+        let WebSocket { ws, ws_service: _ } = &self.ws_rs;
+
+        // test disabled part with cargo run in server directory
+        // (You should first start socket and rocket server before you test it)
+        // Because it is full stack project
         html! {
             <>
                 { social() }
                 <section>
                     <nav id="nav", class=("nav", "flex", "center"), >
                         { steadylarner_blog() }
-                        // <Connect: disabled={*connection}, onsignal=|_| Msg::Connect, />
-                        // <Disconnect: disabled={!*connection}, onsignal=|_| Msg::Disconnect, />
+                        <Connect: disabled={ws.is_some()}, onsignal=|_| WebSocketAction::Connect.into(), />
+                        <Disconnect: disabled={ws.is_none()}, onsignal=|_| WebSocketAction::Disconnect.into(), />
                     </nav>
                     <ul
                         id="messages",
                     >
-                        { 
-                            for ws_responses
-                            .iter()
-                            .enumerate()
-                            .map(|(idx, response)| {
-                                    // https://serde.rs/, use it before you use data, other names for them later not to be confused
-                                    let message = response.clone();
-                                    let deserialized: WebSocketRequest = serde_json::from_str(&message.unwrap()).unwrap();
-                                    view_message(
-                                        &idx, 
-                                        &deserialized.value,
-                                        &deserialized.message_type
-                                    ) 
-                                }
-                            ) 
-                        }
+                        // {
+                        //     for ws_responses
+                        //     .iter()
+                        //     .enumerate()
+                        //     .map(|(idx, response)| {
+                        //             // https://serde.rs/, use it before you use data, other names for them later not to be confused
+                        //             let message = response.clone();
+                        //             let deserialized: WebSocketRequest = serde_json::from_str(&message.unwrap()).unwrap();
+                        //             view_message(
+                        //                 &idx,
+                        //                 &deserialized.value,
+                        //                 &deserialized.message_type
+                        //             )
+                        //         }
+                        //     )
+                        // }
                     </ul>
                     <section
                         id="form",
                         class=("chat-form", "flex", "center"),
                     >
                         <UseCode: disabled={message_type != "code"}, onsignal=Msg::Type, />
-                        // <ChatInput: disabled={!*connection}, onsignal=Msg::Submit, />
-                        // or { self.chat_input() } - refer to /before/component/chat_input_compare folder
+                        <ChatInput: disabled={ws.is_none()}, onsignal=Msg::Submit, />
                         <UseImage: disabled={message_type != "image"}, onsignal=Msg::Type, />
                         <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
                     </section>

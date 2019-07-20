@@ -6,7 +6,7 @@ use stdweb::js;
 
 pub struct ChatInput {
     value: String,
-    disabled: bool,
+    disabled: bool, // should be true when there is no WebSocket connection(ws.is_none() == true) and vice versa
     onsignal: Option<Callback<(String)>>,
 }
 
@@ -25,7 +25,7 @@ pub struct Props {
 impl Default for Props {
     fn default() -> Self {
         Props {
-            disabled: false,
+            disabled: true, 
             onsignal: None,
         }
     }
@@ -39,7 +39,7 @@ impl Component for ChatInput {
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
         ChatInput {
             value: "".to_string(),
-            disabled: false,
+            disabled: true,
             onsignal: props.onsignal,
         }
     }
@@ -91,7 +91,7 @@ impl Renderable<ChatInput> for ChatInput {
                 oninput=|e| Msg::Update(e.value),
                 onkeypress=|e| {
                     if e.key() == "Enter" { Msg::Submit } else { Msg::Nope }
-                }, 
+                },
             />
         }
     }
