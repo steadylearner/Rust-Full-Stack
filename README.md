@@ -87,8 +87,8 @@ Then, **./install.sh** in **web** folder or read [How to use Rust Yew] to test R
 or
 
 ```console
-$**$yarn** in **web** and **web/static** folder
-$**$rustup default nightly** && **$cargo install cargo-web**
+$yarn in web and web/static folder
+$rustup default nightly && $cargo install cargo-web
 ```
 
 When you made it work, **./run-local.sh** for a full stack Rust web app.
