@@ -56,7 +56,10 @@ impl Component for ChatInput {
                     // self.value.clear(); does not work here(callback is async so shows problem here?)
                     js! {
                         setTimeout(() => {
-                            document.querySelector("#chat-input").value = "";
+                            if (document.querySelector("#chat-input").value != "") {
+                                document.querySelector("#chat-input").value = ""
+                            };
+                            // document.querySelector("#chat-input").value = "";
                             window.scrollTo({ top: window.innerHeight, behavior: "auto" });
                             // temporary solution, use number you like or find other ways
                         }, 10);

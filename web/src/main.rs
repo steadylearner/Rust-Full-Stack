@@ -69,8 +69,10 @@ fn main() {
 // }
 // serialized = {"value":"This is test","message_type":"text", number_of_connection":1}
 
-// 3. Write blog post "How to write full stack - Not Yet
-// 4. End the "Fullstack Rust Web App" series
+// use localStorage and wrtie code for server
+
+// 4. Write blog post "How to write full stack - Not Yet
+// 5. End the "Fullstack Rust Web App" series
 
 // </Rust Full Stack>
 
@@ -79,9 +81,10 @@ fn main() {
 
 // Separate it to side project 
 
-// 1. Before connection and after close connection
-// 2. Edit server parts with database and local storage in client
-// 3. enable wss for https with ws-rs documentation
-// 4. Security with hashed messages
-// 5. Login part, form and page for that
+// 1. Security with hashed messages
+// 2. User with database
+// 3. Edit server parts with database and fetch when user enter the chat
+// 4. Login part, form and page for that
+// 5. Before connection and after disconnection
+// 6. enable wss for https with ws-rs documentation
 

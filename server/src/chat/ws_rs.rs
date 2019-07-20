@@ -90,6 +90,8 @@ impl Handler for WebSocket {
         println!("ws_request = {:?}", &ws_request);
         let WebSocketRequest { value, message_type, client } = ws_request;
 
+        // remove ""
+
         let client = if value == "!clearall" {
             None // "WebSocket" instead?
         } else {

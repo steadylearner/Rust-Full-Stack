@@ -185,6 +185,7 @@ impl Component for Model {
 
             Msg::Submit(val) => {
                 match val.as_ref() {
+                    "" => {}
                     "!clear" => {
                         // similar to !clearall in Msg::WebSocketReady(response)
                         self.state.ws_responses.clear();
@@ -248,22 +249,27 @@ impl Renderable<Model> for Model {
                     <ul
                         id="messages",
                     >
-                        // {
-                        //     for ws_responses
-                        //     .iter()
-                        //     .enumerate()
-                        //     .map(|(idx, response)| {
-                        //             // https://serde.rs/, use it before you use data, other names for them later not to be confused
-                        //             let message = response.clone();
-                        //             let deserialized: WebSocketRequest = serde_json::from_str(&message.unwrap()).unwrap();
-                        //             view_message(
-                        //                 &idx,
-                        //                 &deserialized.value,
-                        //                 &deserialized.message_type
-                        //             )
-                        //         }
-                        //     )
-                        // }
+                        {
+                            for ws_responses
+                            .iter()
+                            .enumerate()
+                            .map(|(idx, response)| {
+                                    let message = response.clone();
+                                    // https://serde.rs/, use it before you use data, other names for them later not to be confused
+                                    let deserialized: WebSocketResponse = serde_json::from_str(&message.unwrap()).unwrap();
+                                    let WebSocketResponse { value, message_type, client, number_of_connection: _, } = deserialized;
+                                    // To be explicit here, you can use other variable name or just pass &self.state.client
+                                    let user = self.state.client.clone();
+                                    view_message(
+                                        &idx,
+                                        &value,
+                                        &message_type,
+                                        &client,
+                                        &user,
+                                    )
+                                }
+                            )
+                        }
                     </ul>
                     <section
                         id="form",

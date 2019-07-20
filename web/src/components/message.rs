@@ -1,4 +1,3 @@
-// use name messages instead when you use vector and for to render them
 use yew::{html, Html};
 
 use crate::Model;
@@ -11,36 +10,55 @@ use super::{
     text::view_text,
 };
 
-pub fn view_message(idx: &usize, value: &str, message_type: &str) -> Html<Model> {
-    if !(&value.is_empty()) {
+// function and conditional statements to make it simple
+
+pub fn view_message(_idx: &usize, response: &str, message_type: &str, client: &Option<String>, user: &Option<String>) -> Html<Model> {
+    
+    if !response.is_empty() {
         let message = match message_type {
             "image" => {
-                view_image(&value)
+                view_image(&response)
             }
             "video" => {
-                view_video(&value)
+                view_video(&response)
             }
             "code" => {
-                view_code(&value)
+                view_code(&response)
             }
             _ => {
-                view_text(&value)
+                view_text(&response)
             }
         };
 
-        // Remove this when you use real chat app
-        if idx % 2 != 0 {
-            html! {
-                <li class="red-white", >
-                    <span> { "Steadylearner: " }</span>
-                    { message }
-                </li>
+        if let Some(client_id) = client {
+            if let Some(user_id) = user  {
+                if client_id == user_id {
+                    html! {
+                        <li>
+                            { author() }
+                            { message }
+                        </li>
+                    }
+                } else {
+                    html! { 
+                        <li class="red-white", >
+                            { others(&client_id) }
+                            { message }
+                        </li>
+                    } 
+                }
+            } else {
+                // user is not connected to the web socket
+                // so do not show any messages(this is temporay solution and you should make the pages before user enter and leave)
+                
+                html! {
+                    { "" }
+                }
             }
         } else {
             html! {
                 <li>
-                    <span> { "You: " }</span>
-                    { message }
+                    { message } // this will be from Server with client_id None, use this instead of I want to use Rust Full Stack App
                 </li>
             }
         }
@@ -51,3 +69,14 @@ pub fn view_message(idx: &usize, value: &str, message_type: &str) -> Html<Model>
     }
 }
 
+fn author() -> Html<Model> {
+    html! {
+        <span> { "You: " }</span>
+    }
+}
+
+fn others(client_id: &str) -> Html<Model> {
+    html! {
+        <span> { format!("{}: ", client_id) }</span>
+    }
+}
