@@ -7,4 +7,8 @@ pub struct State {
   pub client: Option<String>,
 }
 
-// impl later?
+impl State {
+    pub fn lost(&mut self) {
+        self.client = None;
+    }
+}

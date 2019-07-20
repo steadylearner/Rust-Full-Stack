@@ -62,7 +62,7 @@ fn main() {
 
 // 1. Type for messages - Done
 // 2. Before connection and after close connection
-// 3. Edit server parts with database and local storage
+// 3. Edit server parts with database and local storage in client
 // 4. enable wss for https with ws-rs documentation
 // 5. Security with hashed messages
 // 6. Login part, form and page for that

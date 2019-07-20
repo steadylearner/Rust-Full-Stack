@@ -6,7 +6,6 @@ extern crate stdweb;
 // use stdweb::js;
 
 extern crate yew;
-use yew::services::Task;
 use yew::format::{Json};
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 use yew::services::{
@@ -136,79 +135,85 @@ impl Component for Model {
                             }
                         });
                         let task = self.ws_rs.ws_service.connect(WEBSOCKET, callback, notification); // 1.
-                        self.ws_rs.ws = Some(task);
+                        self.ws_rs.connect(task);
                     }
                     WebSocketAction::Disconnect => {
-                        self.state.client = None;
-                        self.ws_rs.ws.take().unwrap().cancel();
+                        self.state.lost();
+                        self.ws_rs.disconnect();
+                        // self.console.log("No connection to WebSocket anymore");
                     }
                     WebSocketAction::Lost => {
-                        self.state.client = None;
-                        self.ws_rs.ws = None;
+                        self.state.lost();
+                        // self.console.log("No connection to WebSocket anymore");
+                        self.ws_rs.lost();
                     }
                 }
             }
 
             Msg::WebSocketReady(response) => { // payload, should edit here
                 self.console.log("Websocket is ready. Start to chat with others.");
-                let socket_input = response.map(|data| data).ok();
+                let ws_response = response.map(|data| data).ok();
 
-                let serialized = serde_json::to_string(&socket_input).unwrap(); // value in view_response
-
+                let serialized = serde_json::to_string(&ws_response).unwrap(); // value in view_response
                 self.console.log(&serialized);
 
-                let for_if = serialized.clone();
+                // shadow vraiable here
+                let ws_response: WebSocketResponse = serde_json::from_str(&serialized).unwrap();
+                let WebSocketResponse { value, message_type: _ , client, number_of_connection: _ } = ws_response;
 
-                let ws_response: WebSocketResponse = serde_json::from_str(&for_if).unwrap();
-                let WebSocketResponse { value, message_type, client, number_of_connection: _ } = ws_response;
-
+                // should use login page or oauth later instead of this
+                // and self.state.client = None when disconnect
                 if self.state.client == None {
                     self.state.client = client;
                 }
 
-                if value == "!clearall" {
-                    self.state.ws_responses.clear();
+                // write equivalent condtional for all users from server here server/src/chat/ws_rs.rs
+                // Find the better solution than this
+                match value.as_ref() {
+                    "!clearall" => {
+                        self.state.ws_responses.clear();
+                    }
+                    _ => {
+                        self.state.ws_responses.push(Some(serialized));
+                    }
                 }
-
-                self.state.ws_responses.push(Some(serialized));
             }
 
             Msg::Ignore => {
                 return false;
             }
 
-            // Client 
+            // Client
 
             Msg::Submit(val) => {
-                // use this or if val == "!clear"
                 match val.as_ref() {
                     "!clear" => {
+                        // similar to !clearall in Msg::WebSocketReady(response)
                         self.state.ws_responses.clear();
                     }
                     "!exit" => {
-                        // self.state.connection = false;
+                        // Equal to WebSocketAction::Disconnect
+                        self.state.lost();
+                        self.ws_rs.disconnect();
                     }
                     _ => {
-                        let before = format!("{}", &val);
-                        let emojified = self.emoji.emojify(before.to_string());
+                        let State { ws_responses: _ , message_type, client } = &self.state;
 
-                        let message_type = self.state.message_type.clone();
+                        let emojified = self.emoji.emojify(val.to_string());
+
+                        self.console.log(&emojified);
+
+                        let message_type = message_type.clone();
+                        let client = client.clone();
 
                         // https://serde.rs/
                         let request = WebSocketRequest {
                             value: emojified,
-                            client: Some("steadylearner".to_string()),
                             message_type,
+                            client
                         };
 
-                        // Convert the WebSocketRequest to a JSON string.
-                        // use it when you send JSON or other data
-                        let serialized = serde_json::to_string(&request).unwrap();
-
-                        self.console.log(&serialized);
-
-                        // self.state.ws_responses.push(Some(serialized)); move this to WebSocket Ready
-                        // and write code to send messages to WebSocket in Server
+                        self.ws_rs.send(Json(&request));
 
                         if &self.state.message_type != "text" {
                             self.state.message_type = "text".to_string();
