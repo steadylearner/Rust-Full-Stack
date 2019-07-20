@@ -157,22 +157,35 @@ impl Component for Model {
 
                 // shadow vraiable here
                 let ws_response: WebSocketResponse = serde_json::from_str(&serialized).unwrap();
-                let WebSocketResponse { value, message_type: _ , client, number_of_connection: _ } = ws_response;
+                let WebSocketResponse { value, message_type, client, number_of_connection, } = ws_response;
 
                 // should use login page or oauth later instead of this
                 // and self.state.client = None when disconnect
                 if self.state.client == None {
                     self.state.client = client;
-                }
+                    let user = self.state.client.clone();
+                    // should modify response here or in server?
+                    // write server side code first or write code for users
+                    // or show total number of connection?
+                    let ws_response = WebSocketResponse {
+                        value: format!("Your id is {:#?} and {} in total for this page", &user.unwrap(), &number_of_connection),
+                        message_type,
+                        client: None,
+                        number_of_connection,
+                    };
 
-                // write equivalent condtional for all users from server here server/src/chat/ws_rs.rs
-                // Find the better solution than this
-                match value.as_ref() {
-                    "!clearall" => {
-                        self.state.ws_responses.clear();
-                    }
-                    _ => {
-                        self.state.ws_responses.push(Some(serialized));
+                    let serialized = serde_json::to_string(&ws_response).unwrap();
+                    self.state.ws_responses.push(Some(serialized));
+                } else {
+                    // write equivalent condtional for all users from server here server/src/chat/ws_rs.rs
+                    // Find the better solution than this
+                    match value.as_ref() {
+                        "!clearall" => {
+                            self.state.ws_responses.clear();
+                        }
+                        _ => {
+                            self.state.ws_responses.push(Some(serialized));
+                        }
                     }
                 }
             }

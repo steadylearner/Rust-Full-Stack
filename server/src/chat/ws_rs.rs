@@ -65,10 +65,13 @@ impl Handler for WebSocket {
         //     println!("Use client instead")
         // }
 
+        let client = handshake.peer_addr.expect("Websocket failed to locate the client").to_string();
+
         let ws_resp = WebSocketResponse {
-            value: "I want to use Full Stack Rust chat app.".to_string(),
-            message_type: "text".to_string(),
-            client: Some(handshake.peer_addr.expect("Websocket failed to locate the client").to_string()),
+            value: format!("I want to use a chat app completely built in Rust.").to_string(),
+            message_type: "text".to_string(), 
+            // message_type: "server".to_string(), or manipulate at client 
+            client: Some(client), // we need this at this point to differenciate users
             number_of_connection,
         };
 

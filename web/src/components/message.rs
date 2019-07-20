@@ -10,7 +10,7 @@ use super::{
     text::view_text,
 };
 
-// function and conditional statements to make it simple
+// You can write less code here if you build users, login, before and after pages. 
 
 pub fn view_message(_idx: &usize, response: &str, message_type: &str, client: &Option<String>, user: &Option<String>) -> Html<Model> {
     
@@ -56,10 +56,16 @@ pub fn view_message(_idx: &usize, response: &str, message_type: &str, client: &O
                 }
             }
         } else {
-            html! {
-                <li>
-                    { message } // this will be from Server with client_id None, use this instead of I want to use Rust Full Stack App
-                </li>
+            if let Some(_user_id) = user  { // Use this not to show any message when user leave the chat
+                html! {
+                    <li class="blue", >
+                        { message } 
+                    </li>
+                }
+            } else {
+                html! {
+                    { "" }
+                }
             }
         }
     } else {
