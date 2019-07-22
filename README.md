@@ -72,7 +72,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
-[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
 ## Install
 
@@ -123,17 +123,8 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 
 ## How to deploy and build sitemaps for it
 
-
 1. [How to deploy Rust Web App]
 2. [How to build a static sitemap.xml with Rust]
 3. [How to build a sitemap.xml with dynamic contents in Rust]
 4. [How to build a sitemap for images with Rust]
 5. [How to automate building sitemaps with Rust]
-
-## Note
-
-You may find a little difference between two chat app inside main image.
-
-**I modified it with DOM model** to take a screenshot after those messages were sent without problem.
-
-I wouldn't edit it at this moment because it is not relevant to code but may update when I write the better code that can simulate user with their ids later.
