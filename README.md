@@ -70,7 +70,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
-[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)
 
 ## Install
 
