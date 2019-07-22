@@ -155,7 +155,7 @@ impl Component for Model {
                 let serialized = serde_json::to_string(&ws_response).unwrap(); // value in view_response
                 self.console.log(&serialized);
 
-                // shadow vraiable here
+                // shadow variable here
                 let ws_response: WebSocketResponse = serde_json::from_str(&serialized).unwrap();
                 let WebSocketResponse { value, message_type, client, number_of_connection, } = ws_response;
 

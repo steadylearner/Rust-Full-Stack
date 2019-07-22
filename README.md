@@ -70,7 +70,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
-[![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
 
 ## Install
 
@@ -95,6 +95,8 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 
 ## What you will learn with it
 
+[![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)
+
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
 3. How to use Rust [Yew]
@@ -106,7 +108,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 
 ## Full Stack Rust Web App Development
 
-[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
+[![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
 
 1. [How to install Rust]
 2. [Rust Chat App]
@@ -117,6 +119,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 7. [How to modulize your Rust Frontend]
 
 ## How to deploy and build sitemaps for it
+
 
 1. [How to deploy Rust Web App]
 2. [How to build a static sitemap.xml with Rust]

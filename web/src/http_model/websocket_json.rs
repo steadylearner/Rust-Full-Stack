@@ -1,7 +1,6 @@
 use serde_derive::{Deserialize, Serialize};
 
-// use Option<String> for because before client connect to WebSocket server
-// there is no information for that(None)
+// Option<String> for 'client' because before a client connect to WebSocket server there is no information for that(None)
 
 // Into WebSocket - Message
 #[derive(Serialize, Deserialize, Debug)]
