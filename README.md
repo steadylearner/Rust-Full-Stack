@@ -64,6 +64,8 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to build a sitemap for images with Rust]: https://www.steadylearner.com/blog/read/How-to-build-sitemap-for-images-with-Rust
 [How to automate building sitemaps with Rust]: https://www.steadylearner.com/blog/read/How-to-automate-building-sitemaps-with-Rust
 
+[How to write Full Stack Rust code]: https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code
+
 <!-- / -->
 
 # How to be a full stack Rust Developer
@@ -117,6 +119,7 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 5. [How to use NPM packages with Rust Frontend]
 6. [How to use markdown with Rust Frontend]
 7. [How to modulize your Rust Frontend]
+8. [How to write Full Stack Rust code]
 
 ## How to deploy and build sitemaps for it
 
