@@ -30,6 +30,23 @@ pub fn view_message(_idx: &usize, response: &str, message_type: &str, client: &O
             }
         };
 
+        // Use this if you want to test with idx or id before you write code for users
+        // if idx % 2 != 0 {
+        //     html! {
+        //         <li class="red-white", >
+        //             <span> { "Steadylearner: " }</span>
+        //             { message }
+        //         </li>
+        //     }
+        // } else {
+        //     html! {
+        //         <li>
+        //             <span> { "You: " }</span>
+        //             { message }
+        //         </li>
+        //     }
+        // }
+
         if let Some(client_id) = client {
             if let Some(user_id) = user  {
                 if client_id == user_id {
@@ -86,3 +103,4 @@ fn others(client_id: &str) -> Html<Model> {
         <span> { format!("{}: ", client_id) }</span>
     }
 }
+

@@ -129,3 +129,9 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 3. [How to build a sitemap.xml with dynamic contents in Rust]
 4. [How to build a sitemap for images with Rust]
 5. [How to automate building sitemaps with Rust]
+
+## Note
+
+You may find the main image is different from others. I modified it with DOM model to take a screenshot and help you find the project better.
+
+I wouldn't edit it because image is not my concern and the code for app will work.
