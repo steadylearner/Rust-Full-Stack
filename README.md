@@ -132,6 +132,8 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 
 ## Note
 
-You may find the main image is different from others. I modified it with DOM model to take a screenshot and help you find the project better.
+You may find a little difference between two chat app inside main image.
 
-I wouldn't edit it because image is not my concern and the code for app will work.
+**I modified it with DOM model** to take a screenshot after those messages were sent without problem.
+
+I wouldn't edit it at this moment because it is not relevant to code but may update when I write the better code that can simulate user with their ids later.
