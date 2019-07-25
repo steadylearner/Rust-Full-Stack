@@ -72,7 +72,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
 
-[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)
+[![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew)
 
 ## Install
 
@@ -90,14 +90,14 @@ or
 
 ```console
 $yarn in web and web/static folder
-$rustup default nightly && $cargo install cargo-web
+$rustup default nightly && cargo install cargo-web
 ```
 
 When you made it work, **./run-local.sh** for a full stack Rust web app.
 
 ## What you will learn with it
 
-[![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/static/images/post/web/client-server-rust-chat-app.png)
+[![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code)
 
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
@@ -122,6 +122,8 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 8. [How to write Full Stack Rust code]
 
 ## How to deploy and build sitemaps for it
+
+[![Sitemaps with Rust](https://www.steadylearner.com/static/images/post/sitemap/automate-sitemap-rust.png)](https://www.steadylearner.com/blog/read/How-to-automate-building-sitemaps-with-Rust)
 
 1. [How to deploy Rust Web App]
 2. [How to build a static sitemap.xml with Rust]
