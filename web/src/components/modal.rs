@@ -67,15 +67,21 @@ impl Component for ImageModal {
 
 impl Renderable<ImageModal> for ImageModal {
     fn view(&self) -> Html<Self> {
-        let class = if self.show {
-            "".to_string()
+        let mut class = "modal ".to_string();
+        
+        // switch this when you write message component
+        if self.show {
+            class.push_str("x-display");
         } else {
-            "x-display".to_string()
+            class.push_str("inherit-display");
         };
+
+        let src = "https://www.steadylearner.com/static/images/brand/code.png".to_string();
 
         html! {
             <section class=class, onclick=|_| Msg::Set, id="modal", >
                 { "I will be a modal" }
+                // <img class="max-width relative box-shadow-white", src=src, >
             </section>
         }
     }

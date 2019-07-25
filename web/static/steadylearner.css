@@ -304,6 +304,10 @@ SOFTWARE.
 
 /* Don't maintain layout */
 
+.inherit-display {
+  display: inherit;
+}
+
 .x-display {
   display: none !important;
 }
