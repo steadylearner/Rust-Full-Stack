@@ -70,7 +70,8 @@ impl Renderable<UseVideo> for UseVideo {
         }
 
         html! {
-            <UseVideo
+            // It compiled with UseVideo also. Verify it well and use button.
+            <button
                 onclick=|_| Msg::Type("video".to_string()),
                 disabled={self.disabled},
                 title="Use this to send videos with YouTube video id(s7TVVyTyReU)",
@@ -78,7 +79,7 @@ impl Renderable<UseVideo> for UseVideo {
                 <i
                     class=class,
                 />
-            </UseVideo>
+            </button>
         }
     }
 }

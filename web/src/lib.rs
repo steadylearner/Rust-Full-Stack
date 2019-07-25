@@ -45,9 +45,10 @@ use self::{
         },
         modal::ImageModal,
         website::{
-            steadylarner_blog,
+            // steadylarner_blog,
             social,
-        }
+        },
+        steadylearner::Steadylearner,
     },
 
     npm::{
@@ -253,9 +254,11 @@ impl Component for Model {
                 if val.is_empty() {
                     self.modal.show = false;
                     self.modal.location = "".to_string();
+                    self.console.log("The user wants to close the modal");
                 } else {
                     self.modal.show = true;
                     self.modal.location = val;
+                    self.console.log("The user wants to use the modal");
                 }
             }
         }
@@ -275,7 +278,8 @@ impl Renderable<Model> for Model {
                 { social() }
                 <section>
                     <nav id="nav", class=("nav", "flex", "center"), >
-                        { steadylarner_blog() }
+                        // { steadylarner_blog() }
+                        <Steadylearner: onsignal=Msg::Set, />
                         <Connect: disabled={ws.is_some()}, onsignal=|_| WebSocketAction::Connect.into(), />
                         <Disconnect: disabled={ws.is_none()}, onsignal=|_| WebSocketAction::Disconnect.into(), />
                     </nav>

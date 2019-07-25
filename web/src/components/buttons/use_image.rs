@@ -67,7 +67,8 @@ impl Renderable<UseImage> for UseImage {
         }
 
         html! {
-            <UseImage
+            // It compiled with UseImage also. Verify it well and use button.
+            <button
                 onclick=|_| Msg::Type("image".to_string()),
                 disabled={self.disabled},
                 title="Use this to send images.(https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)",
@@ -75,7 +76,7 @@ impl Renderable<UseImage> for UseImage {
                 <i
                     class=class,
                 />
-            </UseImage>
+            </button>
         }
     }
 }

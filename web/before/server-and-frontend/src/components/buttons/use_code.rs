@@ -67,7 +67,7 @@ impl Renderable<UseCode> for UseCode {
         }
 
         html! {
-            <UseCode
+            <button
                 onclick=|_| Msg::Type("code".to_string()),
                 disabled={self.disabled},
                 title="Use this to write markdown.",
@@ -75,7 +75,7 @@ impl Renderable<UseCode> for UseCode {
                 <i
                     class=class,
                 />
-            </UseCode>
+            </button>
         }
     }
 }

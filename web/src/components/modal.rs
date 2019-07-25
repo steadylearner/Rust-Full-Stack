@@ -2,6 +2,7 @@ use yew::{html, Callback, Component, ComponentLink, Html, Renderable, ShouldRend
 
 // implementation for this will be very simple
 // should be folder later with other type of modal and modal_type etc in modal.rs in main folder
+// or modal_type and conditional statements
 
 pub struct ImageModal {
     show: bool,
@@ -67,21 +68,25 @@ impl Component for ImageModal {
 
 impl Renderable<ImageModal> for ImageModal {
     fn view(&self) -> Html<Self> {
-        let mut class = "modal ".to_string();
+        let mut modal_class = "modal hover cursor-pointer transition-half ".to_string();
         
-        // switch this when you write message component
+        // Test again after you write message component
         if self.show {
-            class.push_str("x-display");
+            modal_class.push_str("inherit-display");
         } else {
-            class.push_str("inherit-display");
+            modal_class.push_str("x-display");
         };
 
         let src = "https://www.steadylearner.com/static/images/brand/code.png".to_string();
 
+        let image_class="max-width relative box-shadow-white modal-content--image";
+
+        // It compiles when you have errors in format for Yew or stdweb html!
+
         html! {
-            <section class=class, onclick=|_| Msg::Set, id="modal", >
-                { "I will be a modal" }
-                // <img class="max-width relative box-shadow-white", src=src, >
+            <section class=modal_class, onclick=|_| Msg::Set, id="modal", >
+                // It compiles without / at the end > so verify it
+                <img class=image_class, src=src, />
             </section>
         }
     }

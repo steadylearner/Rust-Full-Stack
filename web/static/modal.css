@@ -25,5 +25,11 @@
     animation-name: modal;
 }
 
+.modal-content--image {
+    margin: 5.8rem auto auto;
+    display: flex;
+    max-width: 100%;
+    height: calc(100% - 11.6rem);
+}
 
 
