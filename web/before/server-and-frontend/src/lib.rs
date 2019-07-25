@@ -305,6 +305,7 @@ impl Renderable<Model> for Model {
                         <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
                     </section>
                 </section>
+                // <Modal />
             </>
         }
     }
