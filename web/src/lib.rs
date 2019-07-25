@@ -111,6 +111,7 @@ impl Component for Model {
             // WebSocekt
             ws_rs,
             link, //  // remove _ from _link: ComponentLink<Self> to make it work
+            //
 
             // Yew
             console: ConsoleService::new(),
@@ -246,7 +247,6 @@ impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         let State { ws_responses, message_type, client: _ } = &self.state;
         let WebSocket { ws, ws_service: _ } = &self.ws_rs;
-
         // test disabled part with cargo run in server directory
         // (You should first start socket and rocket server before you test it)
         // Because it is full stack project
@@ -259,6 +259,7 @@ impl Renderable<Model> for Model {
                         <Connect: disabled={ws.is_some()}, onsignal=|_| WebSocketAction::Connect.into(), />
                         <Disconnect: disabled={ws.is_none()}, onsignal=|_| WebSocketAction::Disconnect.into(), />
                     </nav>
+                    // <Modal used={used} />
                     <ul
                         id="messages",
                     >

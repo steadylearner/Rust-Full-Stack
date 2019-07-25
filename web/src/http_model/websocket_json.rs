@@ -1,7 +1,5 @@
 use serde_derive::{Deserialize, Serialize};
 
-// Option<String> for 'client' because before a client connect to WebSocket server there is no information for that(None)
-
 // Into WebSocket - Message
 #[derive(Serialize, Deserialize, Debug)]
 pub struct WebSocketRequest {
