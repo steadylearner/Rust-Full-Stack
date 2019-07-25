@@ -7,6 +7,6 @@ pub mod chat_input;
 
 pub mod buttons;
 
-// pub mod modal;
+pub mod modal;
 
 pub mod website;

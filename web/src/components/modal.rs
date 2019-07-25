@@ -1,44 +1,45 @@
 use yew::{html, Callback, Component, ComponentLink, Html, Renderable, ShouldRender};
 
 // implementation for this will be very simple
+// should be folder later with other type of modal and modal_type etc in modal.rs in main folder
 
-pub struct Modal {
+pub struct ImageModal {
     show: bool,
-    location: Option<String>,
+    location: String,
     // type: String with "text", "image", "video" etc or enum
-    onsignal: Option<Callback<()>>,
+    onsignal: Option<Callback<String>>,
 }
 
 pub enum Msg {
-    Set, // show: true, location: Some("www.steadylearner.com") => show: false, lcoation: None,
+    Set, // show: true, location: "" => show: false, lcoation: None,
 }
 
 #[derive(PartialEq, Clone)]
 pub struct Props {
     pub show: bool,
-    pub location: Option<String>,
-    pub onsignal: Option<Callback<()>>,
+    pub location: String,
+    pub onsignal: Option<Callback<String>>,
 }
 
 impl Default for Props {
     fn default() -> Self {
         Props {
             show: true, 
-            location: None,
+            location: "".to_string(),
             onsignal: None,
         }
     }
 }
 
 // https://docs.rs/yew/0.6.0/yew/html/trait.Component.html
-impl Component for Modal {
+impl Component for ImageModal {
     type Message = Msg;
     type Properties = Props;
 
     fn create(props: Self::Properties, _: ComponentLink<Self>) -> Self {
-        Modal {
+        ImageModal {
             show: false,
-            location: None,
+            location: "".to_string(),
             onsignal: props.onsignal,
         }
     }
@@ -47,7 +48,7 @@ impl Component for Modal {
         match msg {
             Msg::Set => {
                 if let Some(ref callback) = self.onsignal { // use this syntax just to use None at the beginning
-                    callback.emit(());
+                    callback.emit("".to_string());
                 }
             }
         }
@@ -64,11 +65,17 @@ impl Component for Modal {
     }
 }
 
-impl Renderable<Modal> for Modal {
+impl Renderable<ImageModal> for ImageModal {
     fn view(&self) -> Html<Self> {
+        let class = if self.show {
+            "".to_string()
+        } else {
+            "x-display".to_string()
+        };
+
         html! {
-            <section>
-                { "I am a modal."}
+            <section class=class, onclick=|_| Msg::Set, id="modal", >
+                { "I will be a modal" }
             </section>
         }
     }

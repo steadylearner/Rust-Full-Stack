@@ -43,7 +43,7 @@ use self::{
             connect::Connect,
             disconnect::Disconnect,
         },
-        // modal::Modal,
+        modal::ImageModal,
         website::{
             steadylarner_blog,
             social,
@@ -86,6 +86,7 @@ pub enum Msg {
     // Client
     Submit(String),
     Type(String),
+    Set(String) // use other name SetImageModal etc later if necessary
 }
 
 // For into in WebSocketAction::Connect.into() and others to work
@@ -247,6 +248,16 @@ impl Component for Model {
             Msg::Type(val) => {
                 self.state.message_type = val
             }
+            Msg::Set(val) => {
+                // should find better way
+                if val.is_empty() {
+                    self.modal.show = false;
+                    self.modal.location = "".to_string();
+                } else {
+                    self.modal.show = true;
+                    self.modal.location = val;
+                }
+            }
         }
         true
     }
@@ -257,9 +268,8 @@ impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         let State { ws_responses, message_type, client: _ } = &self.state;
         let WebSocket { ws, ws_service: _ } = &self.ws_rs;
-        // test disabled part with cargo run in server directory
-        // (You should first start socket and rocket server before you test it)
-        // Because it is full stack project
+        let Modal { show, location } = &self.modal;
+        
         html! {
             <>
                 { social() }
@@ -269,7 +279,6 @@ impl Renderable<Model> for Model {
                         <Connect: disabled={ws.is_some()}, onsignal=|_| WebSocketAction::Connect.into(), />
                         <Disconnect: disabled={ws.is_none()}, onsignal=|_| WebSocketAction::Disconnect.into(), />
                     </nav>
-                    // <Modal used={used} />
                     <ul
                         id="messages",
                     >
@@ -305,7 +314,7 @@ impl Renderable<Model> for Model {
                         <UseVideo: disabled={message_type != "video"}, onsignal=Msg::Type, />
                     </section>
                 </section>
-                // <Modal />
+                <ImageModal: show={show}, location={location}, onsignal=Msg::Set, />
             </>
         }
     }
