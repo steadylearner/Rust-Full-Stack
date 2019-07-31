@@ -176,8 +176,8 @@ impl Renderable<Model> for Model {
                             // onclick=|_| Msg::NavigateTo(Child::SignUp),
                         >
                             <span class="sign-up", title="Use your own code.", >
-                                // or build modal with 
-                                // https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code 
+                                // or build modal with
+                                // https://www.steadylearner.com/blog/read/How-to-use-a-modal-in-Rust
                                 { "Sign Up" }
                             </span>
                         </li>
