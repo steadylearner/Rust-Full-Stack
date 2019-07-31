@@ -66,6 +66,9 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 [How to write Full Stack Rust code]: https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code
 
+[How to use a modal in Rust]: https://www.steadylearner.com/blog/read/How-to-use-a-modal-in-Rust
+[How to use routers in Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend
+
 <!-- / -->
 
 # How to be a full stack Rust Developer
@@ -107,6 +110,13 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 6. How to modulize your Rust project
 7. How to deploy it
 8. How to write sitemaps and metatags for it
+
+## Rust Frontend
+
+[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-router-example.png)](https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend)
+
+1. [How to use a modal in Rust]
+2. [How to use routers in Rust Frontend]
 
 ## Full Stack Rust Web App Development
 

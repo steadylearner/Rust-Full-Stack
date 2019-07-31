@@ -86,7 +86,7 @@ impl Component for Model {
                 self.console.log(&format!("Target Route: {}", &target_route).to_string());
 
                 if current_route == target_route {
-                    self.console.warn("It is not allowed to redirect to the same page.");
+                    self.console.warn("It is not allowed to use route for the same page.");
                     false
                 } else {
                     let route = router::Route {
