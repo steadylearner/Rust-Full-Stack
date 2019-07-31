@@ -76,7 +76,8 @@ impl Renderable<ImageModal> for ImageModal {
             modal_class.push_str("x-display");
         };
 
-        let src = "https://www.steadylearner.com/static/images/brand/code.png".to_string();
+        // let src = "https://www.steadylearner.com/static/images/brand/code.png".to_string();
+        let src = "https://www.steadylearner.com/static/images/post/web/rust_b.png".to_string();
 
         let shadow_class="width-vw height-vh cursor-pointer absolute";
         let image_class="max-width box-shadow-white relative modal-content--image";
@@ -84,8 +85,8 @@ impl Renderable<ImageModal> for ImageModal {
         // It compiles when you have errors in format for Yew or stdweb html!
 
         html! {
-            <section class=modal_class, id="modal", title="Click this to close modal.", >
-                <section class=shadow_class, onclick=|_| Msg::Set, ></section>// It compiles without / at the end > so verify it
+            <section class=modal_class, id="modal", >
+                <section class=shadow_class, onclick=|_| Msg::Set, title="Click this to close modal.", ></section>// It compiles without / at the end > so verify it
                 <img class=image_class, src=src, />
             </section>
         }

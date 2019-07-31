@@ -29,6 +29,7 @@ fn rocket() -> rocket::Rocket {
         web::steadylearner_css,
         web::normalize_css,
         web::markdown_css,
+        web::modal_css,
         // npm
         web::browserify,
         web::npm,

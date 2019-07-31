@@ -19,7 +19,6 @@ use std::marker::PhantomData;
 /// The `T` determines what route state can be stored in the route service.
 ///
 
-#[allow(dead_code)]
 pub struct RouteService<T> {
     history: History,
     location: Location,

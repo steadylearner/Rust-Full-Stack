@@ -48,9 +48,9 @@ body {
   border: 1px solid #08c;
 }
 
-#sign-up {
+.sign-up {
   padding: 0.5rem;
-  border: 1px solid #ff7676;
+  border: 1px solid #efefef;
 }
 
 #messages {

@@ -1,4 +1,5 @@
 // #[macro_use]
+#![recursion_limit="128"]
 extern crate stdweb;
 // #[macro_use]
 extern crate yew;
@@ -142,6 +143,9 @@ impl Renderable<Model> for Model {
 
         let nav_class = "nav nav-height flex center border-white white font-two".to_string();
         let list_class = "flex no-text-decoration hover cursor-pointer transition-half margin-left-one".to_string();
+        
+        let signup_in_list = "transition-half no-text-decoration flex cursor-pointer font-one-and-eight hover margin-right-one".to_string();
+
         let subnav_class = "fixed sub nav-height width-vw theme-black border-white center".to_string();
 
         let rust_image_class = "width-two-and-a-half theme-white border-round margin-right-half";
@@ -165,6 +169,16 @@ impl Renderable<Model> for Model {
                         >
                             <span>
                                 { "With" }
+                            </span>
+                        </li>
+                        <li
+                            class=signup_in_list,
+                            // onclick=|_| Msg::NavigateTo(Child::SignUp),
+                        >
+                            <span class="sign-up", title="Use your own code.", >
+                                // or build modal with 
+                                // https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code 
+                                { "Sign Up" }
                             </span>
                         </li>
                     // </ul>

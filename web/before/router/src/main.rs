@@ -5,8 +5,6 @@ extern crate sl_lib;
 use sl_lib::Model;
 // use yew::prelude::App;
 
-mod routing;
-
 fn main() {
   // yew::initialize();
   // let app: App<Model> = App::new(); // Not yew::start_app::<routing::Model>();

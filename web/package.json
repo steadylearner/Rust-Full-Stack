@@ -1,5 +1,6 @@
 {
-  "name": "part1",
+  "name": "rust-frontend-by-steadylearner",
+  "author": "www.steadylearner.com",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",

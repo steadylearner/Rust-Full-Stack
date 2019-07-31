@@ -1,6 +1,7 @@
 {
-  "name": "part1",
-  "version": "1.0.0",
+  "name": "yew-router-by-steadylearner",
+  "author": "www.steadylearner.com",
+  "version": "0.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {

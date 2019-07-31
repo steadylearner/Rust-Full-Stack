@@ -42,6 +42,11 @@ pub fn markdown_css() -> io::Result<NamedFile> {
     NamedFile::open("web/markdown.css")
 }
 
+#[get("/modal.css")]
+pub fn modal_css() -> io::Result<NamedFile> {
+    NamedFile::open("web/modal.css")
+}
+
 // For browserify and NPM to work and it is optional
 
 #[get("/bundle.js")]
