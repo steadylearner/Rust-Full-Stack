@@ -9,4 +9,4 @@ $yarn
 $yarn watch:rs
 ```
 
-You may refer to [How to use Rust Yew](https://www.steadylearner.com/blog/read/How-to-use-Rust-Yew) also.
+Read [How to serve static files with Rust](https://www.steadylearner.com/blog/read/How-to-serve-static-files-with-Rust).
