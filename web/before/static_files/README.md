@@ -9,5 +9,5 @@ You can use it for these blog posts.
 ## How to test it
 
 ```console
-$cd server && cargo run --releas
+$cd server && cargo run --release
 ```
