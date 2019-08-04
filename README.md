@@ -69,11 +69,14 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use a modal in Rust]: https://www.steadylearner.com/blog/read/How-to-use-a-modal-in-Rust
 [How to use routers in Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend
 
+[How to serve static files with Rust]: https://www.steadylearner.com/blog/read/How-to-serve-static-files-with-Rust
+[How to use React with Rust]: https://www.steadylearner.com/blog/read/How-to-use-React-with-Rust
+
 <!-- / -->
 
 # How to be a full stack Rust Developer
 
-It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. For files relevant to previous ones, You can refer to **before** in each directory and its **README.md** file.
+It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. You can refer to **before** in each directory and its **README.md** file for the previous projects.
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew)
 
@@ -98,6 +101,41 @@ $rustup default nightly && cargo install cargo-web
 
 When you made it work, **./run-local.sh** for a full stack Rust web app.
 
+## Install and Deploy
+
+1. [How to install Rust]
+2. [How to deploy Rust Web App]
+
+## Frontend
+
+[![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
+
+1. [How to use a modal in Rust]
+2. [How to use routers in Rust Frontend]
+3. [How to serve static files with Rust]
+4. [How to use React with Rust]
+5. [How to modulize your Rust Frontend]
+6. [How to use Rust Yew]
+7. [How to use NPM packages with Rust Frontend]
+8. [How to use markdown with Rust Frontend]
+
+## Full Stack
+
+[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-router-example.png)](https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend)
+
+1. [Rust Chat App]
+2. [Fullstack Rust with Yew]
+3. [How to write Full Stack Rust code]
+
+## Sitemap
+
+[![Sitemaps with Rust](https://www.steadylearner.com/static/images/post/sitemap/automate-sitemap-rust.png)](https://www.steadylearner.com/blog/read/How-to-automate-building-sitemaps-with-Rust)
+
+1. [How to build a static sitemap.xml with Rust]
+2. [How to build a sitemap.xml with dynamic contents in Rust]
+3. [How to build a sitemap for images with Rust]
+4. [How to automate building sitemaps with Rust]
+
 ## What you will learn with it
 
 [![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code)
@@ -110,33 +148,3 @@ When you made it work, **./run-local.sh** for a full stack Rust web app.
 6. How to modulize your Rust project
 7. How to deploy it
 8. How to write sitemaps and metatags for it
-
-## Rust Frontend
-
-[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-router-example.png)](https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend)
-
-1. [How to use a modal in Rust]
-2. [How to use routers in Rust Frontend]
-
-## Full Stack Rust Web App Development
-
-[![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
-
-1. [How to install Rust]
-2. [Rust Chat App]
-3. [How to use Rust Yew]
-4. [Fullstack Rust with Yew]
-5. [How to use NPM packages with Rust Frontend]
-6. [How to use markdown with Rust Frontend]
-7. [How to modulize your Rust Frontend]
-8. [How to write Full Stack Rust code]
-
-## How to deploy and build sitemaps for it
-
-[![Sitemaps with Rust](https://www.steadylearner.com/static/images/post/sitemap/automate-sitemap-rust.png)](https://www.steadylearner.com/blog/read/How-to-automate-building-sitemaps-with-Rust)
-
-1. [How to deploy Rust Web App]
-2. [How to build a static sitemap.xml with Rust]
-3. [How to build a sitemap.xml with dynamic contents in Rust]
-4. [How to build a sitemap for images with Rust]
-5. [How to automate building sitemaps with Rust]
