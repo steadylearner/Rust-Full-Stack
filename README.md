@@ -86,9 +86,9 @@ It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. Y
 
 This repostiroy will have all the information to start Rust from frontend to end in server, database, login with users etc. 
 
-Contribute to it with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU). You can also review codes, like and share it to make it more apporachble to many people if you thought it is worthful.
+Contribute to it with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU). You can also review codes, like and [share it with others](https://www.google.com/search?q=rust+full+stack+code).
 
-If you need a help or Rust and JavaScript full stack developer, you can contact me with [Twitter](https://www.linkedin.com/in/steady-learner-3151b7164/) or [LinkedIn](https://twitter.com/steadylearner_p).
+If you need a help or **Rust and JavaScript** full stack developer, you can contact me with [Twitter](https://www.linkedin.com/in/steady-learner-3151b7164/) or [LinkedIn](https://twitter.com/steadylearner_p).
 
 ## Install
 
