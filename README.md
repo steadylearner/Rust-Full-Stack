@@ -90,7 +90,7 @@ Contribute to it with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xc
 
 If you need a help or **Rust and JavaScript** full stack developer, you can contact me with [Twitter](https://www.linkedin.com/in/steady-learner-3151b7164/) or [LinkedIn](https://twitter.com/steadylearner_p).
 
-## Install
+## Start
 
 First, clone this repository with
 
@@ -100,18 +100,20 @@ $git clone https://github.com/steadylearner/Rust-Full-Stack.git
 
 Prepare Rust development environment with [How to install Rust] if you haven't yet.
 
-Then, **./install.sh** in **web** folder or read [How to use Rust Yew] to test Rust frontend.
+Then, 
 
-or
+1. **$./install.sh` in **web** folder or
 
 ```console
 $yarn in web and web/static folder
 $rustup default nightly && cargo install cargo-web
 ```
 
-When you made it work, **./run-local.sh** for a full stack Rust web app.
+for full stack Rust project. When you made it work, **./run-local.sh** for a full stack Rust web app. 
 
-## Install and Deploy
+2. **$cd web/before/static_files && cargo run --release** for JavaScript frontend and Rust server side project.
+
+## Install and Deploy Rust
 
 1. [How to install Rust]
 2. [How to deploy Rust Web App]
