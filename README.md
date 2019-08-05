@@ -102,7 +102,7 @@ Prepare Rust development environment with [How to install Rust] if you haven't y
 
 Then, 
 
-1. **$./install.sh` in **web** folder or
+1. **$./install.sh** in **web** folder or
 
 ```console
 $yarn in web and web/static folder
