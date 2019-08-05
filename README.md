@@ -102,16 +102,9 @@ Prepare Rust development environment with [How to install Rust] if you haven't y
 
 Then, 
 
-1. **$./install.sh** in **web** folder or
+1. **./run-local.sh** and **$./install.sh** in **web** folder for a full stack Rust web app. 
 
-```console
-$yarn in web and web/static folder
-$rustup default nightly && cargo install cargo-web
-```
-
-for full stack Rust Web App. When you made it work, **./run-local.sh** for a full stack Rust web app. 
-
-2. **$cd web/before/static_files && cargo run --release** for JavaScript frontend and Rust server side project.
+2. **$cd web/before/static_files && cargo run --release** for JavaScript frontend and Rust server side web app.
 
 ## Install and Deploy Rust
 
