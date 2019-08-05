@@ -1,9 +1,11 @@
 #![feature(proc_macro_hygiene, decl_macro)]
-#[macro_use] 
-extern crate rocket;
+
+#[macro_use] extern crate rocket;
+// #[macro_use] extern crate serde_derive;
 
 mod routes;
-use crate::routes::{ static_files, get };
+use crate::routes::{ static_files, get, error };
+use rocket_contrib::templates::Template;
 
 fn rocket() -> rocket::Rocket {
     rocket::ignite()
@@ -16,6 +18,8 @@ fn rocket() -> rocket::Rocket {
                 get::favicon,
             ],
         )
+        .attach(Template::fairing())
+        .register(catchers![error::not_found])
 }
 
 fn main() {

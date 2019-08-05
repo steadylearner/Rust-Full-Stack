@@ -6,12 +6,11 @@ edition = "2018"
 
 [dependencies]
 rocket = "0.4.2"
-tera = "0.11.20"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
 
 [dependencies.rocket_contrib]
 version = "0.4.2"
 default-features = false
 features = ["tera_templates"]
-
-# template and markdown
-tera = "0.11.20"
