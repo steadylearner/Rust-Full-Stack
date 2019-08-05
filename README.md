@@ -109,7 +109,7 @@ $yarn in web and web/static folder
 $rustup default nightly && cargo install cargo-web
 ```
 
-for full stack Rust project. When you made it work, **./run-local.sh** for a full stack Rust web app. 
+for full stack Rust Web App. When you made it work, **./run-local.sh** for a full stack Rust web app. 
 
 2. **$cd web/before/static_files && cargo run --release** for JavaScript frontend and Rust server side project.
 
