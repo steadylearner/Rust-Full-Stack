@@ -1,12 +1,3 @@
-<!--
-    Post{
-        subtitle: "Learn to use JavaScript with Rust Frontend",
-        image: "post/web/npm-and-rust-by-Steadylearner.png",
-        image_decription: "Image by Steadylearner",
-        tags: "How NPM Rust Yew",
-    }
--->
-
 <!-- Link -->
 
 [Steadylearner]: https://www.steadylearner.com
@@ -70,7 +61,11 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use routers in Rust Frontend]: https://www.steadylearner.com/blog/read/How-to-use-routers-in-Rust-Frontend
 
 [How to serve static files with Rust]: https://www.steadylearner.com/blog/read/How-to-serve-static-files-with-Rust
-[How to use React with Rust]: https://www.steadylearner.com/blog/read/How-to-use-React-with-Rust
+[How to use a single page app with Rust]: https://www.steadylearner.com/blog/read/How-to-use-a-single-page-app-with-Rust
+
+[How to use Rust Tera for undefined paths]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Tera-for-undefined-paths
+
+[donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
 <!-- / -->
 
@@ -84,9 +79,9 @@ It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. Y
 
 ## The purpose
 
-This repostiroy will have all the information to start Rust from frontend to end in server, database, login with users etc. 
+This repostiroy will have all the information to start Rust from Frontend to end in server with database, login etc.
 
-Contribute to it with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU). You can also review codes, like and [share it with others](https://www.google.com/search?q=rust+full+stack+code).
+You can review codes, like and share it with others.
 
 If you need a help or **Rust and JavaScript** full stack developer, you can contact me with [Twitter](https://www.linkedin.com/in/steady-learner-3151b7164/) or [LinkedIn](https://twitter.com/steadylearner_p).
 
@@ -118,11 +113,17 @@ Then,
 1. [How to use a modal in Rust]
 2. [How to use routers in Rust Frontend]
 3. [How to serve static files with Rust]
-4. [How to use React with Rust]
+4. [How to use a sinlge page app with Rust]
 5. [How to modulize your Rust Frontend]
 6. [How to use Rust Yew]
 7. [How to use NPM packages with Rust Frontend]
 8. [How to use markdown with Rust Frontend]
+
+## Server
+
+[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-tera.png)][How to use Rust Tera for undefined paths]
+
+1. [How to use Rust Tera for undefined paths]
 
 ## Full Stack
 
