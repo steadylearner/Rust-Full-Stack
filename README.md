@@ -95,7 +95,7 @@ $git clone https://github.com/steadylearner/Rust-Full-Stack.git
 
 Prepare Rust development environment with [How to install Rust] if you haven't yet.
 
-Then, 
+Then,
 
 1. **$./install.sh** in **web** folder and **$./run-local.sh** for a full stack Rust web app. 
 
