@@ -1,16 +1,17 @@
 #![recursion_limit = "256"]
 
 use failure::Error;
-use serde_derive::{Deserialize, Serialize};
+// use serde_derive::{Deserialize, Serialize};
 use yew::format::{Json, Nothing};
 use yew::services::{
-    ConsoleService,
+    // ConsoleService,
     fetch::{FetchService, FetchTask, Request, Response},
 };
 
-use yew::services::Task;
+// use yew::services::Task;
 use yew::{html, Component, ComponentLink, Html, Renderable, ShouldRender};
 
+mod components;
 mod http_model;
 
 #[macro_use]
@@ -19,11 +20,12 @@ extern crate serde_json;
 
 use self::{
     http_model::youtube_video::Video,
+    components::video::view_video,
 };
 
 pub struct Model {
     fetch_service: FetchService,
-    console: ConsoleService,
+    // console: ConsoleService,
 
     link: ComponentLink<Model>,
     fetching: bool,
@@ -44,7 +46,7 @@ impl Component for Model {
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
         Model {
             fetch_service: FetchService::new(),
-            console: ConsoleService::new(),
+            // console: ConsoleService::new(),
 
             link,
             fetching: false,
@@ -81,10 +83,12 @@ impl Component for Model {
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
                 // https://docs.rs/yew/0.8.0/yew/services/fetch/struct.Request.html
-
+     
+                // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+  
                 let request = Request::builder()
                     .method("GET")
-                    .uri("http://localhost:8000/video_search_by_id/s7TVVyTyReU")
+                    .uri("http://localhost:8000/video_search_by_id/8EPsnf_ZYU0")
                     .header("Access-Control-Allow-Origin", "http://127.0.0.1:8000/")
                     .body(Nothing)
                     .unwrap();
@@ -106,10 +110,23 @@ impl Component for Model {
 
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
+        let youtube_class = "red center fab fa-youtube font-two-and-a-half";
+        // let rust_class = "width-two-and-a-half theme-white border-round margin-right-half hover cursor-pointer";
+
         html! {
-            <section>
+            <section class=("max-width", "main-width", "flex-column", "center-auto-margin"), >
                 <nav>
-                    <button onclick=|_| Msg::FetchData, >{ "Fetch Data" }</button>
+                    <h1 class=("font-four", "hover", "cursor-pointer"), onclick=|_| Msg::FetchData, >
+                        <span> { "This " } </span>
+                        <i class=youtube_class,  />
+                        <span> { " with Rust" }</span>
+                        // <span> { " with " }</span>
+                        // <img 
+                        //     class=rust_class,
+                        //     src="https://www.steadylearner.com/static/images/code/Rust.svg",
+                        // />
+                    </h1>
+                    
                 </nav>
                 { self.view_data() }
             </section>
@@ -119,13 +136,38 @@ impl Renderable<Model> for Model {
 
 impl Model {
     fn view_data(&self) -> Html<Model> {
-        if let Some(value) = &self.data {
+        // video is relevant to 
+        // let body = res.body_string().unwrap(); 
+        // let video: Video = serde_json::from_str(&body).unwrap();
+        // in /server/tests.rs
+        
+        if let Some(video) = &self.data { 
+    
+        let payload = &video.items.as_ref().unwrap()[0]; // video_item or instead of payload
+
+        let video_id = &payload.id;
+        // let video_title = &payload.snippet.title;
+
+        // let video_title_class = "font-two-and-a-half red-white margin-left-a-quarter";
+ 
             html! {
-                <p>{ format!("{:#?}", value) }</p>
+                <section class="flex-column", >
+                    // <h1 class=video_title_class, >
+                    //     { &video_title }
+                    // </h1>
+                    { view_video(&video_id) }
+                </section>
+
+                // equals to what we tested in server.rs
+                // <p>{ &video_title }</p>
+                // <p> { &video_id } </p>
+
             }
         } else {
             html! {
-                <p>{ "Data hasn't fetched yet." }</p>
+                <p class="red-white margin-left-a-quarter", >
+                    { "Data hasn't fetched yet." }
+                </p>
             }
         }
     }

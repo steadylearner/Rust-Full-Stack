@@ -9,7 +9,7 @@ use rocket::http::{Status, ContentType};
 // Use this or just test it with curl
 // Start your Rust Rocket App => $cargo run --release
 // invalid_youtube_id => $curl http://localhost:8000/video_search_by_id/invalid_youtube_id
-// valid_youtube_id => $curl http://localhost:8000/video_search_by_id/s7TVVyTyReU
+// valid_youtube_id => $curl http://localhost:8000/video_search_by_id/8EPsnf_ZYU0
 
 #[test]
 fn invalid_youtube_id() {
@@ -39,7 +39,7 @@ fn invalid_youtube_id() {
 fn valid_youtube_id() {
     let client = Client::new(rocket()).unwrap();
 
-    let valid_youtube_id = "s7TVVyTyReU";
+    let valid_youtube_id = "8EPsnf_ZYU0";
     // "use_valid_youtube_id"
 
     let request_url = format!(
@@ -57,7 +57,7 @@ fn valid_youtube_id() {
     let payload = &video.items.unwrap()[0]; // video_item or instead of payload
 
     assert_eq!(payload.id, valid_youtube_id.to_string());
-    assert_eq!(payload.snippet.title, "Your Love - The Outfield");
+    assert!(payload.snippet.title.contains("Rust"));
 }
 
 

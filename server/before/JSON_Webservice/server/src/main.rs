@@ -20,33 +20,52 @@ use rocket_cors::{AllowedHeaders, AllowedOrigins, Error};
 
 // https://doc.rust-lang.org/rust-by-example/attribute/cfg.html
 #[cfg(test)] mod tests;
+
 mod http_model;
 mod web_service;
+mod route;
 
 use self::{
     web_service::youtube_video::video_search_by_id,
+    route::web,
 };
 
-use rocket::{get, routes};
-
-#[get("/")]
-fn hello() -> &'static str {
-    "Hello from www.steadylearner.com"
-}
+use rocket::{routes};
 
 fn rocket() -> rocket::Rocket {
     rocket::ignite()
         .mount(
             "/",
             routes![
-                hello,
+                // Rust JSON Web Service 
+
                 video_search_by_id::webservice,
+
+                // Rust Frontend Production Files
+
+                web::web,
+                web::web_index_js,
+                web::web_wasm,
+                web::web_index_css,
+                web::web_favicon,
+                web::steadylearner_css,
+                web::normalize_css,
+                web::markdown_css,
+                web::modal_css,
+                // npm
+                web::browserify,
+                web::npm,
             ],
         )
 }
 
 fn main() -> Result<(), Error> {
-    let allowed_origins = AllowedOrigins::some_exact(&["http://localhost:8080"]);
+    let allowed_origins = AllowedOrigins::some_exact(&[
+        "http://localhost:8080", 
+        "http://127.0.0.1:8080",
+        "http://localhost:8000",
+        "http://0.0.0.0:8000",
+    ]);
 
     // You can also deserialize this
     // https://lawliet89.github.io/rocket_cors/rocket_cors/struct.CorsOptions.html
@@ -65,7 +84,9 @@ fn main() -> Result<(), Error> {
     .to_cors()?;
 
     rocket()
-        .attach(cors)
+        // Error: No matching routes for OPTIONS /video_search_by_id/8EPsnf_ZYU0.
+        // Warning: Responding with 404 Not Found catcher.
+        .attach(cors) // then faring with attach handle the route and return data
         .launch();
 
     Ok(())
