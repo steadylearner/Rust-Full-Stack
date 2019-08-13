@@ -119,12 +119,8 @@ impl Renderable<Model> for Model {
                     <h1 class=("font-four", "hover", "cursor-pointer"), onclick=|_| Msg::FetchData, >
                         <span> { "This " } </span>
                         <i class=youtube_class,  />
-                        <span> { " with Rust" }</span>
-                        // <span> { " with " }</span>
-                        // <img 
-                        //     class=rust_class,
-                        //     src="https://www.steadylearner.com/static/images/code/Rust.svg",
-                        // />
+                        <span> { " with Rust " } </span>
+                        <span class="blue", > { "© Steadylearner" } </span>
                     </h1>
                     
                 </nav>
