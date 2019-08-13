@@ -64,6 +64,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use a single page app with Rust]: https://www.steadylearner.com/blog/read/How-to-use-a-single-page-app-with-Rust
 
 [How to use Rust Tera for undefined paths]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Tera-for-undefined-paths
+[How to make Rust JSON Webservice with YouTube API]: https://www.steadylearner.com/blog/read/How-to-make-Rust-JSON-Webservice-with-YouTube-API
 
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
@@ -124,6 +125,7 @@ Then,
 [![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-tera.png)][How to use Rust Tera for undefined paths]
 
 1. [How to use Rust Tera for undefined paths]
+2. [How to make Rust JSON Webservice with YouTube API]
 
 ## Full Stack
 
