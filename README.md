@@ -79,7 +79,7 @@ It will be updated with [the latest blog post][Steadylearner Rust Blog Posts]. Y
 
 ## The purpose
 
-This repostiroy will have all the information to start Rust from Frontend to end in server with database, login etc.
+This repository will have all the information to start Rust from Frontend to end in server with database, login etc.
 
 You can review codes, like and share it with others.
 
@@ -113,7 +113,7 @@ Then,
 1. [How to use a modal in Rust]
 2. [How to use routers in Rust Frontend]
 3. [How to serve static files with Rust]
-4. [How to use a sinlge page app with Rust]
+4. [How to use a single page app with Rust]
 5. [How to modulize your Rust Frontend]
 6. [How to use Rust Yew]
 7. [How to use NPM packages with Rust Frontend]

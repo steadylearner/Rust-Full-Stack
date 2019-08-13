@@ -564,6 +564,22 @@ SOFTWARE.
   margin-bottom: 0.2rem;
 }
 
+.margin-left-a-quarter {
+  margin-left: 0.25rem;
+}
+
+.margin-right-a-quarter {
+  margin-right: 0.25rem;
+}
+
+.margin-top-a-quarter {
+  margin-top: 0.25rem;
+}
+
+.margin-bottom-a-quarter {
+  margin-bottom: 0.25rem;
+}
+
 .margin-left-half {
   margin-left: 0.5rem;
 }
