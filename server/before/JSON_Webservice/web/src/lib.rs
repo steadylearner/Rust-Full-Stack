@@ -85,11 +85,11 @@ impl Component for Model {
                 // https://docs.rs/yew/0.8.0/yew/services/fetch/struct.Request.html
      
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
-  
+                // is this from hyper API?
                 let request = Request::builder()
                     .method("GET")
                     .uri("http://localhost:8000/video_search_by_id/8EPsnf_ZYU0")
-                    .header("Access-Control-Allow-Origin", "http://127.0.0.1:8000/")
+                    .header("Access-Control-Allow-Origin", "http://127.0.0.1:8000")
                     .body(Nothing)
                     .unwrap();
 
@@ -119,8 +119,8 @@ impl Renderable<Model> for Model {
                     <h1 class=("font-four", "hover", "cursor-pointer"), onclick=|_| Msg::FetchData, >
                         <span> { "This " } </span>
                         <i class=youtube_class,  />
-                        <span> { " with Rust " } </span>
-                        <span class="blue", > { "© Steadylearner" } </span>
+                        <span> { " with Rust by " } </span>
+                        <span class="blue", > { "Steadylearner" } </span>
                     </h1>
                     
                 </nav>

@@ -16,7 +16,10 @@ extern crate dotenv;
 extern crate reqwest;
 
 use rocket::http::Method;
-use rocket_cors::{AllowedHeaders, AllowedOrigins, Error};
+use rocket_cors::{
+    AllowedHeaders, AllowedOrigins, Error,
+    Cors, CorsOptions
+};
 
 // https://doc.rust-lang.org/rust-by-example/attribute/cfg.html
 #[cfg(test)] mod tests;
@@ -32,12 +35,38 @@ use self::{
 
 use rocket::{routes};
 
+fn make_cors() -> Cors {
+    let allowed_origins = AllowedOrigins::some_exact(&[
+        "http://localhost:8080",
+        "http://127.0.0.1:8080",
+        "http://localhost:8000",
+        "http://0.0.0.0:8000",
+    ]);
+
+    // You can also deserialize this
+    // https://lawliet89.github.io/rocket_cors/rocket_cors/struct.CorsOptions.html
+    // https://www.w3.org/TR/cors/#resource-processing-model
+    CorsOptions {
+        allowed_origins,
+        allowed_methods: vec![Method::Get].into_iter().map(From::from).collect(),
+        allowed_headers: AllowedHeaders::some(&[
+            "Authorization",
+            "Accept",
+            "Access-Control-Allow-Origin", // copy and paste what you used in web folder
+        ]),
+        allow_credentials: true,
+        ..Default::default()
+    }
+    .to_cors()
+    .expect("error while building cors")
+}
+
 fn rocket() -> rocket::Rocket {
     rocket::ignite()
         .mount(
             "/",
             routes![
-                // Rust JSON Web Service 
+                // Rust JSON Web Service
 
                 video_search_by_id::webservice,
 
@@ -57,37 +86,14 @@ fn rocket() -> rocket::Rocket {
                 web::npm,
             ],
         )
+        .attach(make_cors())
+        // Error: No matching routes for OPTIONS /video_search_by_id/8EPsnf_ZYU0.
+        // Warning: Responding with 404 Not Found catcher.
+        // then faring with attach handle the route and return data
 }
 
 fn main() -> Result<(), Error> {
-    let allowed_origins = AllowedOrigins::some_exact(&[
-        "http://localhost:8080", 
-        "http://127.0.0.1:8080",
-        "http://localhost:8000",
-        "http://0.0.0.0:8000",
-    ]);
-
-    // You can also deserialize this
-    // https://lawliet89.github.io/rocket_cors/rocket_cors/struct.CorsOptions.html
-    // https://www.w3.org/TR/cors/#resource-processing-model
-    let cors = rocket_cors::CorsOptions {
-        allowed_origins,
-        allowed_methods: vec![Method::Get].into_iter().map(From::from).collect(),
-        allowed_headers: AllowedHeaders::some(&[
-            "Authorization",
-            "Accept",
-            "Access-Control-Allow-Origin", // copy and paste what you used in web folder
-        ]),
-        allow_credentials: true,
-        ..Default::default()
-    }
-    .to_cors()?;
-
-    rocket()
-        // Error: No matching routes for OPTIONS /video_search_by_id/8EPsnf_ZYU0.
-        // Warning: Responding with 404 Not Found catcher.
-        .attach(cors) // then faring with attach handle the route and return data
-        .launch();
+    rocket().launch();
 
     Ok(())
 }
