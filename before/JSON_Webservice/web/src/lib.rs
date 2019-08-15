@@ -4,7 +4,8 @@ use failure::Error;
 // use serde_derive::{Deserialize, Serialize};
 use yew::format::{Json, Nothing};
 use yew::services::{
-    // ConsoleService,
+    ConsoleService,
+    storage::{Area, StorageService},
     fetch::{FetchService, FetchTask, Request, Response},
 };
 
@@ -18,6 +19,8 @@ mod http_model;
 extern crate serde_derive;
 extern crate serde_json;
 
+const NAME: &'static str = "rust.yew.fetch.webstorage.example";
+
 use self::{
     http_model::youtube_video::Video,
     components::video::view_video,
@@ -25,7 +28,8 @@ use self::{
 
 pub struct Model {
     fetch_service: FetchService,
-    // console: ConsoleService,
+    console: ConsoleService,
+    storage: StorageService,
 
     link: ComponentLink<Model>,
     fetching: bool,
@@ -44,13 +48,27 @@ impl Component for Model {
     type Properties = ();
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
+        let storage = StorageService::new(Area::Local);
+
+        // You don't have to refresh the page with this
+        // once you fetch the youtube data
+        let data = {
+            if let Json(Ok(restored_model)) = storage.restore(NAME) {
+                Some(restored_model)
+            } else {
+                None
+            }
+        }; 
+
         Model {
+            storage,
             fetch_service: FetchService::new(),
-            // console: ConsoleService::new(),
+            console: ConsoleService::new(),
 
             link,
             fetching: false,
-            data: None,
+            data,
+            // data: None 
             ft: None,
         }
     }
@@ -59,11 +77,12 @@ impl Component for Model {
         match msg {
             Msg::FetchData => {
                 self.fetching = true;
+                self.console.log("Browser uses Rust Yew Fetch API for YouTube data");
                 
                 let callback = self.link.send_back(
                     move |response: Response<Json<Result<Video, Error>>>| {
                         let (meta, Json(data)) = response.into_parts();
-                        println!("META: {:?}, {:?}", meta, data);
+                        // println!("META: {:?}, {:?}", meta, data);
                         if meta.status.is_success() {
                             Msg::FetchReady(data)
                         } else {
@@ -83,9 +102,9 @@ impl Component for Model {
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 
                 // https://docs.rs/yew/0.8.0/yew/services/fetch/struct.Request.html
-     
                 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
-                // is this from hyper API?
+                
+                // https://github.com/hyperium/http
                 let request = Request::builder()
                     .method("GET")
                     .uri("http://localhost:8000/video_search_by_id/8EPsnf_ZYU0")
@@ -98,7 +117,9 @@ impl Component for Model {
             }
             Msg::FetchReady(response) => {
                 self.fetching = false;
+                self.console.log("YouTube data is ready.");
                 self.data = response.map(|data| data).ok();
+                self.storage.store(NAME, Json(&self.data));
             }
             Msg::Ignore => {
                 return false;
@@ -111,16 +132,29 @@ impl Component for Model {
 impl Renderable<Model> for Model {
     fn view(&self) -> Html<Self> {
         let youtube_class = "red center fab fa-youtube font-two-and-a-half";
-        // let rust_class = "width-two-and-a-half theme-white border-round margin-right-half hover cursor-pointer";
 
         html! {
             <section class=("max-width", "main-width", "flex-column", "center-auto-margin"), >
                 <nav>
-                    <h1 class=("font-four", "hover", "cursor-pointer"), onclick=|_| Msg::FetchData, >
-                        <span> { "This " } </span>
-                        <i class=youtube_class,  />
-                        <span> { " with Rust by " } </span>
-                        <span class="blue", > { "Steadylearner" } </span>
+                    <h1 class=("font-four", "flex"), >
+                        <span 
+                            class=("cursor-pointer", "hover", "transition-half"), 
+                            onclick=|_| Msg::FetchData,
+                            title="Click this to show the Rust video.",
+                        >
+                            <span> { "This " } </span>
+                            <i class=youtube_class,  />
+                            <span> { " with Rust " } </span>
+                        </span>
+                        <a 
+                            class=("no-text-decoration", "blue", "left-auto", "hover", "transition-half"),
+                            href="https://www.steadylearner.com/blog/search/Rust",
+                            title="Click it to learn how to code this.",
+                            target="_blank",
+                            rel="noopener noreferrer",
+                        > 
+                            { "©ode" } 
+                        </a>
                     </h1>
                     
                 </nav>
@@ -137,7 +171,7 @@ impl Model {
         // let video: Video = serde_json::from_str(&body).unwrap();
         // in /server/tests.rs
         
-        if let Some(video) = &self.data { 
+        if let Some(video) = &self.data {
     
         let payload = &video.items.as_ref().unwrap()[0]; // video_item or instead of payload
 
