@@ -1,8 +1,7 @@
 extern crate yew;
 extern crate sl_lib;
 
-extern crate reqwest;
-#[cfg(test)] mod tests;
+// #[cfg(test)] mod tests;
 
 use sl_lib::Model;
 
