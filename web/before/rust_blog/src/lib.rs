@@ -47,6 +47,9 @@ impl Component for Model {
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
 
+        // $cargo run in /server and  http://127.0.0.1:8000/post to test it work with database
+        // or use yours (You should enable .env relevant code or comment it)
+
         // https://raw.githubusercontent.com/steadylearner/react-easy-md/master/README.md
         // https://raw.githubusercontent.com/yewstack/yew/master/README.md
 
