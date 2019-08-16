@@ -31,7 +31,7 @@ mod route;
 use self::{
     web_service::{
         youtube_video::video_search_by_id,
-        post,
+        post, author,
     },
     route::web,
 };
@@ -75,6 +75,7 @@ fn rocket() -> rocket::Rocket {
 
                 // Test post
                 post::webservice,
+                author::webservice,
 
                 // Rust Frontend Production Files
 
