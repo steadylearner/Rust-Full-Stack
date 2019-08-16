@@ -8,8 +8,8 @@ use yew::{html, Html};
 use yew::virtual_dom::VNode;
 
 use stdweb::js;
-use stdweb::Value;
-use stdweb::unstable::TryInto;
+// use stdweb::Value;
+// use stdweb::unstable::TryInto;
 
 use crate::Model;
 
@@ -35,13 +35,27 @@ pub fn view_code(value: &str) -> Html<Model> {
             sanitize: false, // true when you don't want to allow HTML
             smartLists: true,
             smartypants: false,
+
+            // https://highlightjs.org/download/
+            // https://github.com/steadylearner/react-easy-md/blob/master/src/MarkdownPreview.js
+
+            // /static/index.html
+            // <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script> 
+
             langPrefix: "hljs ",
+            highlight: (code, lang) => {
+                if (!!(lang && hljs.getLanguage(lang))) {
+                    return hljs.highlight(lang, code).value;
+                }
+
+                return code;
+            }
         };
 
         marked.setOptions(options);
 
-        div.innerHTML = marked(code);
-        // console.log(div);
+        div.innerHTML = marked(code); // Dosen't parse the contents in code snippets with this in Rust
+        console.log(marked(code));
         return div;
     };
     eprintln!("markdown: {:?}", markdown);
