@@ -33,7 +33,7 @@ use self::{
         youtube_video::video_search_by_id,
         post, author,
     },
-    route::web,
+    route::{web, static_files},
 };
 
 use rocket::{routes};
@@ -76,6 +76,10 @@ fn rocket() -> rocket::Rocket {
                 // Test post
                 post::webservice,
                 author::webservice,
+
+                //
+
+                static_files::file,
 
                 // Rust Frontend Production Files
 

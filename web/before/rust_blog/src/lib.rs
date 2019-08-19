@@ -47,12 +47,6 @@ impl Component for Model {
 
     fn create(_: Self::Properties, link: ComponentLink<Self>) -> Self {
 
-        // $cargo run in /server and  http://127.0.0.1:8000/post or http://127.0.0.1:8000/author to test it work with database
-        // or use yours (You should enable .env relevant code or comment it)
-
-        // https://raw.githubusercontent.com/steadylearner/react-easy-md/master/README.md
-        // https://raw.githubusercontent.com/yewstack/yew/master/README.md
-
         Model {
             fetch_service: FetchService::new(),
             console: ConsoleService::new(),
@@ -65,6 +59,12 @@ impl Component for Model {
             
             ft: None,
         }
+    }
+
+    fn mounted(&mut self) -> ShouldRender {
+        self.fetch_data();
+
+        true
     }
 
     fn update(&mut self, msg: Self::Message) -> ShouldRender {
@@ -87,12 +87,6 @@ impl Component for Model {
         }
         true
     }
-
-    fn mounted(&mut self) -> ShouldRender {
-        self.fetch_data();
-
-        true
-    }
 }
 
 impl Renderable<Model> for Model {
@@ -108,7 +102,7 @@ impl Renderable<Model> for Model {
 
         html! {
             <section>
-                <section id="content" class=("main-width", "flex-column", "center-auto-margin"), >
+                <section id="content", class=("main-width", "flex-column", "center-auto-margin"), >
                     <section
                         class=("post-form", "flex", "center"),
                     >

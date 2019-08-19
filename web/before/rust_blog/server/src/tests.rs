@@ -1,6 +1,5 @@
 use crate::rocket;
 use crate::serde_json;
-use crate::reqwest;
 use crate::http_model::youtube_video::Video;
 
 use rocket::local::Client;
@@ -14,7 +13,7 @@ use rocket::http::{
 };
 
 // Use this or just test it with curl
-// Start your Rust Rocket App => $cargo run --release
+// Start your Rust Rocket App with $cargo run --release
 
 // invalid_youtube_id 
 // $curl http://localhost:8000/video_search_by_id/invalid_youtube_id
@@ -27,7 +26,6 @@ use rocket::http::{
 // $curl -H "Origin: http://localhost:8080" --verbose \http://localhost:8000/video_search_by_id/8EPsnf_ZYU0
 
 // 1. Test JSON Webservice made with Rust and YouTube API
-
 #[test]
 fn invalid_youtube_id() {
     // https://api.rocket.rs/v0.4/rocket/local/struct.Client.html
@@ -57,7 +55,6 @@ fn valid_youtube_id() {
     let client = Client::new(rocket()).unwrap();
 
     let valid_youtube_id = "8EPsnf_ZYU0";
-    // "use_valid_youtube_id"
 
     let request_url = format!(
         "/video_search_by_id/{}",
@@ -104,7 +101,6 @@ fn valid_youtube_id_and_invalid_origin() {
 
 #[test]
 fn valid_youtube_id_and_origin() {
-    // https://api.rocket.rs/v0.4/rocket/local/struct.Client.html
     let client = Client::new(rocket()).unwrap();
 
     let valid_youtube_id = "8EPsnf_ZYU0";
@@ -123,9 +119,9 @@ fn valid_youtube_id_and_origin() {
     //                 .unwrap();
 
     let valid_origin = Header::new("Access-Control-Allow-Origin", "http://127.0.0.1:8000");
+        .get(&request_url)
 
     let mut res = client
-        .get(&request_url)
         .header(Origin::new("http", "127.0.0.1:8080", None))
         .header(valid_origin)
         .header(ContentType::JSON)
@@ -133,6 +129,9 @@ fn valid_youtube_id_and_origin() {
 
     println!("{:#?}", res.headers()); // cargo test -- --nocapture
 
+    assert_eq!(res.headers().len(), 4); 
+
+    // why you should use 4 instead of 3
     // Uncased {
     //     string: "Content-Type",
     // }: [
@@ -154,8 +153,6 @@ fn valid_youtube_id_and_origin() {
     //     "true",
     // ],
 
-    assert_eq!(res.headers().len(), 4); // why you should use 4 instead of 3
-
     assert_eq!(res.status(), Status::Ok);
 
     let body = res.body_string().unwrap();
@@ -167,29 +164,41 @@ fn valid_youtube_id_and_origin() {
     assert!(payload.snippet.title.contains("Rust"));
 }
 
-// https://doc.rust-lang.org/beta/std/fs/fn.copy.html
-// https://doc.rust-lang.org/stable/std/string/struct.String.html#method.from_utf16
-// https://doc.rust-lang.org/stable/std/char/fn.from_u32.html
+// #[test]
+// pub fn post() -> Result<(), Box<dyn std::error::Error>> {
 
-#[test]
-pub fn github_article_request() -> Result<(), Box<dyn std::error::Error>> {
+//     let client = Client::new(rocket()).unwrap();
 
-    let target = "https://raw.githubusercontent.com/steadylearner/Rust-Full-Stack/master/README.md";
+//     let request_url = "/post";
 
-    let mut res = reqwest::get(target)?;
-    let mut body: Vec<u8> = vec![];
+//     let mut res = client.get(request_url).dispatch();
 
-    std::io::copy(&mut res, &mut body)?;
+//     assert_eq!(res.status(), Status::Ok);
 
-    // let characters: Vec<char> = body.into_iter().map(|x| x as char).collect();
-    // let result: String = characters.into_iter().collect();
+//     let body = res.body_string().unwrap();
 
-    let result: String = String::from_utf8(body).unwrap();
+//     println!("{:#?}", &body);
 
-    println!("{:#?}", &result); // cargo test -- --nocapture
+//     Ok(())
+// }
 
-    Ok(())
-}
+// #[test]
+// pub fn author() -> Result<(), Box<(dyn std::error::Error + 'static)>> {
+ 
+//     let client = Client::new(rocket()).unwrap();
+
+//     let request_url = "/author";
+
+//     let mut res = client.get(request_url).dispatch();
+
+//     assert_eq!(res.status(), Status::Ok);
+
+//     let body = res.body_string().unwrap();
+
+//     println!("{:#?}", &body);
+
+//     Ok(())
+// }
 
 
 
