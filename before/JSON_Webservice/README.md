@@ -1,4 +1,4 @@
-# Rust React Website example
+# Rust JSON Webservice example with YouTube and Yew API
 
 You can use it for these blog posts.
 
