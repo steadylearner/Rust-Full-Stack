@@ -98,9 +98,13 @@ Prepare Rust development environment with [How to install Rust] if you haven't y
 
 Then,
 
-1. **$./install.sh** in **web** folder and **$./run-local.sh** for a full stack Rust web app. 
+1. **$./install.sh** in **web** folder and **$./run-local.sh** for a full stack Rust chat app. 
 
-2. **$cd web/before/static_files && cargo run --release** for JavaScript frontend and Rust server side web app.
+2. **$cd web/before/static_files && $cargo run --release** for JavaScript frontend and Rust server side web app.
+
+3. **$cd before/JSON_Webservice && $./run-local.sh** for YouTube vlog example with JSON Webservice.
+
+4. **$cd web/before/rust_blog && $./install.sh && yarn watch:rs** for a Rust blog example. 
 
 ## Install and Deploy Rust
 
@@ -122,10 +126,12 @@ Then,
 
 ## Server
 
-[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-tera.png)][How to use Rust Tera for undefined paths]
+[![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code)
 
 1. [How to use Rust Tera for undefined paths]
 2. [How to make Rust JSON Webservice with YouTube API]
+3. [How to use CORS and OPTIONS HTTP request with Rust Rocket](https://www.steadylearner.com/blog/read/How-to-use-CORS-and-OPTIONS-HTTP-request-with-Rust-Rocket)
+4. [How to render a YouTube vlog with Rust Yew fetch API](https://www.steadylearner.com/blog/read/How-to-render-a-YouTube-vlog-with-Rust-Yew-fetch-API)
 
 ## Full Stack
 
@@ -146,7 +152,7 @@ Then,
 
 ## What you will learn with it
 
-[![Rust equivalent server and client code](https://www.steadylearner.com/static/images/post/web/client-server-equal-rust-code.png)](https://www.steadylearner.com/blog/read/How-to-write-Full-Stack-Rust-code)
+[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-tera.png)][How to use Rust Tera for undefined paths]
 
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
