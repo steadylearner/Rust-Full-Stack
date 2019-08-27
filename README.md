@@ -131,7 +131,6 @@ Then,
 1. [How to use Rust Tera for undefined paths]
 2. [How to make Rust JSON Webservice with YouTube API]
 3. [How to use CORS and OPTIONS HTTP request with Rust Rocket](https://www.steadylearner.com/blog/read/How-to-use-CORS-and-OPTIONS-HTTP-request-with-Rust-Rocket)
-4. [How to render a YouTube vlog with Rust Yew fetch API](https://www.steadylearner.com/blog/read/How-to-render-a-YouTube-vlog-with-Rust-Yew-fetch-API)
 
 ## Full Stack
 
@@ -140,6 +139,8 @@ Then,
 1. [Rust Chat App]
 2. [Fullstack Rust with Yew]
 3. [How to write Full Stack Rust code]
+4. [How to render a YouTube vlog with Rust Yew fetch API](https://www.steadylearner.com/blog/read/How-to-render-a-YouTube-vlog-with-Rust-Yew-fetch-API)
+
 
 ## Sitemap
 

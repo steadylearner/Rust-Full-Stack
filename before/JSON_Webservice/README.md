@@ -1,4 +1,4 @@
-# Rust JSON Webservice example with YouTube and Yew API
+# Rust YouTube JSON Webservice example
 
 You can use it for these blog posts.
 
