@@ -1,13 +1,12 @@
-# How to test it
+# Rust blog post exaxmple
 
-```console
-$./install.sh && yarn watch:rs
-```
+You can use it for these blog posts.
 
-## How to test it with Rust server
+1. [How to render blog posts with Rust Yew mounted API](https://www.steadylearner.com/blog/read/How-to-render-blog-posts-with-Rust-Yew-mounted-API)
 
-```console
-$cd server && cargo run 
-```
+## How to test it
 
-in another console.
+1. **$./install.sh && yarn watch:rs** for the client
+2. **cd server && cargo run --release** in another console if you want to test it with Rust server side end points.
+
+
