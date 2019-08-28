@@ -115,14 +115,12 @@ Then,
 
 [![NPM and Rust by Steadylearner](https://www.steadylearner.com/static/images/post/web/npm-and-rust-by-Steadylearner.png)](https://www.steadylearner.com/blog/read/How-to-use-NPM-packages-with-Rust-Frontend)
 
-1. [How to use a modal in Rust]
-2. [How to use routers in Rust Frontend]
-3. [How to serve static files with Rust]
-4. [How to use a single page app with Rust]
-5. [How to modulize your Rust Frontend]
-6. [How to use Rust Yew]
-7. [How to use NPM packages with Rust Frontend]
-8. [How to use markdown with Rust Frontend]
+1. [How to use Rust Yew]
+2. [How to use a modal in Rust]
+3. [How to use routers in Rust Frontend]
+4. [How to modulize your Rust Frontend]
+5. [How to use NPM packages with Rust Frontend]
+6. [How to use markdown with Rust Frontend]
 
 ## Server
 
@@ -131,6 +129,8 @@ Then,
 1. [How to use Rust Tera for undefined paths]
 2. [How to make Rust JSON Webservice with YouTube API]
 3. [How to use CORS and OPTIONS HTTP request with Rust Rocket](https://www.steadylearner.com/blog/read/How-to-use-CORS-and-OPTIONS-HTTP-request-with-Rust-Rocket)
+4. [How to serve static files with Rust]
+5. [How to use a single page app with Rust]
 
 ## Full Stack
 
@@ -140,7 +140,7 @@ Then,
 2. [Fullstack Rust with Yew]
 3. [How to write Full Stack Rust code]
 4. [How to render a YouTube vlog with Rust Yew fetch API](https://www.steadylearner.com/blog/read/How-to-render-a-YouTube-vlog-with-Rust-Yew-fetch-API)
-
+5. [How to render blog posts with Rust Yew mounted API](https://www.steadylearner.com/blog/read/How-to-render-blog-posts-with-Rust-Yew-mounted-API)
 
 ## Sitemap
 
@@ -152,8 +152,6 @@ Then,
 4. [How to automate building sitemaps with Rust]
 
 ## What you will learn with it
-
-[![Rust Router Example](https://www.steadylearner.com/static/images/post/web/rust-tera.png)][How to use Rust Tera for undefined paths]
 
 1. How to use HTML, CSS and Markdown in Rust Frontend
 2. How to include NPM packages and JavaScript modules in it
