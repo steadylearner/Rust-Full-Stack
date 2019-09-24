@@ -2,9 +2,7 @@
 
 set -e #$help set
 
-# build frontend assets and put them in a place the Rocket server
-# expects
-
+# build frontend assets and put them in a folder for Rocket server
 
 echo "building web"
 pushd web #$help pushd
