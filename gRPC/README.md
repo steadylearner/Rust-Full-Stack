@@ -1,5 +1,7 @@
 # Set of links that I will use for this project
 
+https://github.com/actix/actix-protobuf
+
 I will use [Actix Web](https://github.com/actix/actix-web) for routing and [Tonic](https://github.com/hyperium/tonic) for gRPC.
 
 ## Blog Posts
@@ -10,4 +12,5 @@ I will use [Actix Web](https://github.com/actix/actix-web) for routing and [Toni
 
 ## Reference
 
-[My microservice gRPC project with docker and deploy example](https://github.com/steadylearner/docker-examples). 
+1. [My microservice gRPC project with docker and deploy example](https://github.com/steadylearner/docker-examples). 
+2. [Use this to write blog posts](https://mherman.org/blog/node-grpc-postgres/)

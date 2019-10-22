@@ -1,0 +1,41 @@
+[package]
+name = "actix"
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+autobins = false
+
+# $cargo run --bin main will point to the path we define here(Should use autobins = false)
+[[bin]]
+name = "main"
+path = "src/main.rs"
+[[bin]]
+name = "hello_world"
+path = "src/hello_world/main.rs"
+[[bin]]
+name = "json"
+path = "src/json/main.rs"
+[[bin]]
+name = "static"
+path = "src/static/main.rs"
+[[bin]]
+name = "template"
+path = "src/template/main.rs"
+[[bin]]
+name = "graphql"
+path = "src/graphql/main.rs"
+
+
+[dependencies]
+actix-web = "1.0.8"
+futures = "0.1.29"
+bytes = "0.4.12"
+env_logger = "0.7.1"
+serde = "1.0.101"
+serde_json = "1.0.41"
+serde_derive = "1.0.101"
+json = "0.12.0"
+console = "0.9.0"
+actix-files = "0.1.6"
+tera = "0.11.20"
+juniper = "0.14.0"

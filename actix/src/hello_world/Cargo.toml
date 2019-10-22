@@ -1,0 +1,10 @@
+[package]
+name = "actix"
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+
+[dependencies]
+actix-web = "1.0.8"
+futures = "0.1.29"
+
