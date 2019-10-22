@@ -18,7 +18,10 @@ package user;
 
 service Crud {
   rpc GetUser (UserRequest) returns (UserReply) {}
+  // rpc ListUsers(Empty) returns (Users) {}
 }
+
+// message Empty {}
 
 message UserRequest {
     string id = 1;
@@ -30,5 +33,10 @@ message UserReply {
     string last_name = 3;
     string date_of_birth = 4;
 }
+
+// message Users {
+//     repeated UserReply users = 1;
+// }
+
 
 
