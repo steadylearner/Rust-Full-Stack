@@ -6,3 +6,4 @@ release/
 .env
 
 flask/
+actix_full_stack_reference/
