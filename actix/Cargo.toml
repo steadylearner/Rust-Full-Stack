@@ -26,8 +26,8 @@ path = "src/template/main.rs"
 name = "graphql"
 path = "src/graphql/main.rs"
 [[bin]]
-name = "grpc"
-path = "src/grpc/main.rs"
+name = "protobuf"
+path = "src/protobuf/main.rs"
 
 [dependencies]
 actix-web = "1.0.8"
