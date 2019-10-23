@@ -18,7 +18,7 @@ use juniper::http::GraphQLRequest;
 mod type_defs;
 
 mod resolvers;
-use crate::resolvers::product::{create_schema, Schema};
+use crate::resolvers::user::{create_schema, Schema};
 
 const PORT: &str = "127.0.0.1:8088";
 

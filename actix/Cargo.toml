@@ -1,3 +1,5 @@
+# https://rust-lang-nursery.github.io/api-guidelines/documentation.html#cargotoml-includes-all-common-metadata-c-metadata
+
 [package]
 name = "actix"
 version = "0.1.0"
@@ -28,6 +30,9 @@ path = "src/graphql/main.rs"
 [[bin]]
 name = "protobuf"
 path = "src/protobuf/main.rs"
+[[bin]]
+name = "database"
+path = "src/database/main.rs"
 
 [dependencies]
 actix-web = "1.0.8"
@@ -48,3 +53,6 @@ juniper = "0.14.0"
 actix-protobuf = "0.4.1"
 prost = "0.5.0"
 prost-derive = "0.5.0"
+# Postgresl
+diesel = { version = "1.4.3", features = ["postgres"] }
+dotenv = "0.15.0"

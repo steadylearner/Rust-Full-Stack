@@ -1,7 +1,10 @@
+//  Read https://graphql-rust.github.io/juniper/current/schema/schemas_and_mutations.html
+//  and compare to this file.
+
 use juniper::FieldResult;
 use juniper::RootNode;
 
-use crate::type_defs::product::{User, NewUser};
+use crate::type_defs::user::{User, NewUser};
 
 pub struct QueryRoot;
 
