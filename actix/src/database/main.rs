@@ -1,4 +1,11 @@
 // https://dev.to/werner/practical-rust-web-development-api-rest-29g1
+// https://dev.to/werner/practical-rust-web-development-connection-pool-46f4
+// The author should have included 
+/// ```
+/// use db_connection::establish_connection; 
+/// .data(establish_connection()) 
+/// ```
+
 // #[macro_use]
 extern crate actix_web;
 // #[macro_use]
@@ -20,6 +27,8 @@ use console::Style;
 mod schema;
 mod models;
 mod db_connection;
+
+use db_connection::establish_connection;
 
 pub mod handlers; // This goes to the top to load the next handlers module 
 
@@ -43,6 +52,7 @@ fn main() -> std::io::Result<()> {
         App::new()
             // enable logger
             .wrap(middleware::Logger::default())
+            .data(establish_connection())
             .service(
                 web::resource("/products")
                     .route(web::get().to(handlers::products::index))

@@ -2,9 +2,9 @@ use crate::schema::products;
 
 use diesel::RunQueryDsl;
 use diesel::QueryDsl;
+use diesel::PgConnection;
 use crate::schema::products::dsl;
 use crate::schema::products::dsl::*;
-use crate::db_connection::establish_connection;
 
 #[derive(Queryable, Serialize, Deserialize)]
 pub struct Product {
@@ -16,23 +16,20 @@ pub struct Product {
 
 // Use product_id instead of id not to make confusion for compiler for duplicate variable names.
 impl Product {
-    pub fn find(product_id: &i32) -> Result<Product, diesel::result::Error> {
-        let connection = establish_connection();
-        products::table.find(product_id).first(&connection)
+    pub fn find(product_id: &i32, connection: &PgConnection) -> Result<Product, diesel::result::Error> {
+        products::table.find(product_id).first(connection)
     }
 
-    pub fn destroy(product_id: &i32) -> Result<(), diesel::result::Error> {
-        let connection = establish_connection();
-        diesel::delete(dsl::products.find(product_id)).execute(&connection)?;
+    pub fn destroy(product_id: &i32, connection: &PgConnection) -> Result<(), diesel::result::Error> {
+        diesel::delete(dsl::products.find(product_id)).execute(connection)?;
         Ok(())
     }
 
-    pub fn update(product_id: &i32, new_product: &NewProduct) -> Result<(), diesel::result::Error> {
-        let connection = establish_connection();
+    pub fn update(product_id: &i32, new_product: &NewProduct, connection: &PgConnection) -> Result<(), diesel::result::Error> {
 
         diesel::update(dsl::products.find(product_id))
             .set(new_product)
-            .execute(&connection)?;
+            .execute(connection)?;
         Ok(())
     }
 }
@@ -42,13 +39,12 @@ impl Product {
 pub struct ProductList(pub Vec<Product>);
 
 impl ProductList {
-    pub fn list() -> Self {
-        let connection = establish_connection();
+    pub fn list(connection: &PgConnection) -> Self {
 
         let result =
             products
                 .limit(10)
-                .load::<Product>(&connection)
+                .load::<Product>(connection)
                 .expect("Error loading products");
 
         ProductList(result)
@@ -64,12 +60,11 @@ pub struct NewProduct {
 }
 
 impl NewProduct {
-    pub fn create(&self) -> Result<Product, diesel::result::Error> {
+    pub fn create(&self, connection: &PgConnection) -> Result<Product, diesel::result::Error> {
 
-        let connection = establish_connection();
         diesel::insert_into(products::table)
             .values(self)
-            .get_result(&connection)
+            .get_result(connection)
     }
 }
 

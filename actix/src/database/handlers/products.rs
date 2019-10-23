@@ -1,43 +1,53 @@
-use actix_web::{HttpRequest, HttpResponse, web, web::Json};
+use actix_web::{HttpRequest, HttpResponse};
+use actix_web::web;
 
 use crate::models::product::{ProductList, NewProduct, Product};
+use crate::db_connection::{ PgPool, PgPooledConnection };
 
-// curl http://127.0.0.1:8080/products
-pub fn index(_req: HttpRequest) -> HttpResponse {
-    HttpResponse::Ok().json(ProductList::list())
+fn pg_pool_handler(pool: web::Data<PgPool>) -> Result<PgPooledConnection, HttpResponse> {
+    pool
+    .get()
+    .map_err(|e| {
+        HttpResponse::InternalServerError().json(e.to_string())
+    })
 }
 
-// curl http://127.0.0.1:8080/products -H "Content-Type: application/json" -d '{"name": "socks", "stock": 7, "price": 2}'
-pub fn create(new_product: Json<NewProduct>) -> Result<HttpResponse, HttpResponse> {
+pub fn index(_req: HttpRequest, pool: web::Data<PgPool>) -> Result<HttpResponse, HttpResponse> {
+    let pg_pool = pg_pool_handler(pool)?;
+    Ok(HttpResponse::Ok().json(ProductList::list(&pg_pool)))
+}
+
+pub fn create(new_product: web::Json<NewProduct>, pool: web::Data<PgPool>) -> Result<HttpResponse, HttpResponse> {
+    let pg_pool = pg_pool_handler(pool)?;
     new_product
-        .create()
+        .create(&pg_pool)
+        .map(|product| HttpResponse::Ok().json(product))
+        .map_err(|e| {
+            HttpResponse::InternalServerError().json(e.to_string())
+        })
+} 
+
+pub fn show(id: web::Path<i32>, pool: web::Data<PgPool>) -> Result<HttpResponse, HttpResponse> {
+    let pg_pool = pg_pool_handler(pool)?;
+    Product::find(&id, &pg_pool)
         .map(|product| HttpResponse::Ok().json(product))
         .map_err(|e| {
             HttpResponse::InternalServerError().json(e.to_string())
         })
 }
 
-// curl http://127.0.0.1:8080/products/1
-pub fn show(id: web::Path<i32>) -> Result<HttpResponse, HttpResponse> {
-    Product::find(&id)
-        .map(|product| HttpResponse::Ok().json(product))
-        .map_err(|e| {
-            HttpResponse::InternalServerError().json(e.to_string())
-        })
-}
-
-// curl -X DELETE http://127.0.0.1:8080/products/1 -H "Content-Type: application/json"
-pub fn destroy(id: web::Path<i32>) -> Result<HttpResponse, HttpResponse> {
-    Product::destroy(&id)
+pub fn destroy(id: web::Path<i32>, pool: web::Data<PgPool>) -> Result<HttpResponse, HttpResponse> {
+    let pg_pool = pg_pool_handler(pool)?;
+    Product::destroy(&id, &pg_pool)
         .map(|_| HttpResponse::Ok().json(()))
         .map_err(|e| {
-            HttpResponse::InternalServerError().json(e.to_string())
+             HttpResponse::InternalServerError().json(e.to_string())
         })
 }
 
-// curl -X PATCH http://127.0.0.1:8080/products/3 -H "Content-Type: application/json" -d '{"stock": 8}'
-pub fn update(id: web::Path<i32>, new_product: web::Json<NewProduct>) -> Result<HttpResponse, HttpResponse> {
-    Product::update(&id, &new_product)
+pub fn update(id: web::Path<i32>, new_product: web::Json<NewProduct>, pool: web::Data<PgPool>) -> Result<HttpResponse, HttpResponse> {
+    let pg_pool = pg_pool_handler(pool)?;
+    Product::update(&id, &new_product, &pg_pool)
         .map(|_| HttpResponse::Ok().json(()))
         .map_err(|e| {
             HttpResponse::InternalServerError().json(e.to_string())
