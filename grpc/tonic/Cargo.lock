@@ -1159,7 +1159,8 @@ dependencies = [
 
 [[package]]
 name = "tonic-build"
-version = "0.1.0-alpha.3"
+version = "0.1.0-alpha.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "proc-macro2 1.0.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "prost-build 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -1179,7 +1180,7 @@ dependencies = [
  "prost-derive 0.5.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "tokio 0.2.0-alpha.6 (registry+https://github.com/rust-lang/crates.io-index)",
  "tonic 0.1.0-alpha.3 (registry+https://github.com/rust-lang/crates.io-index)",
- "tonic-build 0.1.0-alpha.3",
+ "tonic-build 0.1.0-alpha.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "tower 0.3.0-alpha.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -1687,6 +1688,7 @@ dependencies = [
 "checksum tokio-sync 0.2.0-alpha.6 (registry+https://github.com/rust-lang/crates.io-index)" = "4f1aaeb685540f7407ea0e27f1c9757d258c7c6bf4e3eb19da6fc59b747239d2"
 "checksum tokio-timer 0.3.0-alpha.6 (registry+https://github.com/rust-lang/crates.io-index)" = "b97c1587fe71018eb245a4a9daa13a5a3b681bbc1f7fdadfe24720e141472c13"
 "checksum tonic 0.1.0-alpha.3 (registry+https://github.com/rust-lang/crates.io-index)" = "fe61acec8725d529460dea3a7eca0e97e07706106283de8236b9aa69f861b678"
+"checksum tonic-build 0.1.0-alpha.4 (registry+https://github.com/rust-lang/crates.io-index)" = "f2dee0462a93da0c8cf446434290f74ba4bd8926f3b9b42a287b02e5880da0b0"
 "checksum tower 0.3.0-alpha.2 (registry+https://github.com/rust-lang/crates.io-index)" = "b05ce6a5913c351c65d5538545302eceaf3f84e8257654370d298c3ea1a97935"
 "checksum tower-balance 0.3.0-alpha.2 (registry+https://github.com/rust-lang/crates.io-index)" = "38dce028671196b8e89965a7b057b8e4bc99206185c0418ce8d164fe674c9d72"
 "checksum tower-buffer 0.3.0-alpha.2 (registry+https://github.com/rust-lang/crates.io-index)" = "eb66caab441682c3eac396617cbc1c2bd8962589468d08be3b05cb6875200694"

@@ -31,7 +31,6 @@ http = "0.1"
 tower = "=0.3.0-alpha.2"
 
 [build-dependencies]
-tonic-build = { path = "./tonic-build" }
-
+tonic-build = "0.1.0-alpha.3"
 
 
