@@ -1,25 +1,12 @@
-// https://docs.rs/postgres/0.15.2/postgres/
-// main.rs + models.rs, use it for Rust gRPC tonic blog posts.
-extern crate postgres;
-extern crate dotenv;
-
-extern crate chrono;
+use uuid::Uuid;
 use chrono::*;
 
-use tonic::{transport::Server, Request, Response, Status};
+use crate::db_connection::establish_connection;
 
-extern crate uuid;
-use uuid::Uuid;
+use tonic::{Request, Response, Status};
 
-extern crate console;
-use console::Style;
-
-pub mod user {
-    tonic::include_proto!("user");
-}
-
-use user::{
-    server::{Crud, CrudServer},
+use crate::user::{
+    server::{Crud},
     UserRequest,
     UserReply,
     Empty,
@@ -28,9 +15,6 @@ use user::{
     UpdateUserRequest,
     DeleteUserReply,
 };
-
-mod db_connection;
-use crate::db_connection::establish_connection;
 
 #[derive(Default)]
 pub struct User {}
@@ -237,24 +221,4 @@ impl Crud for User {
 
         Ok(Response::new(reply))
     }
-}
-
-#[tokio::main]
-async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let addr = "[::1]:50051".parse().unwrap();
-    let user = User::default();
-
-    let blue = Style::new()
-        .blue();
-
-    println!("\nRust gRPC Server ready at {}", blue.apply_to(format!("http://{}", addr)));
-
-    // $curl [::1]:50051
-    // Should show this.
-    // Warning: Binary output can mess up your terminal. Use "--output -" to tell
-    // Warning: curl to output it to your terminal anyway, or consider "--output
-    // Warning: <FILE>" to save to a file.
-
-    Server::builder().serve(addr, CrudServer::new(user)).await?;
-    Ok(())
 }
