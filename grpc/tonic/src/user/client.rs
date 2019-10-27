@@ -1,3 +1,5 @@
+// https://docs.rs/chrono/0.4.9/chrono/
+
 pub mod user {
     tonic::include_proto!("user");
 }
@@ -16,6 +18,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let response = client.get_user(request).await?;
 
     println!("RESPONSE={:?}", response);
+    let user_date_of_birth = &response.into_inner().date_of_birth;
+    println!("{}", user_date_of_birth);
 
     Ok(())
 }

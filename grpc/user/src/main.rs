@@ -1,9 +1,12 @@
 // https://docs.rs/postgres/0.15.2/postgres/
 extern crate postgres;
-use postgres::{Connection, TlsMode};
+use postgres::{Connection, TlsMode,};
 extern crate dotenv;
 use dotenv::dotenv;
 use std::env;
+
+extern crate chrono;
+use chrono::*;
 
 use tonic::{transport::Server, Request, Response, Status};
 
@@ -42,14 +45,22 @@ impl Crud for User {
         // println!("{:#?}", rows.get(0));
         // https://docs.rs/postgres/0.17.0-alpha.1/postgres/row/struct.Row.html
 
-        let payload = rows.get(0);
+        let payload = rows.get(0); // row
+        println!("{:#?}", &payload);
+
+        // https://github.com/chronotope/chrono
+        // https://docs.rs/postgres/0.17.0-alpha.1/postgres/types/trait.FromSql.html#tymethod.from_sql
+        // cannot infer type
+        // the trait `postgres::types::FromSql` is not implemented for
+
+        let date_of_birth: NaiveDate = payload.get(3);
 
         let reply = UserReply {
             id: payload.get(0),
             first_name: payload.get(1),
             last_name: payload.get(2),
-            date_of_birth: "It works".into(),
-            // date_of_birth: payload.get(3),
+            // https://docs.rs/postgres/0.17.0-alpha.1/postgres/types/trait.FromSql.html?search=to_string
+            date_of_birth: date_of_birth.to_string(),
         };
 
         Ok(Response::new(reply))
