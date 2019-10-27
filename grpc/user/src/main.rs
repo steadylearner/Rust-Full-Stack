@@ -1,6 +1,6 @@
 // https://docs.rs/postgres/0.15.2/postgres/
 extern crate postgres;
-use postgres::{Connection, TlsMode,};
+use postgres::{Connection, TlsMode};
 extern crate dotenv;
 use dotenv::dotenv;
 use std::env;
@@ -17,6 +17,7 @@ pub mod user {
 use user::{
     server::{Crud, CrudServer},
     UserReply, UserRequest,
+    Empty, Users,
 };
 
 #[derive(Default)]
@@ -45,22 +46,55 @@ impl Crud for User {
         // println!("{:#?}", rows.get(0));
         // https://docs.rs/postgres/0.17.0-alpha.1/postgres/row/struct.Row.html
 
-        let payload = rows.get(0); // row
-        println!("{:#?}", &payload);
+        let row = rows.get(0); // row
+        println!("{:#?}", &row);
 
         // https://github.com/chronotope/chrono
         // https://docs.rs/postgres/0.17.0-alpha.1/postgres/types/trait.FromSql.html#tymethod.from_sql
         // cannot infer type
         // the trait `postgres::types::FromSql` is not implemented for
 
-        let date_of_birth: NaiveDate = payload.get(3);
+        let date_of_birth: NaiveDate = row.get(3);
 
         let reply = UserReply {
-            id: payload.get(0),
-            first_name: payload.get(1),
-            last_name: payload.get(2),
+            id: row.get(0),
+            first_name: row.get(1),
+            last_name: row.get(2),
             // https://docs.rs/postgres/0.17.0-alpha.1/postgres/types/trait.FromSql.html?search=to_string
             date_of_birth: date_of_birth.to_string(),
+        };
+
+        Ok(Response::new(reply))
+    }
+
+    async fn list_users(&self, request: Request<Empty>) -> Result<Response<Users>, Status> {
+        println!("Got a request: {:#?}", &request);
+
+        dotenv().ok();
+        let database_url = env::var("DATABASE_URL").expect("DATABASE_URL must be set");
+        let conn = Connection::connect(database_url, TlsMode::None).unwrap();
+
+        // https://docs.rs/postgres/0.15.2/postgres/
+        // use functional approach?
+        let mut v: Vec<UserReply> = Vec::new();
+        for row in &conn.query("SELECT * FROM users", &[]).unwrap() {
+            let date_of_birth: NaiveDate = row.get(3);
+            let user = UserReply {
+                id: row.get(0),
+                first_name: row.get(1),
+                last_name: row.get(2),
+                date_of_birth: date_of_birth.to_string(),
+            };
+            v.push(user);
+        }
+
+        // message Users {
+        //     repeated UserReply users = 1;
+        // }
+        // (repeated, vec), (users, users)
+
+        let reply = Users {
+            users: v,
         };
 
         Ok(Response::new(reply))
