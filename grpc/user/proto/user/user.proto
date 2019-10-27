@@ -18,13 +18,15 @@ syntax = "proto3";
 
 package user;
 
-service Crud {
-  rpc GetUser (UserRequest) returns (UserReply) {}
+// If you mistype at impl Crud for User
+// Rust compiler with gRPC protobuf will show "not a member of trait `Crud`"
+service Crud { // Use whatever name you want, this is for blog posts and not prouction files with coworkers.
+  rpc GetUser (UserRequest) returns (UserReply) {} // becomes get_user in impl functions
   rpc ListUsers(Empty) returns (Users) {}
-//   rpc CreateUser (CreateUserRequest) returns (UserReply) {}
-//   rpc DeleteUser (UserRequest) returns (UseReply) {}
-//   rpc UpdateUser (UpdateUserRequest) returns (UserReply) {}
-//   rpc DelteUsers (Empty) returns (Empty) {}
+  rpc CreateUser (CreateUserRequest) returns (UserReply) {}
+  rpc UpdateUser (UpdateUserRequest) returns (UserReply) {}
+  rpc DeleteUser (UserRequest) returns (DeleteUserReply) {} // DeleteUserRequest if you want to improve it later
+  rpc DeleteUsers (Empty) returns (DeleteUserReply) {} // Separate it with DeleteUsersReply later if you want
 }
 
 message Empty {}
@@ -38,6 +40,10 @@ message UserReply {
     string first_name = 2;
     string last_name = 3;
     string date_of_birth = 4;
+}
+
+message DeleteUserReply {
+    string message = 1;
 }
 
 message Users {
