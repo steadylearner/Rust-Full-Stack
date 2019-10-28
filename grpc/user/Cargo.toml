@@ -1,5 +1,5 @@
 [package]
-name = "tonic-examples"
+name = "rust-tonic-crud-example"
 version = "0.1.0"
 authors = ["www.steadylearner.com"]
 edition = "2018"
@@ -27,6 +27,6 @@ uuid = { version = "0.8.1", features = ["serde", "v4"] }
 
 # Help you use gRPC protobuf files in Rust.
 [build-dependencies]
-tonic-build = "0.1.0-alpha.3"
+tonic-build = "0.1.0-alpha.4"
 
 

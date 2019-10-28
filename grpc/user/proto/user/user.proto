@@ -25,8 +25,8 @@ service Crud { // Use whatever name you want, this is for blog posts and not pro
   rpc ListUsers(Empty) returns (Users) {}
   rpc CreateUser (CreateUserRequest) returns (CreateUserReply) {}
   rpc UpdateUser (UpdateUserRequest) returns (UpdateUserReply) {}
-  rpc DeleteUser (UserRequest) returns (DeleteUserReply) {} // DeleteUserRequest if you want to improve it later
-  rpc DeleteUsers (Empty) returns (DeleteUserReply) {} // Separate it with DeleteUsersReply later if you want
+  rpc DeleteUser (UserRequest) returns (DeleteUserReply) {} 
+  rpc DeleteUsers (Empty) returns (DeleteUserReply) {}
 }
 
 message Empty {}

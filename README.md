@@ -66,6 +66,8 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use Rust Tera for undefined paths]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Tera-for-undefined-paths
 [How to make Rust JSON Webservice with YouTube API]: https://www.steadylearner.com/blog/read/How-to-make-Rust-JSON-Webservice-with-YouTube-API
 
+[How to use Rust Tonic with CRUD database example]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Tonic-with-CRUD-database-example
+
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
 <!-- / -->
@@ -104,7 +106,7 @@ Then,
 
 3. **$cd before/JSON_Webservice && $./run-local.sh** for YouTube vlog example with JSON Webservice.
 
-4. **$cd web/before/rust_blog && $./install.sh && yarn watch:rs** for a Rust blog example. 
+4. **$cd web/before/rust_blog && $./install.sh && yarn watch:rs** for a Rust blog example.
 
 ## Install and Deploy Rust
 
@@ -131,6 +133,7 @@ Then,
 3. [How to use CORS and OPTIONS HTTP request with Rust Rocket](https://www.steadylearner.com/blog/read/How-to-use-CORS-and-OPTIONS-HTTP-request-with-Rust-Rocket)
 4. [How to serve static files with Rust]
 5. [How to use a single page app with Rust]
+6. [How to use Rust Tonic with CRUD database example]
 
 ## Full Stack
 

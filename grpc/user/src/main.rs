@@ -21,8 +21,8 @@ use console::Style;
 
 mod db_connection;
 
-mod models;
-use crate::models::User;
+mod service;
+use crate::service::User;
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
