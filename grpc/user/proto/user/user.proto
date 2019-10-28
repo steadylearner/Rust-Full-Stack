@@ -20,11 +20,11 @@ package user;
 
 // If you mistype at impl Crud for User
 // Rust compiler with gRPC protobuf will show "not a member of trait `Crud`"
-service Crud { // Use whatever name you want, this is for blog posts and not prouction files with coworkers.
+service Crud { // Use whatever name you want, this is for blog posts and not prouction files.
   rpc GetUser (UserRequest) returns (UserReply) {} // becomes get_user in impl functions
   rpc ListUsers(Empty) returns (Users) {}
-  rpc CreateUser (CreateUserRequest) returns (UserReply) {}
-  rpc UpdateUser (UpdateUserRequest) returns (UserReply) {}
+  rpc CreateUser (CreateUserRequest) returns (CreateUserReply) {}
+  rpc UpdateUser (UpdateUserRequest) returns (UpdateUserReply) {}
   rpc DeleteUser (UserRequest) returns (DeleteUserReply) {} // DeleteUserRequest if you want to improve it later
   rpc DeleteUsers (Empty) returns (DeleteUserReply) {} // Separate it with DeleteUsersReply later if you want
 }
@@ -42,18 +42,14 @@ message UserReply {
     string date_of_birth = 4;
 }
 
-message DeleteUserReply {
-    string message = 1;
-}
-
-message Users {
-    repeated UserReply users = 1;
-}
-
 message CreateUserRequest {
     string first_name = 1;
     string last_name = 2;
     string date_of_birth = 3;
+}
+
+message CreateUserReply {
+    string message = 1;
 }
 
 message UpdateUserRequest {
@@ -63,5 +59,15 @@ message UpdateUserRequest {
     string date_of_birth = 4;
 }
 
+message UpdateUserReply {
+    string message = 1;
+}
 
+message DeleteUserReply {
+    string message = 1;
+}
+
+message Users {
+    repeated UserReply users = 1;
+}
 

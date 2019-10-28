@@ -32,13 +32,15 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let blue = Style::new()
         .blue();
 
-    println!("\nRust gRPC Server ready at {}", blue.apply_to(format!("http://{}", addr)));
+    println!("\nRust gRPC Server ready at {}", blue.apply_to(addr));
 
     // $curl [::1]:50051
     // Should show this.
     // Warning: Binary output can mess up your terminal. Use "--output -" to tell
     // Warning: curl to output it to your terminal anyway, or consider "--output
     // Warning: <FILE>" to save to a file.
+
+    // Use [::1]:50051 for everywhere. https://github.com/uw-labs/bloomrpc
 
     Server::builder().serve(addr, CrudServer::new(user)).await?;
     Ok(())

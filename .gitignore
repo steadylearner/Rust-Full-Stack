@@ -7,3 +7,6 @@ release/
 
 flask/
 actix_full_stack_reference/
+
+# gRPC client
+bloomrpc/
