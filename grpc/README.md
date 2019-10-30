@@ -107,6 +107,8 @@ The purpose of it is to help you to have the working Rust Tonic code and start y
 
 If you want the result first, visit [Tonic CRUD Example by Steadylearner] set up database with **user.sql** in it and use **$cargo run --release** to start the project in your machine.
 
+[You can also read this at Steadylearner](https://www.steadylearner.com/blog/read/How-to-use-gRPC-with-Rust-Tonic-and-Postgresql-database)
+
 <br />
 
 <h2 class="red-white">[Prerequisite]</h2>

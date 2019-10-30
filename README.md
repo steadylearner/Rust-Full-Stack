@@ -68,6 +68,8 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 [How to use gRPC with Rust Tonic and Postgresql database]: https://www.steadylearner.com/blog/read/How-to-use-gRPC-with-Rust-Tonic-and-Postgresql-database
 
+[How to use Python Scrapy to scrap This Week in Rust]: https://www.steadylearner.com/blog/read/How-to-use-Python-Scrapy-to-scrap-This-Week-in-Rust
+
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
 <!-- / -->
@@ -153,6 +155,10 @@ Then,
 2. [How to build a sitemap.xml with dynamic contents in Rust]
 3. [How to build a sitemap for images with Rust]
 4. [How to automate building sitemaps with Rust]
+
+## Web Scrapers
+
+1. [How to use Python Scrapy to scrap This Week in Rust]
 
 ## What you will learn with it
 
