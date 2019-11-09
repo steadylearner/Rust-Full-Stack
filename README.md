@@ -68,7 +68,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 [How to use gRPC with Rust Tonic and Postgresql database]: https://www.steadylearner.com/blog/read/How-to-use-gRPC-with-Rust-Tonic-and-Postgresql-database
 
-[How to use Python Scrapy to scrap This Week in Rust]: https://www.steadylearner.com/blog/read/How-to-use-Python-Scrapy-to-scrap-This-Week-in-Rust
+[How to use Python Scrapy to scrap This Week in Rust]: https://www.steadylearner.com/blog/read/How-to-use-Python-Scrapy-to-crawl-static-websites
 
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
