@@ -69,6 +69,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 [How to use gRPC with Rust Tonic and Postgresql database]: https://www.steadylearner.com/blog/read/How-to-use-gRPC-with-Rust-Tonic-and-Postgresql-database
 
 [How to use Python Scrapy to scrap This Week in Rust]: https://www.steadylearner.com/blog/read/How-to-use-Python-Scrapy-to-crawl-static-websites
+[How to use React with Rust Actix]: https://www.steadylearner.com/blog/read/How-to-use-React-with-Rust-Actix
 
 [donation]: (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU)
 
@@ -134,6 +135,7 @@ Then,
 4. [How to serve static files with Rust]
 5. [How to use a single page app with Rust]
 6. [How to use gRPC with Rust Tonic and Postgresql database]
+7. [How to use React with Rust Actix]
 
 ## Full Stack
 
