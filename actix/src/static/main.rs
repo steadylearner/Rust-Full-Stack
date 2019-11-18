@@ -7,7 +7,7 @@ use actix_web::{App, HttpServer, middleware};
 
 use console::Style;
 
-const PORT: &str = "127.0.0.1:8088";
+const PORT: &str = "0.0.0.0:8000";
 
 pub fn main() {
     std::env::set_var("RUST_LOG", "actix_web=info");

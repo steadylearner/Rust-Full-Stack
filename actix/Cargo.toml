@@ -33,10 +33,16 @@ path = "src/protobuf/main.rs"
 [[bin]]
 name = "database"
 path = "src/database/main.rs"
+[[bin]]
+name = "session"
+path = "src/session/main.rs"
 
 [dependencies]
 actix-web = "1.0.8"
 actix-files = "0.1.6"
+actix-identity = "0.1.0"
+actix-session = "0.2.0"
+actix-rt = "0.2.5"
 futures = "0.1.29"
 bytes = "0.4.12"
 env_logger = "0.7.1"
