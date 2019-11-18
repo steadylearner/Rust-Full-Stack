@@ -10,3 +10,6 @@ actix_full_stack_reference/
 
 # gRPC client
 bloomrpc/
+
+# From session-file-store
+session/
