@@ -1,0 +1,34 @@
+<html>
+<head>
+<title>Sign up</title>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/validateForm.js') }}">
+</script>
+</head>
+<body>
+<!-- https://www.google.com/search?q=what+happen+when+onsubmit+value+is+false -->
+<form action="/register" method="POST" onsubmit="return validate()">
+    <p>Email: <input type="email" name="email"></p>
+
+    <P>Password: <input type="password" name="password" id="password" required></p>
+
+    <p>Confirm Password: <input type="password" name="cpassword" id="cpassword"></p>
+
+    <p>First Name: <input type="text" name="firstName"></p>
+    <p>Last Name: <input type="text" name="lastName"></p>
+    <p>Address Line 1: <input type="text" name="address1"></p>
+    <p>Address Line 2: <input type="text" name="address2"></p>
+    <p>Zipcode: <input type="text" name="zipcode"></p>
+    <p>City: <input type="text" name="city"></p>
+    <p>State: <input type="text" name="state"></p>
+    <p>Country: <input type="text" name="country"></p>
+    <p>Phone Number: <input type="text" name="phone"></p>
+
+    <p><input type="submit" value="Register"></p>
+
+    <a href="/loginForm">Login here</a>
+</form>
+</body>
+</html>
+
+
+
