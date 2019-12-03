@@ -1,0 +1,12 @@
+[package]
+authors = ["htttps://www.steadylearner.com"]
+name = "fullstack_chat_app_server_by_steadylearner"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+ws = "0.8.1"
+rocket = "0.4.1"
+serde_derive = "1.0.94"
+serde = "1.0.94"
+serde_json = "1.0.40"

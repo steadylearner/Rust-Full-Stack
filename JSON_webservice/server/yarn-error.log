@@ -1,0 +1,36 @@
+Arguments: 
+  /home/steadylearner/.nvm/versions/node/v12.3.1/bin/node /usr/share/yarn/bin/yarn.js add rocket_cors
+
+PATH: 
+  /home/steadylearner/.nvm/versions/node/v12.3.1/bin:/home/steadylearner/.cargo/bin:/home/steadylearner/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.3.1
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/rocket_cors: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66830:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:140464:22)
+      at Request.emit (events.js:200:13)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:141436:10)
+      at Request.emit (events.js:200:13)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:141358:12)
+      at Object.onceWrapper (events.js:288:20)
+      at IncomingMessage.emit (events.js:205:15)
+      at endReadableNT (_stream_readable.js:1137:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:9)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

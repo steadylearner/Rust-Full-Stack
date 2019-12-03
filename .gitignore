@@ -1,0 +1,41 @@
+# Refer this https://medium.com/@haydar_ai/learning-how-to-git-ignoring-files-and-folders-using-gitignore-177556afdbe3
+target/
+node_modules/
+release/
+
+# .env for api keys and configuration variables(use / for only for folder, don't use somewhat .env/)
+.env
+
+flask/
+actix_full_stack_reference/
+
+# gRPC client
+bloomrpc/
+
+# From session-file-store
+session/
+
+# profile images at auth/
+profile/*.png
+
+# Should use version control systems instead.
+before/
+
+# Refer folder is just to help when the author have doubts
+/src/refer/
+
+# Files with Cypress credentials
+cypress.json
+cypress.video.json
+cypress/
+record-video.bash
+
+# You can make it easily
+dist/
+
+# AWS
+ecs-params.yml
+
+# Heavy Python venv files and from dependencies.
+python/
+admin/

@@ -1,0 +1,11 @@
+.hover:hover {
+    opacity: 0.7;
+}
+
+.hover--blue:hover {
+    color: #08c;
+}
+
+.hover--red-white:hover {
+    color: #ff7676;
+}

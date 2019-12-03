@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include('partials/head') %>
+        <title>Edit your profile <%= profile.fullname %></title>
+        <link rel="stylesheet" href="/css/editProfile.css">
+    </head>
+    <body>
+        <%- include('partials/topnav') %>
+        <section class="theme-black-white" >
+            <section class="editProfile flex flex-flow-column margin-center-auto font-normal theme-white">
+                <section class="flex flex-flow-column" >
+                    <section class="flex border-bottom-white-black" >
+                        <h1 class="editProfile__title bold font-two width-percent x-margin" >Public Profile</h1>
+                        <form action="/profile/delete/<%= profile.username %>" method="post" >
+                            <button
+                                class="x-button font-two hover hover--red-white cursor-pointer transition-half"
+                                type="submit"
+                                title="Use this to delete the account."
+                            >
+                                <i class="fas fa-eraser" ></i>
+                            </button>
+                        </form>
+                    </section>
+                    <section class="flex flex-flow-row" >
+                        <form method="post" action="/profile/edit" >
+                            <section class="flex flex-flow-column margin-right-auto" >
+                                <!-- You should use id in input when you want to use label with it. -->
+                                <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label -->
+                                <label class="bold opacity" for="username">Username: </label>
+                                <input type="text" name="username" id="username" value="<%= profile.username %>" placeholder="Steadylearner" />
+                                <label class="bold opacity" for="email">Email: </label>
+                                <input type="email" name="email" id="email" value="<%= profile.email %>" placeholder="steady@learner.com" />
+                                <!--  -->
+                                <label class="bold opacity" for="first_name">First Name: </label>
+                                <input type="text" name="first_name" id="first_name" value="<%= profile.first_name %>" placeholder="John" />
+                                <label class="bold opacity" for="last_name">Last Name: </label>
+                                <!--  -->
+                                <input type="text" name="last_name" id="last_name" value="<%= profile.last_name %>" placeholder="Doe" />
+                                <label class="bold opacity" for="website">Website: </label>
+                                <!--  -->
+                                <input type="url" name="website" id="website" value="<%= profile.website %>" placeholder="https://www.steadylearner.com" />
+                                <label class="bold opacity" for="profile_description">Profile Description: </label>
+                                <textarea
+                                    name="profile_description"
+                                    id="profile_description"
+                                    rows="5"
+                                    placeholder="Edit your profile..."
+                                ><%= profile.profile_description %></textarea>
+                                <section class="flex" >
+                                    <p class="margin-right-one">
+                                        <button
+                                            class="button--edit-profile x-outline hover cursor-pointer x-border-style border-radius-half"
+                                            type="submit"
+                                        >
+                                            Update Profile
+                                        </button>
+                                    </p>
+                                    <p>
+                                        <a class="x-text-decoration" href="/profile/<%= profile.username %>" >
+                                            <button
+                                                type="button"
+                                                class="button--view-profile x-border-style border-radius-half bold blue"
+                                            >
+                                                View Profile
+                                            </button>
+                                        </a>
+                                    </p>
+                                    <p class="margin-left-auto" >
+                                        <a class="x-text-decoration" href="/password/edit/<%= profile.username %>" >
+                                            <button
+                                                type="button"
+                                                class="button--edit-password hover--red-white x-border-style border-radius-half bold black"
+                                            >
+                                                Edit Password
+                                            </button>
+                                        </a>
+                                    </p>
+                                </section>
+                            </section>
+                        </form>
+                        <form class="margin-left-two margin-top-half" method="post" enctype="multipart/form-data" action="/profile/image/update">
+                            <label
+                                class="editProfile__image-wrapper"
+                                for="profileImage"
+                            >
+                                <input class="x-default-file-input" type="file" name="profileImage" id="profileImage" >
+                                <p class="bold font-one-and-a-half" >Profile Picture</p>
+                                <img
+                                    class="editProfile__image cursor-pointer hover transition border-radius-circle"
+                                    src="/images/profile/<%= profile.username %>.png"
+                                />
+                            </label>
+                            <section class="flex">
+                                <p class="margin-right-one">
+                                    <button
+                                        class="button--edit-profile-image x-outline hover cursor-pointer x-border-style border-radius-half"
+                                        type="submit"
+                                        title="Use this to update your profile image."
+                                    >
+                                        Update
+                                    </button>
+                                </p>
+                                <p>
+                                    <button
+                                        class="button--delete-profile-image x-outline hover cursor-pointer x-border-style border-radius-half"
+                                        type="button"
+                                        title="Use this to delete your profile image."
+                                    >
+                                        Delete
+                                    </button>
+                                </p>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="/js/editProfile.js"></script>
+</html>
+

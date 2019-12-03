@@ -1,0 +1,36 @@
+[package]
+name = "tonic-examples"
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+autobins = false
+
+[[bin]]
+name = "helloworld-server"
+path = "src/helloworld/server.rs"
+[[bin]]
+name = "helloworld-client"
+path = "src/helloworld/client.rs"
+
+[[bin]]
+name = "user-server"
+path = "src/user/server.rs"
+[[bin]]
+name = "user-client"
+path = "src/user/client.rs"
+
+[dependencies]
+tonic = { version = "0.1.0-alpha.1", features = ["rustls"] }
+bytes = "0.4"
+prost = "0.5"
+prost-derive = "0.5"
+tokio = "=0.2.0-alpha.6"
+futures-preview = { version = "=0.3.0-alpha.19", default-features = false, features = ["alloc"]}
+async-stream = "0.1.2"
+http = "0.1"
+tower = "=0.3.0-alpha.2"
+
+[build-dependencies]
+tonic-build = "0.1.0-alpha.3"
+
+

@@ -1,0 +1,19 @@
+.background--cover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.background--percent {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.background--no-repeat {
+    background-repeat: no-repeat;
+}
+
+.background--position-center {
+    background-position: center;
+}
