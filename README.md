@@ -103,6 +103,7 @@ Then, use one of these commands.
 3. **$cd JSON_Webservice && $./run-local.sh** for YouTube vlog example with JSON Webservice.
 4. **$cd yew/rust_blog && $./install.sh && yarn watch:rs** for a Rust blog example.
 5. **$cd React_Rust** to test a React app with **Rocket**, **Actix**, Express, Restify, Django, Golang, Vibora etc.
+6. **$cd sitemap** if you want to build sitemap automatically with a database.
 
 You can **like** and share it with others. 
 
@@ -181,7 +182,9 @@ Rust login features prototype at **auth/javascript/express**.
 
 ## Contact
 
+Send messages with them if you need a help from a full stack developer.
+
 1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) 
-2. [Twitter](https://twitter.com/steadylearner_p).
+2. [Twitter](https://twitter.com/steadylearner_p)
 
 
