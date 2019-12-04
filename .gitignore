@@ -3,7 +3,7 @@ target/
 node_modules/
 release/
 
-# .env for api keys and configuration variables(use / for only for folder, don't use somewhat .env/)
+# .env for api keys and configuration variables
 .env
 
 flask/
@@ -21,8 +21,8 @@ profile/*.png
 # Should use version control systems instead.
 before/
 
-# Refer folder is just to help when the author have doubts
-/src/refer/
+# refer folders are just to help when the author
+refer/
 
 # Files with Cypress credentials
 cypress.json

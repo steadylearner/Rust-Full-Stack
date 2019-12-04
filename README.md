@@ -102,13 +102,9 @@ Then, use one of these commands.
 2. **$cd static_files && $cargo run --release** for JavaScript frontend and Rust server side web app.
 3. **$cd JSON_Webservice && $./run-local.sh** for YouTube vlog example with JSON Webservice.
 4. **$cd yew/rust_blog && $./install.sh && yarn watch:rs** for a Rust blog example.
-5. **$cd React** to test a React app with Rocket and Actix.
+5. **$cd React_Rust** to test a React app with **Rocket**, **Actix**, Express, Restify, Django, Golang, Vibora etc.
 
-You can **like** and share it with others. Contact me with [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) or [Twitter](https://twitter.com/steadylearner_p).
-
-## CWD
-
-**auth/javascript/express**
+You can **like** and share it with others. 
 
 ## Install and Deploy Rust
 
@@ -178,5 +174,14 @@ You can **like** and share it with others. Contact me with [LinkedIn](https://ww
 6. How to modulize your Rust project
 7. How to deploy it
 8. How to write sitemaps and metatags for it
+
+## CWD
+
+Rust login features prototype at **auth/javascript/express**.
+
+## Contact
+
+1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) 
+2. [Twitter](https://twitter.com/steadylearner_p).
 
 

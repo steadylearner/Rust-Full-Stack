@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/steadylearner/React-Rust.svg?branch=master)](https://travis-ci.org/steadylearner/React-Rust)
-
 [How to use React with Rust Actix]: https://www.steadylearner.com/blog/read/How-to-use-React-with-Rust-Actix
 [How to use Docker commands]: https://www.steadylearner.com/blog/read/How-to-use-Docker-commands
 [How to use Docker with Rust]: https://www.steadylearner.com/blog/read/How-to-use-Docker-with-Rust
