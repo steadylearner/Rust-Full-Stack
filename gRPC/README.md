@@ -51,7 +51,7 @@
 [Rust Postgresql query]: https://docs.rs/postgres/0.15.2/postgres/struct.Connection.html#method.query
 [Rust Postgresql execute]: https://docs.rs/postgres/0.15.2/postgres/struct.Connection.html#method.execute
 [Tonic CRUD Example by Steadylearner]: https://github.com/steadylearner/Rust-Full-Stack/blob/master/grpc/user/proto/user/user.proto
-[Official Tonic Guide]: https://github.com/hyperium/tonic/blob/master/tonic-examples/helloworld-tutorial.md
+[Official Tonic Guide]: https://github.com/hyperium/tonic/blob/master/examples/helloworld-tutorial.md
 [gRPC Client]: https://github.com/uw-labs/bloomrpc
 
 [How to install Postgresql]: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04
