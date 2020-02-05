@@ -94,12 +94,12 @@ Test codes here or read [the Rust blog posts at Steadylearner][Steadylearner Rus
 
 ## The reason to use this repository
 
-**Everything is simple with examples but it is not easy to make it with Rust.**
-
 1. Rust is fast and strongly typed language with many benefits. 
 2. But, it takes long time to compile. You can't be sure your code will satisfy the compiler or not.
 3. So use the examples here as your starting points.
 4. There are many Rust web development relevant examples here. Find what you want.
+
+**Everything is simple with examples but it is not easy to make them with Rust.**
 
 The auhtor likes to challenge with a new technology and share code, but, currently spend less time with Rust to get a developer job. 
 
