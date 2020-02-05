@@ -251,7 +251,7 @@ I am not a native speaker so there will be grammatical or type errors. You can h
 
 So that he can make and share more exampels and blog posts with a better machine and internet.
 
-## The current status of this repository
+## The current state of this repository
 
 The auhtor will spend time with Golang while writing blog posts about Rust also.
 
