@@ -251,4 +251,4 @@ So that he can make and share more exampels and blog posts with a better machine
 
 The auhtor will spend time with Golang while writing blog posts about Rust also.
 
-The Rust examples for libp2 and crpytocurrency would be included if the author have a reason to spend time for them.
+The Rust examples for libp2p and crpytocurrency would be included if the author have a reason to spend time for them.
