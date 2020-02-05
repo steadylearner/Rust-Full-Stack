@@ -1,0 +1,11 @@
+[package]
+name = "state"
+version = "0.1.0"
+authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
+workspace = ".."
+edition = "2018"
+
+[dependencies]
+actix-web = "1.0.0"
+futures = "0.1.25"
+env_logger = "0.6"

@@ -1,0 +1,39 @@
+/* [Height] */
+
+.max-height-percent {
+    max-height: 100%;
+}
+
+.min-height-percent {
+    min-height: 100%;
+}
+
+.min-height-vh {
+    min-height: 100vh;
+}
+
+.height-percent {
+    height: 100%;
+}
+
+.height-vh {
+    height: 100vh;
+}
+
+/* [Width] */
+
+.max-width-percent {
+    max-width: 100%;
+}
+
+.min-width-percent {
+    min-width: 100%;
+}
+
+.width-vw {
+    width: 100vw;
+}
+
+.width-percent {
+    width: 100%;
+}

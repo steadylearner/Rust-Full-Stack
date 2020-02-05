@@ -1,0 +1,13 @@
+{
+  "name": "restify",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "restify": "^8.4.0"
+  },
+  "scripts": {
+    "serve": "node index.js"
+  }
+}

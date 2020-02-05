@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "@nodeutils/defaults-deep": "^1.1.0",
+    "libp2p": "^0.26.2",
+    "libp2p-mplex": "^0.8.5",
+    "libp2p-secio": "^0.11.1",
+    "libp2p-tcp": "^0.13.2",
+    "pull-pushable": "^2.2.0",
+    "pull-stream": "^3.6.14"
+  },
+  "scripts": {
+    "fix": "eslint . --fix",
+    "moon": "node src/peers/moon/index.js",
+    "earth": "node src/peers/earth/index.js"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-node": "^11.0.0",
+    "node-emoji": "^1.10.0"
+  }
+}

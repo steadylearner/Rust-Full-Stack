@@ -1,0 +1,57 @@
+# Dependencies and results
+target/
+node_modules/
+release/
+
+# .env for api keys and configuration variables
+.env
+
+flask/
+actix_full_stack_reference/
+
+config/
+
+# gRPC client
+bloomrpc/
+
+# From session-file-store
+session/
+
+# profile images at auth/
+profile/*.png
+
+# Should use version control systems instead.
+before/
+
+# refer folders are just to help when the author
+refer/
+
+# Files with Cypress credentials
+cypress.json
+cypress.video.json
+cypress/
+record-video.bash
+
+# You can make it easily
+dist/
+
+# AWS
+ecs-params.yml
+
+# Heavy Python venv files and from dependencies.
+python/
+admin/
+
+# Files for email
+cv.pdf
+resume.html
+
+# Cloned repository
+ta-rs/
+
+# Where I test a language feature
+lang/
+
+# .swp files from vim
+
+*.swp

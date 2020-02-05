@@ -1,0 +1,183 @@
+// Use it to make a layout.
+// https://getbootstrap.com/docs/4.4/layout/grid/
+
+$white: #ffffff;
+$black: #121212;
+$whiter-black: #efefef;
+
+$primary-color: #486cec;
+$secondray-color: #dee4ef;
+
+$link: 0.2rem solid $primary-color;
+
+.profile-wrapper {
+    background-color: #f4f8f9;
+}
+
+.profile {
+    // padding: 2rem;
+    max-width: 96.4rem;
+    display: flex;
+    flex-flow: column;
+    background-color: $white;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.profile__auth {
+    flex: 2 2 auto;
+    padding: 2rem 2rem 1rem 0;
+
+    .logout {
+        color: $primary-color;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1rem;
+        text-shadow: 0.1rem 0.1rem #c3d9fa;
+        padding: 0.5rem 2rem;
+        border: 0.1rem solid $primary-color;
+        border-radius: 0.5rem;
+    }
+}
+
+.profile__cover {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+    .button--upload {
+        color: #929aa4;
+        border-style: none;
+        border: 0.1rem solid $secondray-color;
+        border-radius: 0.5rem;
+        background: none;
+        padding: 0.5rem 2rem;
+        font-weight: bold;
+        font-size: 1.2rem;
+        // 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.profile__user {
+    color: #727a86;
+    font-size: 1.2rem;
+    margin-left: 19rem;
+
+    .user__name {
+        padding: 0.5rem;
+        font-size: 1.6rem;
+        color: $black;
+        opacity: 0.7;
+    }
+
+    .user__location {
+        font-size: 2rem;
+        margin-right: 0.5rem;
+    }
+
+    .user__phone {
+        font-size: 1.6rem;
+        margin-left: -1rem;
+        margin-right: 0.5rem;
+    }
+}
+
+.profile__review {
+    color: #727a86;
+    display: flex;
+    align-items: start;
+
+    .review__number {
+        font-size: 1.2rem;
+    }
+
+    .review__letters  {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+.profile__image-wrapper {
+    padding-bottom: 2.5rem;
+    padding-left: 2.5rem;
+
+    position: absolute;
+    top: 6.5rem;
+    left: 19rem;
+}
+
+.profile__image {
+    max-width: 15rem;
+    height: 15rem;
+    box-shadow: 0 0 2rem $whiter-black;
+}
+
+.profile__nav-wrapper {
+    box-shadow: 0.1rem 0.1rem 0.5rem 0.1rem $whiter-black;
+
+    > * {
+        height: 5rem;
+        line-height: 5rem;
+    }
+
+    .profile__nav {
+        margin-left: 19.5rem;
+    }
+
+    li {
+        margin-right: 1.5rem;
+        font-size: 1.25rem;
+        color: #6f6367;
+        font-weight: bold;
+        opacity: 0.7;
+    }
+
+    .followers {
+        display: flex;
+        align-items: center;
+    }
+
+    .followers__plus {
+        color:  #a4adb4;
+    }
+
+    .followers__number {
+        font-size: 1.2rem;
+    }
+
+    .followers__letters  {
+        font-size: 1rem;
+        color: #babfc6;
+        font-weight: bold;
+    }
+}
+
+.link--active {
+    border-bottom: $link;
+}
+
+.profile__detail-wrapper {
+    margin-top: 5rem;
+    max-width: 96.4rem;
+    display: flex;
+    flex-flow: column;
+    background-color: $white;
+    margin: 0 auto;
+    min-height: 50vh;
+}
+
+.profile__detail {
+    padding: 2.5rem;
+    color: #929aa4;
+}
+
+// .profile_nav {
+
+// }

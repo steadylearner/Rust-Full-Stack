@@ -1,0 +1,98 @@
+.login {
+    /* Refer to css/partials/topnav */
+    height: calc(100vh - 5.8rem);
+}
+
+/* Measuring the result file, assume that flex will be 9:3 */
+
+/* Left will be disply none in responsive mode */
+
+.login__left {
+    flex: 9;
+    max-height: 100%;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient */
+    background: linear-gradient(#8f2f61, #fff);
+    /* background: linear-gradient(#40c8f4, #2179b5); */
+}
+
+/* Should give an opacity to the image and background color for the wrapper element */
+
+.login__image {
+    background-image: url(/images/animal-example.jpg);
+    opacity: 0.5;
+}
+
+.login__main {
+    flex: 3;
+    max-height: 100%;
+    padding: 2rem 5rem;
+}
+
+.login__title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #121212;
+    font-weight: normal;
+}
+
+input {
+    padding: 0.5rem;
+    display: block;
+    border-radius: 0.1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    color: #555555;
+    /* Remove default bolder CSS */
+    border: none;
+    border-bottom: 0.2rem solid #efefef;
+}
+
+/* https://stackoverflow.com/questions/2943548/how-to-reset-remove-chromes-input-highlighting-focus-border */
+
+/* 
+	outline-style: none;
+	box-shadow: none; 
+*/
+
+input:focus {
+    border-color: #555555;
+    outline: none;
+    outline-style: none;
+    box-shadow: none;
+}
+
+input.error {
+    border-color: red;
+    outline-style: none;
+    box-shadow: none;
+}
+
+.input-feedback {
+    color: red;
+    margin-top: 0.25rem;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    text-align: start;
+    margin-bottom: 0.5rem;
+    font-size: 1.6rem;
+    color: #999999;
+}
+
+.button--login {
+    margin: 1rem 0.5rem 2rem 0.5rem;
+    padding: 1rem 5rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.15);
+    font-size: 1.7rem;
+    font-weight: 500;
+    -webkit-appearance: none;
+    color: #ffffff;
+    background: #40c8f4;
+}
+
+.button--login:hover {
+    opacity: 0.7;
+}

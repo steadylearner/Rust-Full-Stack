@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <%- include('partials/head') %>
+        <title><%= profile.username %></title>
+        <link rel="stylesheet" href="/css/profile.css">
+    </head>
+    <body>
+        <%- include('partials/topnav') %>
+        <section class="theme-black-white" >
+            <section class="profile flex flex-flow-row margin-center-auto font-normal theme-white">
+                <section class="profile__detail flex-flow-column" >
+                    <section>
+                        <a
+                            class="flex margin-bottom-one"
+                            href="/profile/edit/<%= profile.username %>"
+                            title="Edit your profile image."
+                        >
+                            <img
+                                class="detail__image cursor-pointer hover transition width-percent margin-center-auto"
+                                src="/images/profile/<%= profile.username %>.png"
+                            />
+                        </a>
+                    </section>
+                    <section class="flex flex-flow-column margin-bottom-one" >
+                        <span class="font-two bold" ><%= profile.fullname %></span>
+                        <span class="font-one-and-a-half opacity" >@<%= profile.username %></span>
+                        <p class="font-one-and-a-half" >This is user description to test login project.</p>
+                        <span class="font-one-and-a-half hover hover--blue cursor-pointer transition-half"><%= profile.website %></span>
+                        <span>
+                            <span class="bold">©</span> Joined <%= profile.created_at %>
+                        </span>
+                    </section>
+                    <a
+                        class="bold x-text-decoration"
+                        href="/profile/edit/<%= profile.username %>"
+                        title="Edit your profile."
+                    >
+                        <button class="button--edit-profile" >
+                            Edit Profile
+                        </button>
+                    </a>
+                </section>
+                <section class="profile__main flex-flow-column" >
+                    <ul class="main__list x-ul flex flex-flow-row" >
+                        <li>
+                            <a>
+                                <span class="bold font-two" >Blog</span>
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a>
+                                <span class="bold font-two" >Code</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </section>
+
+                <!-- <a href="/account/profile/view">View Profile</a><br> -->
+                <!-- <a href="/account/profile/changePassword">Change password</a> -->
+            </section>
+        </section>
+    </body>
+</html>

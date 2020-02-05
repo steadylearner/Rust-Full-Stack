@@ -1,0 +1,82 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true,
+        "jest/globals": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:node/recommended",
+        "plugin:jest/recommended"
+    ],
+    "plugins": [
+        "jest"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "quotes": [
+            2,
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "node/exports-style": [
+            "error",
+            "module.exports"
+        ],
+        "node/file-extension-in-import": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/buffer": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/console": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/process": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/url-search-params": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/url": [
+            "error",
+            "always"
+        ],
+        "node/no-unpublished-require": [
+            "error",
+            {
+                "allowModules": [
+                    "tape",
+                    "supertest",
+                    "faker"
+                ]
+            }
+        ],
+        "node/prefer-promises/dns": "error",
+        "node/prefer-promises/fs": "error",
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error"
+    }
+}

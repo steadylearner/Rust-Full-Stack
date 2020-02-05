@@ -1,0 +1,49 @@
+<html>
+	<head>
+        <%- include('partials/head') %>
+        <title>Login</title>
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
+	<body>
+		<%- include('partials/topnav') %>
+		<section class="login flex animated fadeInLeftBig" >
+			<section class="login__left" >
+				<section
+					class="
+						login__image
+						width-percent
+						height-percent
+						background--percent
+						hover cursor-pointer transition-half
+					"
+				>
+				</section>
+			</section>
+			<section class="login__main">
+				<form class="font-normal flex flex-flow-column" id="loginForm" action="#" >
+					<section className="flex" >
+						<h1 className="login__title bold" >
+							©ode
+						</h1>
+					</section>
+					<label for="email">Email: </label>
+                    <input type="email" name="email" id="email" />
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password -->
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id="password" minlength="5" id="email" required />
+					<button
+						class="button--login x-outline hover cursor-pointer x-border-style"
+						type="submit"
+					>
+						Submit
+					</button>
+					<% if (error) { %>
+						<h2 class="x-display" ><%= error %></h2>
+					<% } %>
+				</form>
+			</section>
+		</section>
+	</body>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js" integrity="sha256-S1J4GVHHDMiirir9qsXWc8ZWw74PHHafpsHp5PXtjTs=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/js/login.js"></script>
+</html>
