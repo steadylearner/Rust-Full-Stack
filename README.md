@@ -103,7 +103,9 @@ The auhtor likes to challenge with a new technology and share code, but, current
 
 You can make an issue if you want him to spend time to make more examples to help other Rust developers.
 
-You can help him to have better equipment and better internet connection with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU). 
+**You can invite the author to work with you so that he can work with better development environment.** 
+
+You can also help him to have better equipment and better internet connection with [donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU).
 
 ## Start
 
@@ -243,7 +245,7 @@ I am not a native speaker so there will be grammatical or type errors. You can h
 
 **You can suggest your code instead of deprecated ones, imporve existing codes or ask the author to include your projects.**
 
-**You can also help the author get his first developer job if you liked his code.** 
+**You can also invite the author to work with you so that he can work with better development environment.** 
 
 So that he can make and share more exampels and blog posts with a better machine and internet.
 

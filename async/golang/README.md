@@ -12,10 +12,13 @@
 
 6.[Golang Examples](https://github.com/SimonWaldherr/golang-examples)
 
+7.[Goworker](https://github.com/benmanns/goworker)
+
 ## Read
 
 * [Seven stages of becoming a Golang programmer](https://opensource.com/article/17/9/seven-stages-becoming-go-programmer)
 * [The behavior of channles](https://www.ardanlabs.com/blog/2017/10/the-behavior-of-channels.html) 
+* [Network Programming with Golang](https://jan.newmarch.name/go/)
 
 ## Blueprint
 
