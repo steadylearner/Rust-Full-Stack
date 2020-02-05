@@ -8,11 +8,9 @@
 
 4.[Golang documenation](https://golang.org/doc/)
 
-5.[Go Learn](https://github.com/skippednote/Go-Learn)
+5.[Golang Examples](https://github.com/SimonWaldherr/golang-examples)
 
-6.[Golang Examples](https://github.com/SimonWaldherr/golang-examples)
-
-7.[Goworker](https://github.com/benmanns/goworker)
+6.[Goworker](https://github.com/benmanns/goworker)
 
 ## Read
 

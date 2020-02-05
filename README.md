@@ -94,6 +94,8 @@ Test codes here or read [the Rust blog posts at Steadylearner][Steadylearner Rus
 
 ## The reason to use this repository
 
+**Everything is simple with examples but it is not easy to make it with Rust.**
+
 1. Rust is fast and strongly typed language with many benefits. 
 2. But, it takes long time to compile. You can't be sure your code will satisfy the compiler or not.
 3. So use the examples here as your starting points.
@@ -253,4 +255,4 @@ So that he can make and share more exampels and blog posts with a better machine
 
 The auhtor will spend time with Golang while writing blog posts about Rust also.
 
-The Rust examples for libp2p and crpytocurrency would be included if the author have a reason to spend time for them.
+The Rust examples for libp2p and cryptocurrency would be included if the author have a reason to spend time for them.
