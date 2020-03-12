@@ -1,0 +1,16 @@
+[package]
+name = 'static_files_react_tera_with_rust'
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+
+[dependencies]
+rocket = "0.4.2"
+serde = "1.0"
+serde_derive = "1.0"
+serde_json = "1.0"
+
+[dependencies.rocket_contrib]
+version = "0.4.2"
+default-features = false
+features = ["tera_templates"]

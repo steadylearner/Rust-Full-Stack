@@ -1,0 +1,34 @@
+{
+  "name": "fx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "rollup -c",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulhoughton/fx.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/paulhoughton/fx/issues"
+  },
+  "homepage": "https://github.com/paulhoughton/fx#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "node-fetch": "^1.6.0",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "@types/react": "^0.14.41",
+    "@types/react-dom": "^0.14.18",
+    "@types/socket.io-client": "^1.4.27",
+    "rollup": "^0.36.3",
+    "rollup-plugin-typescript": "^0.8.1",
+    "typescript": "^2.0.3"
+  }
+}

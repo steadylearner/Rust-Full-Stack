@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "has-emoji": "^1.1.0",
+    "highlight.js": "^9.15.6",
+    "node-emoji": "^1.10.0"
+  },
+  "author": "www.steadylearner.com"
+}

@@ -1,0 +1,64 @@
+<html>
+	<head>
+        <%- include('partials/head') %>
+        <title>Sign Up</title>
+		<link rel="stylesheet" href="/css/register.css">
+    </head>
+	<body>
+		<%- include('partials/topnav') %>
+		<section class="sign-up flex animated fadeInLeftBig" >
+			<section class="sign-up__left" >
+				<section
+					class="
+						sign-up__image
+						width-percent
+						height-percent
+						background--percent
+						hover cursor-pointer transition-half
+					"
+				>
+				</section>
+			</section>
+			<section class="sign-up__main">
+				<form
+					class="font-normal flex flex-flow-column"
+					action="/register"
+					method="POST"
+					onsubmit="return validateRegister()"
+				>
+					<section className="flex" >
+						<h1 className="sign-up__title bold" >
+							©ode
+						</h1>
+					</section>
+					<!-- <label for="username">Username: </label>
+					<input type="text" name="username" id="username" placeholder="John Doe" /> -->
+					<label for="username">Username: </label>
+					<input type="text" name="username" id="username" placeholder="Steadylearner" />
+                    <label for="email">Email: </label>
+					<input type="email" name="email" id="email" placeholder="steady@learner.com" />
+					<!-- If you want to imporve this, read the documentation for them. -->
+					<!-- Otherwise, use frontend frameworks such as React etc. -->
+                    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password -->
+                    <label for="password">Password: </label>
+                    <input type="password" name="password" id="password" minlength="5" required />
+                    <label for="cpassword">Confirm Password: </label>
+                    <input type="password" name="cpassword" id="cpassword" minlength="5" />
+                    <button
+						class="button--register x-outline hover cursor-pointer x-border-style"
+						type="submit"
+					>
+						Submit
+					</button>
+					<% if (error) { %>
+						<h2 class="x-display" ><%= error %></h2>
+					<% } %>
+				</form>
+			</section>
+		</section>
+	</body>
+	<script type="text/javascript" src="/js/register.js"></script>
+</html>
+
+
+

@@ -1,0 +1,26 @@
+{% extends "main" %} 
+
+{% block title %} [404] Not Found {% endblock title %}
+
+{% block css %}
+  <link rel="stylesheet" href="/static/css/not-found.css">
+{% endblock css %}
+
+{% block main %}
+  <section class="not-found">
+    {# Put title here  #}
+    <h1 class="not-found--title red-white" title={{path}} >No contents for {{ 
+      path | truncate(length=25) | default(value="undefined")  
+    }}</h1>
+    <h2 class="not-found--content" title="Redriect to /">
+      <a class="blue hover no-text-decoration" href="/" >
+        Please, 
+        <i class="fas fa-mouse-pointer"></i>
+        this to back to the
+        <i class="fas fa-home" ></i>
+        page
+      </a>
+    </h2>
+  </section>
+{% endblock main %}
+

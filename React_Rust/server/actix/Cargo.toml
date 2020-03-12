@@ -1,0 +1,18 @@
+[package]
+name = "react_actix"
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+
+[dependencies]
+actix-web = "1.0.8"
+actix-files = "0.1.6"
+futures = "0.1.29"
+bytes = "0.4.12"
+env_logger = "0.7.1"
+serde = "1.0.101"
+serde_json = "1.0.41"
+serde_derive = "1.0.101"
+json = "0.12.0"
+console = "0.9.0"
+

@@ -1,0 +1,18 @@
+body {
+  background-color: #eee;
+  font-size: 24pt;
+}
+table {
+  padding: 2rem;
+  border-spacing: 0.5rem 0;
+}
+td:first-child {
+  padding-right: 1rem;
+}
+footer {
+  float:right;
+  font-size:.75rem;
+}
+.changed-true {
+  background-color: #ccc;
+}

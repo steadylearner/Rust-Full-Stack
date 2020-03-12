@@ -1,0 +1,1 @@
+from .create import create_thumbnail

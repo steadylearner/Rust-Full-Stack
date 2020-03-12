@@ -1,0 +1,16 @@
+{
+  "name": "frontend-vue",
+  "version": "0.1.0",
+  "description": "webapp",
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "vue": "2.6.10"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^3.0.0",
+    "vue-template-compiler": "^2.5.21"
+  }
+}

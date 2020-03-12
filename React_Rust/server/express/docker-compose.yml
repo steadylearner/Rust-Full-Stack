@@ -1,0 +1,16 @@
+version: "3"
+services:
+  express:
+    # Test with steadylearner/express when you write post for it.  
+    image: steadylearner/express:aws
+    container_name: express
+    # Should be same to use ECS fargate option, normally it will be 80:80.
+    # You have to modify your frontend and server along with it.
+    ports:
+      - "80:80"
+    command: yarn aws
+    healthcheck:
+      test: curl --fail -s http://localhost:80 || exit 1
+      interval: 1m
+      timeout: 10s
+ 

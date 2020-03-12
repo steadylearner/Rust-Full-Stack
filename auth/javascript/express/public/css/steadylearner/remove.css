@@ -1,0 +1,58 @@
+.x-text-decoration {
+    text-decoration: none;
+}
+
+.x-list-style {
+    list-style: none;
+    list-style-type: none;
+}
+
+.x-display {
+    display: none !important;
+}
+
+.x-opacity {
+    opacity: 0;
+}
+
+.x-outline {
+    outline: none;
+}
+
+.x-overflow {
+    overflow: hidden;
+}
+
+.x-border-style {
+    border-style: none;
+}
+
+.x-margin {
+    margin: 0;
+}
+
+.x-padding {
+    padding: 0;
+}
+
+.x-ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.x-button {
+    border: 0;
+    padding: 0;
+    background: none;
+}
+
+.x-default-file-input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}

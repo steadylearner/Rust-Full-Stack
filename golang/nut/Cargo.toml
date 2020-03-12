@@ -1,0 +1,30 @@
+[package]
+name = "nut"
+version = "0.1.0"
+authors = ["Vyrtsev Mikhail <reeywhaar@gmail.com>"]
+homepage = "https://github.com/Reeywhaar/nut"
+description = "Bolt DB Port in Rust"
+edition = "2018"
+license = "MIT"
+
+[[bin]]
+name = "nut"
+
+[dependencies]
+fnv = "1.0.6"
+poolcache = "0.1.1"
+memoffset = "0.2.1"
+fs2 = "0.4.3"
+page_size = "0.4.1"
+memmap = "0.7.0"
+scopeguard = "1.0.0"
+bitflags = "1.0.4"
+either = "1.5.0"
+lock_api = "0.1.5"
+parking_lot = "0.7.1"
+clap = "2.32.0"
+hexdump = "0.1.0"
+ansi_term = "^0.11"
+
+[dev-dependencies]
+rand = "0.6.5"

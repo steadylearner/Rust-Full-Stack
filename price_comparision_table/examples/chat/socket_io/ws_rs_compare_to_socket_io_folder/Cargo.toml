@@ -1,0 +1,7 @@
+[package]
+name = "ws_rs"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+ws = "0.7.9"

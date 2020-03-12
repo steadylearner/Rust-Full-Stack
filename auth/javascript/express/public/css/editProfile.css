@@ -1,0 +1,64 @@
+.editProfile {
+    max-width: 64rem;
+    /* min-height: calc(100vh - 10rem); */
+    padding: 2rem;
+}
+
+.editProfile__title {
+    padding-bottom: 0.5rem;
+}
+
+.editProfile__image-wrapper {
+    max-height: 21rem;
+}
+
+.editProfile__image {
+    width: 16rem;
+    height: 16rem;
+}
+
+.button--edit-profile {
+    color: #fff;
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg, #34d058, #28a745 80%);
+    padding: 0.5rem 1rem;
+}
+
+.button--edit-password {
+    color: #fff;
+    padding: 0.5rem 1rem;
+    background-color: #121212;
+}
+
+.button--edit-profile-image {
+    color: #fff;
+    background-color: #08c;
+    padding: 0.5rem 1rem;
+}
+
+.button--delete-profile-image {
+    color: #fff;
+    background-color: #ff7676;
+    padding: 0.5rem 1rem;
+}
+
+.button--delete-profile-image:disabled {
+    cursor: not-allowed;
+}
+
+.button--view-profile {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: none;
+    padding: 0.5rem 1rem;
+}
+
+label {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 44rem;
+}

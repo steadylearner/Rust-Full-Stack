@@ -1,0 +1,17 @@
+[package]
+name = "multipart-example"
+version = "0.1.0"
+authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
+workspace = ".."
+edition = "2018"
+
+[[bin]]
+name = "multipart"
+path = "src/main.rs"
+
+[dependencies]
+actix-web = "1.0.0"
+actix-multipart = "0.1.1"
+
+env_logger = "0.6"
+futures = "0.1.25"

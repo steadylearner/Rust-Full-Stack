@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% block title %}<title> {{ title }} </title>{% endblock %}
+{% block content %}
+    <article class="main-width flex-column center-auto-margin">
+        <section class="flex separate" >
+            <a
+                class="no-text-decoration black hover hover-blue transition-half"
+                href="https://www.steadylearner.com/blog/read/{{ title }}"
+            >
+                <h1>
+                    {{ title }}
+                </h1>
+            </a>
+        </section>
+        <section class="markdown margin-bottom-two">
+            {{ content }}
+        </section>
+    </article>
+{% endblock %}
+
+
+
+
