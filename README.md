@@ -1,4 +1,5 @@
 <!-- Find blog posts with SELECT title,id FROM posts WHERE posts.title LIKE 'Title%'; -->
+
 <!-- 
     Reset commits to edit the documenations with these.
 
@@ -7,6 +8,10 @@
     $git commit -m "Reset commits"
     $git remote add origin git@github.com:steadylearner/Rust-Full-Stack.git
     $git push -u origin master
+-->
+
+<!--
+  $git log --stat to see the difference in each commit.
 -->
 
 <!-- Link -->

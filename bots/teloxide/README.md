@@ -13,3 +13,7 @@ $find . -type f -print0 | xargs -0 sed -i 's/teleoxide/teloxide/g'
 $grep -R "teleoxide" . // Should return empty result.
 $grep -R "teloxide" 
 ```
+
+## How to handle error messages
+
+Don't care for the number and refer to [ApiErrorKind](https://docs.rs/teloxide/0.1.0/teloxide/enum.ApiErrorKind.html)
