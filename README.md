@@ -266,7 +266,7 @@ You can find microservices examples built with **Warp**, **Tonic**, **Postgresql
 
 ## Bots
 
-[![Rust Telegram bot](https://github.com/steadylearner/Rust-Full-Stack/blob/master/bots/teloxide/rust_example.png)](https://github.com/steadylearner/Rust-Full-Stack/tree/master/bots/teleoxide/src)
+[![Rust Telegram bot](https://github.com/steadylearner/Rust-Full-Stack/blob/master/bots/teloxide/rust_example.png)](https://github.com/steadylearner/Rust-Full-Stack/tree/master/bots/teloxide/src)
 
 ## Resume
 
