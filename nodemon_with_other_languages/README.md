@@ -18,4 +18,4 @@ Just use its Cargo watch.
 
 ## Go
 
-Test [reflex](https://github.com/cespare/reflex) if you want more.
+Test [reflex](https://github.com/cespare/reflex) and [go-wathcer](https://github.com/canthefason/go-watcher) if you want more.
