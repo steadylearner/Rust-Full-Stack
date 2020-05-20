@@ -1,0 +1,1 @@
+// Include database relevant fucntion instead of impl to models.

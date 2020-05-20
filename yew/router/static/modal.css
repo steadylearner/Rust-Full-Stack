@@ -1,0 +1,35 @@
+@keyframes modal {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    1% {
+        display: flex;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation-duration: 0.6s;
+    animation-name: modal;
+}
+
+.modal-content--image {
+    margin: 5.8rem auto auto;
+    display: flex;
+    max-width: 100%;
+    height: calc(100% - 11.6rem);
+}
+
+

@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "moduleResolution": "node",
+        "module": "system",
+        "target": "es5",
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "jsx": "react"
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

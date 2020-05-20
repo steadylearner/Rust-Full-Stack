@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>warp-example-app</title>
+</head>
+<body>
+  <h1>TASKS</h1>
+  <ul>
+    {% for task in tasks %}
+      {% if task.done %}
+        <li style="text-decoration: line-through;">{{task.id}}: {{task.title}}</li>
+      {% else %}
+        <li>{{task.id}}: {{task.title}}</li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</body>
+</html>

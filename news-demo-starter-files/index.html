@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>News App Demo</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <main>
+  <header>
+    <a class="logo" href="/">News Demo</a>
+    <form action="/search" method="GET">
+      <input autofocus class="search-input" value="{{ .SearchKey }}" placeholder="Enter a news topic" type="search" name="q">
+    </form>
+    <a href="https://github.com/freshman-tech/news" class="button
+      github-button">View on Github</a>
+  </header>
+  <section class="container">
+  <div class="result-count">
+    {{ if (gt .Results.TotalResults 0)}}
+      {{ if (eq .TotalPages 0)}}
+        <p>About <strong>{{ .Results.TotalResults }}</strong> results were found. You are on page <strong>{{ .CurrentPage }}</strong> of <strong> 1</strong>.</p>
+      {{ else }}
+        <p>About <strong>{{ .Results.TotalResults }}</strong> results were found. You are on page <strong>{{ .CurrentPage }}</strong> of <strong> {{ .TotalPages }}</strong>.</p>
+      {{ end }}
+    {{ else }}
+      <p>No results found.</p>
+    {{ end }}
+  </div>
+  <ul class="search-results">
+    {{ range .Results.Articles }}
+      <li class="news-article">
+        <div>
+          <a target="_blank" rel="noreferrer noopener" href="{{.URL}}">
+            <h3 class="title">{{.Title }}</h3>
+          </a>
+          <p class="description">{{ .Description }}</p>
+          <div class="metadata">
+            <p class="source">{{ .Source.Name }}</p>
+            <time class="published-date">{{ .FormatPublishedDate }}</time>
+          </div>
+        </div>
+        <img class="article-image" src="{{ .URLToImage }}">
+      </li>
+    {{ end }}
+  </ul>
+  <div class="pagination">
+    {{ if (gt .NextPage 2) }}
+      <a href="/search?q={{ .SearchKey }}&page={{ .PreviousPage }}" class="button previous-page">Previous</a>
+    {{ end }}
+    {{ if (ne .IsLastPage true) }}
+      <a href="/search?q={{ .SearchKey }}&page={{ .NextPage }}" class="button next-page">Next</a>
+    {{ end }}
+  </div>
+</section>  
+</main> 
+</body>
+</html>

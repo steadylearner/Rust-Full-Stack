@@ -1,0 +1,34 @@
+.profile {
+    max-width: 108rem;
+    min-height: calc(100vh - 10rem);
+    padding: 2rem;
+}
+
+.profile__detail {
+    max-width: 27rem;
+    margin-left: 3rem;
+    margin-right: 6rem;
+}
+
+.detail__image {
+    max-width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    border: 0.5rem solid #efefef;
+}
+
+.profile__main {
+    flex: 1 1 auto;
+}
+
+.main__list {
+    padding: 1rem;
+    border-bottom: 0.5rem solid #efefef;
+}
+
+.button--edit-profile {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #121212;
+}

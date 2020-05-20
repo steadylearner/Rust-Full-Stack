@@ -1,0 +1,10 @@
+[package]
+name = 'react_rust_rocket'
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+
+[dependencies]
+rocket = "0.4.2"
+
+

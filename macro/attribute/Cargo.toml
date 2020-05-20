@@ -1,0 +1,19 @@
+[package]
+name = "attribute"
+version = "0.1.0"
+authors = ["steadylearner <32325099+steadylearner@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+proc_macro_roids = "0.7.0"
+quote = "1.0.6"
+syn = "1.0.22"
+
+[lib]
+proc-macro = true
+
+[[bin]]
+name = "main"
+path = "src/main.rs"

@@ -1,0 +1,11 @@
+[package]
+name = "cookie-auth"
+version = "0.1.0"
+authors = ["Nikolay Kim <fafhrd91@gmail.com>"]
+edition = "2018"
+workspace = ".."
+
+[dependencies]
+actix-web = "1.0.0"
+actix-identity = "0.1.0"
+env_logger = "0.6"

@@ -1,0 +1,54 @@
+{
+    "env": {
+        "browser": true,
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "airbnb-base",
+        "plugin:react/recommended"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "plugins": [
+        "react",
+        "react-hooks"
+    ],
+    "settings": {
+        "react": {
+            "version": "^16.8.3"
+        },
+        "propWrapperFunctions": [ "forbidExtraProps" ]
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "import/prefer-default-export": "off",
+        "no-tabs": 0,
+        "no-mixed-spaces-and-tabs": 0,
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "max-len": [2, 120, 8],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+    }
+}

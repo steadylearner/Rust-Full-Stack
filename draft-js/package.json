@@ -1,0 +1,26 @@
+{
+  "name": "draft-js",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@material-ui/core": "^4.9.2",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.42",
+    "@types/draft-js": "^0.10.38",
+    "draft-js": "^0.11.5",
+    "draft-js-mention-plugin": "^3.1.5",
+    "draft-js-plugins-utils": "^2.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}
