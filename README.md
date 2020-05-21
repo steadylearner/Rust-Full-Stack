@@ -152,7 +152,7 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 [Use $du -h ./foldername](https://shapeshed.com/unix-du/) first before you use plugins that delete codes to compare.
 
 * [Use cargo wipe](https://github.com/mihai-dinculescu/cargo-wipe) when you are full of unused Rust projects. [See results here.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/cargo_wipe_results) You can use [$cargo clean](https://doc.rust-lang.org/cargo/commands/cargo-clean.html) for a folder.
-* [Use cargo ws to manage large projects](https://github.com/pksunkara/cargo-workspaces) and refer to [Lerna](https://lerna.js.org/). [Read official documenation for this also.](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html)
+* [Use cargo ws to manage large projects](https://github.com/pksunkara/cargo-workspaces) and refer to [Lerna](https://lerna.js.org/). [Read official documentation for this also.](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html)
 
 ## Error handling
 
@@ -207,6 +207,11 @@ These are lists of what I should prototype. I also write production projects in 
 
 ```console
 Rust
+
+Test them.
+
+https://github.com/GuillaumeGomez/doc-comment
+https://github.com/LogoiLab/commenteer
 
 Include regex to the production code and test it work at with-javascript/
 
