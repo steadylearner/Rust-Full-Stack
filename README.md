@@ -190,6 +190,8 @@ Then, refer to [cargo-publish-example](https://github.com/steadylearner/cargo-pu
 
 When you are ready to publish, read [publishing to crate io](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html) and [another from cargo](https://doc.rust-lang.org/cargo/reference/publishing.html)
 
+Optionally, you can include [doc-comment](https://github.com/GuillaumeGomez/doc-comment) to test code exampels in README.md. You can also dynamically create Rust documentation with it.
+
 Refer to them also.
 
 * [Cargo.toml and Cargo.lock comparision](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)
@@ -207,11 +209,6 @@ These are lists of what I should prototype. I also write production projects in 
 
 ```console
 Rust
-
-Test them.
-
-https://github.com/GuillaumeGomez/doc-comment
-https://github.com/LogoiLab/commenteer
 
 Include regex to the production code and test it work at with-javascript/
 
