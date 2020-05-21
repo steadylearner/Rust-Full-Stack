@@ -1,13 +1,13 @@
 <!-- Find blog posts with SELECT title,id FROM posts WHERE posts.title LIKE 'Title%'; -->
 
-<!-- 
-    Reset commits to edit the documenations with these.
+<!--
+  Reset commits to edit the documentations with these.
 
-    $rm -rf .git && $git init 
-    $git add .
-    $git commit -m "Reset commits"
-    $git remote add origin git@github.com:steadylearner/Rust-Full-Stack.git
-    $git push -u origin master
+  $rm -rf .git && $git init
+  $git add .
+  $git commit -m "Reset commits"
+  $git remote add origin git@github.com:steadylearner/Rust-Full-Stack.git
+  $git push -u origin master
 -->
 
 <!--
@@ -180,16 +180,33 @@ Then, use [thiserror](https://github.com/dtolnay/thiserror) to build a web serve
 * Read these first. [Procedural macro in Rust](https://blog.rust-lang.org/2018/12/21/Procedural-Macros-in-Rust-2018.html), [proc macro workshop](https://github.com/steadylearner/proc-macro-workshop) etc.
 * [Refer to duplicate source code to use derive.](https://docs.rs/duplicate/0.2.1/duplicate/)
 * [cargo-expand](https://github.com/steadylearner/cargo-expand), [trybuild](https://github.com/steadylearner/trybuild) and [macrotest](https://docs.rs/macrotest/1.0.2/macrotest/) to test macros.
-* Use them when you want more. [proc macro hack](https://github.com/dtolnay/proc-macro-hack), [proc macro2](https://github.com/alexcrichton/proc-macro2), [quote](https://github.com/dtolnay/quote), [syn](https://github.com/dtolnay/syn), [proc macro roids](https://github.com/azriel91/proc_macro_roids).
+* Use them when you want more. [proc macro hack](https://github.com/dtolnay/proc-macro-hack), [proc macro2](https://github.com/alexcrichton/proc-macro2), [quote](https://github.com/dtolnay/quote), [syn](https://github.com/dtolnay/syn), [proc macro roids](https://github.com/azriel91/proc_macro_roids), [procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#attribute-macros), [tt-call for eager expansion](https://github.com/dtolnay/tt-call) etc.
+
+## How to publish a cargo package
+
+Read [rustdoc]([rustdoc documenation](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html)) and [cargo documentation](https://doc.rust-lang.org/cargo) a
+
+Then, refer to [cargo-publish-example](https://github.com/steadylearner/cargo-publish-example) and its [dev.py](https://github.com/steadylearner/cargo-publish-example/blob/master/dev.py) to help the development process.
+
+When you are ready to publish, read [publishing to crate io](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html) and [another from cargo](https://doc.rust-lang.org/cargo/reference/publishing.html)
+
+Refer to them also.
+
+* [Cargo.toml and Cargo.lock comparision](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)
+* [Project structure](https://doc.rust-lang.org/cargo/guide/project-layout.html) and [How to manage it](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html)
+* [Test](https://doc.rust-lang.org/book/ch11-00-testing.html), [benchmark](https://doc.rust-lang.org/unstable-book/library-features/test.html) with std or [criterion](https://github.com/bheisler/criterion.rs), [documentation test](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#documentation-comments-as-tests)
+* [Continuous Integration](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
+* [cargo profile](https://doc.rust-lang.org/cargo/reference/profiles.html), [cargo doc](https://doc.rust-lang.org/cargo/commands/cargo-doc.html), [API guideline](https://rust-lang.github.io/api-guidelines/), [publishing to crate.io](https://doc.rust-lang.org/cargo/reference/publishing.html), [build.rs](https://doc.rust-lang.org/cargo/reference/build-scripts.html), [cargo cache](https://github.com/matthiaskrgr/cargo-cache)
+* [cargo manifest](https://doc.rust-lang.org/cargo/reference/manifest.html)
 
 ## The current state of this repository
 
-These are lists of what I should prototype. I also write production projects in private repositories. 
+These are lists of what I should prototype. I also write production projects in private repositories.
 
 [You can help it have more examples with donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU).
 
 ```console
-Rust 
+Rust
 
 Include regex to the production code and test it work at with-javascript/
 
@@ -380,22 +397,3 @@ I do what I want here. **It is a personal repository** to learn and prototype ne
 
 * [Teloxide subreddit and with_webserver bot.](https://github.com/teloxide/community-bots/pull/3)
 
-## How to publish a cargo package
-
-[Read Cargo documentation.](https://doc.rust-lang.org/cargo)
-
-**$cargo update** to update dependencies. Include cargo.lock to .gitignore when you make a library. **$ cargo test -- --test-threads=1** to test web apps. Test $cargo verify-project also.
-
-* [Cargo.toml and Cargo.lock comparision](https://doc.rust-lang.org/cargo/guide/cargo-toml-vs-cargo-lock.html)
-* [Project structure](https://doc.rust-lang.org/cargo/guide/project-layout.html) and [How to manage it](https://doc.rust-lang.org/book/ch07-00-managing-growing-projects-with-packages-crates-and-modules.html)
-* [Test](https://doc.rust-lang.org/book/ch11-00-testing.html), [benchmark](https://doc.rust-lang.org/unstable-book/library-features/test.html) with std or [criterion](https://github.com/bheisler/criterion.rs), [documentation test](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html#documentation-comments-as-tests)
-* [Continuous Integration](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
-* [cargo profile](https://doc.rust-lang.org/cargo/reference/profiles.html), [cargo doc](https://doc.rust-lang.org/cargo/commands/cargo-doc.html), [API guideline](https://rust-lang.github.io/api-guidelines/), [publishing to crate.io](https://doc.rust-lang.org/cargo/reference/publishing.html), [build.rs](https://doc.rust-lang.org/cargo/reference/build-scripts.html)
-* [cargo cache](https://github.com/matthiaskrgr/cargo-cache)
-* [Use this to help the package to explain pub in struct and enum.](https://doc.rust-lang.org/book/ch07-03-paths-for-referring-to-an-item-in-the-module-tree.html#making-structs-and-enums-public)
-* [Use the attribute example](https://github.com/steadylearner/Rust-Full-Stack/tree/master/macro/attribute) and [the crate](https://lib.rs/crates/proc_macro_roids) to compare it with a similar approach.
-* [procedural macros](https://doc.rust-lang.org/reference/procedural-macros.html#attribute-macros)
-
-* https://doc.rust-lang.org/cargo/reference/manifest.html
-* https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html
-* https://doc.rust-lang.org/cargo/reference/publishing.html
