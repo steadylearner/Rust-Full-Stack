@@ -184,7 +184,7 @@ Then, use [thiserror](https://github.com/dtolnay/thiserror) to build a web serve
 
 ## How to publish a cargo package
 
-Read [rustdoc]([rustdoc documenation](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html)) and [cargo documentation](https://doc.rust-lang.org/cargo) a
+Read [rustdoc](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html) and [cargo](https://doc.rust-lang.org/cargo) documenation for it.
 
 Then, refer to [cargo-publish-example](https://github.com/steadylearner/cargo-publish-example) and its [dev.py](https://github.com/steadylearner/cargo-publish-example/blob/master/dev.py) to help the development process.
 
