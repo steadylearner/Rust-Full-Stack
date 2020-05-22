@@ -112,7 +112,9 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 ## Crates by Steadylearner
 
-* [born](https://github.com/steadylearner/born) to resue fields in `struct` and `enum`.
+* [born](https://github.com/steadylearner/born) to reuse fields in `struct` and `enum`. You can define fields of them and create, extend and rename.
+
+[![born crate example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/born_example.png)](https://github.com/steadylearner/born)
 
 ## Interesting projects and blog posts from others
 
