@@ -188,7 +188,7 @@ Read [rustdoc](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html) and [ca
 
 Then, refer to [cargo-publish-example](https://github.com/steadylearner/cargo-publish-example) and its [dev.py](https://github.com/steadylearner/cargo-publish-example/blob/master/dev.py) to help the development process.
 
-When you are ready to publish, read [publishing to crate io](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html) and [another from cargo](https://doc.rust-lang.org/cargo/reference/publishing.html)
+When you are ready to publish, read [publishing to crate io](https://doc.rust-lang.org/book/ch14-02-publishing-to-crates-io.html) and [the similar one from cargo](https://doc.rust-lang.org/cargo/reference/publishing.html).
 
 Optionally, you can include [doc-comment](https://github.com/GuillaumeGomez/doc-comment) to test code exampels in README.md. You can also dynamically create Rust documentation with it.
 
