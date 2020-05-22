@@ -200,6 +200,7 @@ Refer to them also.
 * [Continuous Integration](https://doc.rust-lang.org/cargo/guide/continuous-integration.html)
 * [cargo profile](https://doc.rust-lang.org/cargo/reference/profiles.html), [cargo doc](https://doc.rust-lang.org/cargo/commands/cargo-doc.html), [API guideline](https://rust-lang.github.io/api-guidelines/), [publishing to crate.io](https://doc.rust-lang.org/cargo/reference/publishing.html), [build.rs](https://doc.rust-lang.org/cargo/reference/build-scripts.html), [cargo cache](https://github.com/matthiaskrgr/cargo-cache)
 * [cargo manifest](https://doc.rust-lang.org/cargo/reference/manifest.html)
+* Include Travis CI. Use [cargo fmt](https://github.com/rust-lang/rustfmt) and [cargo clippy](https://github.com/rust-lang/rust-clippy) with it if necessary.
 
 ## The current state of this repository
 
