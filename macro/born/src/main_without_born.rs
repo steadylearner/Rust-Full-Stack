@@ -11,18 +11,17 @@ pub struct NewUser {
     pub email: String,
     pub password: String,
 }
+
 fn main() {
     let new_user = NewUser {
-        first_name: "steady".into(),
-        last_name: "learner".into(),
+        name: "steadylearner".into(),
         email: "example@email.com".into(),
         password: "password".into(),
     };
 
     let user = User {
         id: 0,
-        first_name: new_user.first_name,
-        last_name: new_user.last_name,
+        name: new_user.first_name,
         email: new_user.email,
         password: new_user.password,
     };
