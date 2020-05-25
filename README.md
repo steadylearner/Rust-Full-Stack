@@ -112,9 +112,11 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 ## Crates by Steadylearner
 
-* [born](https://github.com/steadylearner/born) is to help you remove code duplication in struct and enum. [Refer to the Python FAST API documenation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).  
+* [born](https://github.com/steadylearner/born) is to help you reduce code duplication in struct and enum. [Refer to the Python FAST API documentation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).
 
-[![born crate example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/born_example.png)](https://github.com/steadylearner/born)
+[![born python and rust comparision example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/unite_rust_and_python_with_born.png)](https://github.com/steadylearner/born)
+
+[![born macro expansion example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/born_example.png)](https://github.com/steadylearner/born)
 
 ## Interesting projects and blog posts from others
 
@@ -190,7 +192,7 @@ Then, use [thiserror](https://github.com/dtolnay/thiserror) to build a web serve
 
 ## How to publish a cargo package
 
-Read [rustdoc](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html) and [cargo](https://doc.rust-lang.org/cargo) documenation for it.
+Read [rustdoc](https://doc.rust-lang.org/rustdoc/the-doc-attribute.html) and [cargo](https://doc.rust-lang.org/cargo) documentation for it.
 
 Then, refer to [cargo-publish-example](https://github.com/steadylearner/cargo-publish-example) and its [dev.py](https://github.com/steadylearner/cargo-publish-example/blob/master/dev.py) to help the development process.
 
