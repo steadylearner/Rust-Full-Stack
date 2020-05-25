@@ -110,11 +110,13 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 [![React Rust demo](https://img.youtube.com/vi/I1iNhOuXESQ/0.jpg)](https://www.youtube.com/watch?v=I1iNhOuXESQ)
 
-## Crates by Steadylearner
+## born
 
-1. [born](https://github.com/steadylearner/born) is to help you remove code duplication in struct and enum. [You can read this documentation from Python FAST API that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).  
+[born](https://github.com/steadylearner/born) is to help you remove code duplication in struct and enum. 
 
-[You can do the same for structs with attribute macros.](https://github.com/steadylearner/born-attribute) 
+[You can read the Python FAST API that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).  
+
+[You can do the same for structs with attribute macros.](https://github.com/steadylearner/born-attribute)
 
 [![born crate example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/born_example.png)](https://github.com/steadylearner/born)
 
