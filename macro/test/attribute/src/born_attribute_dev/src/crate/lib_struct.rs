@@ -1,6 +1,7 @@
 use proc_macro::TokenStream;
 use proc_macro_roids::{
     FieldsNamedAppend,
+    // FieldsUnnamedAppend
 };
 use quote::quote;
 use syn::{parse_macro_input, parse_quote, DeriveInput, FieldsNamed};
