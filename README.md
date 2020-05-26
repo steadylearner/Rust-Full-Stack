@@ -106,10 +106,6 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew)
 
-## React and Rust web project demo that you can login
-
-[![React Rust demo](https://img.youtube.com/vi/I1iNhOuXESQ/0.jpg)](https://www.youtube.com/watch?v=I1iNhOuXESQ)
-
 ## Crates by Steadylearner
 
 * [born](https://github.com/steadylearner/born) is to help you reduce code duplication in struct and enum. [Refer to the Python FAST API documentation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).
@@ -117,6 +113,10 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 [![born python and rust comparision example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/unite_rust_and_python_with_born.png)](https://github.com/steadylearner/born)
 
 [![born macro expansion example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/born_example.png)](https://github.com/steadylearner/born)
+
+## React and Rust web project demo that you can login
+
+[![React Rust demo](https://img.youtube.com/vi/I1iNhOuXESQ/0.jpg)](https://www.youtube.com/watch?v=I1iNhOuXESQ)
 
 ## Interesting projects and blog posts from others
 
