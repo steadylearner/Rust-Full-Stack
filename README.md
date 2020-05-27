@@ -232,6 +232,8 @@ These are lists of what I should prototype. I also write production projects in 
 ```console
 Rust
 
+Read leftpad code and make a cargo binary to share.
+
 Include regex to the production code and test it work at with-javascript/
 
 * https://docs.rs/regex/1.3.7/regex/
@@ -240,6 +242,7 @@ Include regex to the production code and test it work at with-javascript/
 
 Python
 
+* Transaction(Paypal, Visa, Mastercard) and Bitcoin?
 * Make a full stack app with FAST API and deploy.
 * Include email verification for the login process.
 * (Refer to this. https://github.com/eightBEC/fastapi-ml-skeleton)
