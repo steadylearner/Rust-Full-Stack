@@ -114,7 +114,7 @@ Everything is simple with examples but it is not easy to make them with Rust.
 
 ## Crates by Steadylearner
 
-* [born](https://github.com/steadylearner/born) is to help you reduce code duplication in struct and enum. [Refer to the Python FAST API documentation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).
+* [born](https://github.com/steadylearner/born) is to help you reduce code duplication in struct and enum. [Refer to the Python FAST API documentation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication)
 
 [![born python and rust comparision example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/unite_rust_and_python_with_born.png)](https://github.com/steadylearner/born)
 
