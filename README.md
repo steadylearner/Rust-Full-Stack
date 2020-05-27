@@ -106,6 +106,12 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew)
 
+## The reason to use this repository
+
+Everything is simple with examples but it is not easy to make them with Rust.
+
+[Use code here and spare your time.](https:/https://www.steadylearner.com/blog/search/Rust) 
+
 ## Crates by Steadylearner
 
 * [born](https://github.com/steadylearner/born) is to help you reduce code duplication in struct and enum. [Refer to the Python FAST API documentation that inspired it.](https://fastapi.tiangolo.com/tutorial/extra-models/#reduce-duplication).
@@ -258,12 +264,6 @@ JavaScript
 
 * Make a transaction microservice with graphql, Express and a database.
 ```
-
-## The reason to use this repository
-
-Everything is simple with examples but it is not easy to make them with Rust.
-
-**Use code here and spare your time.** 
 
 ## Start
 
