@@ -238,7 +238,7 @@ These are lists of what I should prototype. I also write production projects in 
 ```console
 Rust
 
-Read leftpad code and make a cargo binary to share.
+Read [leftpad](https://github.com/steadylearner/leftpad-rs) and [cargo-wipe](https://github.com/steadylearner/cargo-wipe) and [a blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/). Then, make a cargo binary to share.
 
 Include regex to the production code and test it work at with-javascript/
 
