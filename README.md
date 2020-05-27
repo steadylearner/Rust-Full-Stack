@@ -118,6 +118,11 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 [![React Rust demo](https://img.youtube.com/vi/I1iNhOuXESQ/0.jpg)](https://www.youtube.com/watch?v=I1iNhOuXESQ)
 
+## Contact
+
+1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) or [Twitter](https://twitter.com/steadylearner_p)
+2. [Telegram](https://t.me/steadylearner)
+
 ## Interesting projects and blog posts from others
 
 * [envconfig-rs](https://github.com/greyblake/envconfig-rs)
@@ -244,11 +249,6 @@ JavaScript
 
 * Make a transaction microservice with graphql, Express and a database.
 ```
-
-## Contact
-
-1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) or [Twitter](https://twitter.com/steadylearner_p)
-2. [Telegram](https://t.me/steadylearner)
 
 ## The reason to use this repository
 
