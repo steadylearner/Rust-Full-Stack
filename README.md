@@ -247,8 +247,8 @@ JavaScript
 
 ## Contact
 
-1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) 
-2. [Twitter](https://twitter.com/steadylearner_p)
+1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) or [Twitter](https://twitter.com/steadylearner_p)
+2. [Telegram](https://t.me/steadylearner)
 
 ## The reason to use this repository
 
