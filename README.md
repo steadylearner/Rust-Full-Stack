@@ -153,6 +153,8 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 ## CLI
 
+If you want to make some, [refer to this official documenation](https://rust-cli.github.io/book/index.html).
+
 * [bat](https://github.com/sharkdp/bat)
 
 ## Cargo packages
