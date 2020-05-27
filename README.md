@@ -167,7 +167,7 @@ If you want to make some, [refer to this official documenation](https://rust-cli
 
 [Use $du -h ./foldername](https://shapeshed.com/unix-du/) first before you use plugins that delete codes to compare.
 
-* [Use cargo wipe](https://github.com/mihai-dinculescu/cargo-wipe) when you are full of unused Rust projects. [See results here.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/cargo_wipe_results) You can use [$cargo clean](https://doc.rust-lang.org/cargo/commands/cargo-clean.html) for a folder. You can also use [cargo-wseep](https://github.com/holmgr/cargo-sweep).
+* [Use cargo wipe](https://github.com/mihai-dinculescu/cargo-wipe) when you are full of unused Rust projects. [See results here.](https://github.com/steadylearner/Rust-Full-Stack/tree/master/cargo_wipe_results) You can use [$cargo clean](https://doc.rust-lang.org/cargo/commands/cargo-clean.html) for a folder. You can also use [cargo-sweep](https://github.com/holmgr/cargo-sweep).
 * [Use cargo ws to manage large projects](https://github.com/pksunkara/cargo-workspaces) and refer to [Lerna](https://lerna.js.org/). [Read official documentation for this also.](https://doc.rust-lang.org/book/ch14-03-cargo-workspaces.html)
 
 ## Error handling
