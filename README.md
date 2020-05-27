@@ -167,7 +167,7 @@ Use them if you need a personal help or need a new developer in your company.
 
 ## CLI
 
-If you want to make some, refer to [the official documenation](https://rust-cli.github.io/book/index.html) and [the code snippet](https://github.com/rust-cli/book/tree/master/src/tutorial/testing) used there.
+If you want to make some apps, refer to [the official documenation](https://rust-cli.github.io/book/index.html) and [the code snippet](https://github.com/rust-cli/book/tree/master/src/tutorial/testing) used there.
 
 * [bat](https://github.com/sharkdp/bat)
 * [Rust on the command line blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/)
@@ -233,12 +233,12 @@ Refer to them also.
 
 These are lists of what I should prototype. I also write production projects in private repositories.
 
+Read [leftpad](https://github.com/steadylearner/leftpad-rs) and [cargo-wipe](https://github.com/steadylearner/cargo-wipe) and [a blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/). Then, make a cargo binary to share.
+
 [You can help it have more examples with donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HLNVQJ2L2YYZU).
 
 ```console
 Rust
-
-Read [leftpad](https://github.com/steadylearner/leftpad-rs) and [cargo-wipe](https://github.com/steadylearner/cargo-wipe) and [a blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/). Then, make a cargo binary to share.
 
 Include regex to the production code and test it work at with-javascript/
 
