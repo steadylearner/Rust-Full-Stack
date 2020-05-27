@@ -120,6 +120,8 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 ## Contact
 
+Use them if you need a personal help or need a new developer in your company.
+
 1. [LinkedIn](https://www.linkedin.com/in/steady-learner-3151b7164/) or [Twitter](https://twitter.com/steadylearner_p)
 2. [Telegram](https://t.me/steadylearner)
 
@@ -159,9 +161,12 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 ## CLI
 
-If you want to make some, [refer to this official documenation](https://rust-cli.github.io/book/index.html).
+If you want to make some, refer to [the official documenation](https://rust-cli.github.io/book/index.html) and [the code snippet](https://github.com/rust-cli/book/tree/master/src/tutorial/testing) used there.
 
 * [bat](https://github.com/sharkdp/bat)
+* [Rust on the command line blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/)
+* [Communicating with humans](https://rust-cli.github.io/book/in-depth/human-communication.html)
+* [Communicating with machines](https://rust-cli.github.io/book/in-depth/machine-communication.html)
 
 ## Cargo packages
 
