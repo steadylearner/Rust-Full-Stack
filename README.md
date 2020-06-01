@@ -183,7 +183,7 @@ If you want to make some apps, refer to [the official documenation](https://rust
 
 ## Error handling
 
-[Read how std error works.](https://doc.rust-lang.org/std/error/trait.Error.html) 
+[Read how std error works with official documenation.](https://doc.rust-lang.org/std/error/trait.Error.html) [Learn how to use cusotm error types.](https://learning-rust.github.io/docs/e7.custom_error_types.html)
 
 Then, use [thiserror](https://github.com/dtolnay/thiserror) to build a web server, library etc. Use [anyhow](https://github.com/dtolnay/thiserror) with it when necessary.
 
