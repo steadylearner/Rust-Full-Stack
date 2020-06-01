@@ -163,7 +163,7 @@ Use them if you need a personal help or need a new developer in your company.
 * [surf](https://github.com/http-rs/surf) and [wiremock](https://github.com/LukeMathWalker/wiremock-rs) to test http
 * [lazy_static](https://github.com/rust-lang-nursery/lazy-static.rs) and [once_cell](https://github.com/matklad/once_cell)
 * [juniper](https://github.com/graphql-rust/juniper), and [graphql-client](https://github.com/graphql-rust/graphql-client)
-* [rayon](https://github.com/rayon-rs/rayon), [crossbeam](https://github.com/crossbeam-rs/crossbeam), [easy-parallel](https://github.com/stjepang/easy-parallel)for multithreading
+* [rayon](https://github.com/rayon-rs/rayon), [crossbeam](https://github.com/crossbeam-rs/crossbeam), [easy-parallel](https://github.com/stjepang/easy-parallel), [fearles concurrency](https://blog.rust-lang.org/2015/04/10/Fearless-Concurrency.html) etc for multithreading
 
 ## CLI
 
