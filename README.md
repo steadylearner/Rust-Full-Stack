@@ -248,7 +248,7 @@ Include regex to the production code and test it work at with-javascript/
 
 Python
 
-* Transaction(Paypal, Visa, Mastercard) and Bitcoin?
+* Transaction(Paypal, Stripe), Visa, Mastercard and Cryptocurrencies like Bitcoin?
 * Make a full stack app with FAST API and deploy.
 * Include email verification for the login process.
 * (Refer to this. https://github.com/eightBEC/fastapi-ml-skeleton)
