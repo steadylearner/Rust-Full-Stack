@@ -1,0 +1,27 @@
+{
+  "name": "parcel-react",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.7",
+    "prop-passer": "^1.1.1-3",
+    "react": ">=15",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.1.2",
+    "styled-components": "^5.1.0",
+    "views": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "serve": "parcel serve src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "Steadylearner (https://www.steadylearner.com)"
+}

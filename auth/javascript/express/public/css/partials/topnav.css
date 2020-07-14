@@ -1,0 +1,12 @@
+.topnav {
+    height: 5.6rem;
+    border: 0.1rem solid white;
+}
+
+.topnav__login {}
+
+.topnav__sign-up {
+    border: 0.1rem solid white;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}

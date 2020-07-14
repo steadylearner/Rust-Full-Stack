@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% block title %}<title> Python Vibora Blog </title>{% endblock %}
+{% block content %}
+    <section class="main-width flex-column center-auto-margin">
+        <section class="flex separate" >
+            <h1 class="list-title width-percent right-auto">
+                <!-- Python -->
+                <a
+                    class="no-text-decoration hover black transition-half"
+                    href="https://github.com/vibora-io/vibora"
+                    title="Python Vibora"
+                >
+                    <!-- or use https://docs.vibora.io/ -->
+                    <img
+                        src="https://raw.githubusercontent.com/vibora-io/vibora/master/docs/logo.png"
+                        style="height: 2.5rem;"
+                    >
+                    Blog
+                </a>
+            </h1>
+            <a
+                class="no-text-decoration hover center black bold transition margin-right-one font-two-and-a-half"
+                href="https://www.steadylearner.com/blog"
+                title="React Rust Blog by Steadylearner"
+            >
+                ©ode
+            </a>
+            <a
+                class="no-text-decoration hover center blue transition margin-right-one"
+                href="/blog/Python"
+                title="Python blog posts"
+            >
+                <img
+                    class="width-two-and-a-half"
+                    src="https://www.steadylearner.com//static/images/code/Python.svg"
+                    title="Steadylearner Python blog posts"
+                >
+            </a>
+            <a
+                class="no-text-decoration hover center blue transition margin-right-half"
+                href="/blog/JavaScript"
+                title="JavaScript blog posts"
+            >
+                <i class="fab fa-js font-two-and-a-half"></i>
+            </a>
+            <a
+                class="no-text-decoration hover center black hover-red-white transition"
+                href="/blog/Rust"
+                title="Rust blog posts"
+            >
+                <img
+                    class="width-four"
+                    src="https://www.steadylearner.com//static/images/code/Rust.svg"
+                    title="Steadylearner Rust blog posts"
+                >
+            </a>
+        </section>
+        <section class="markdown margin-bottom-two">
+        {{ content }}
+        </section>
+    </section>
+{% endblock %}

@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Helvetica, Arial;
+}
+
+#content {
+  padding-top: 2rem;
+}
+
+.post-form {
+  background: #121212;
+  padding: 0.5rem;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+}
+
+.post-form img {
+  margin-right: 0.5rem;
+}
+
+.post-form input {
+  border: 0;
+  padding: 0.5rem;
+  width: 100vw;
+  color: inherit;
+}
+
+.post-form input:focus {
+  color: #121212;
+}
+
+.post-form button {
+  background: black;
+  border: none;
+  padding: none;
+}
+
+footer {
+  height: 5rem;
+  margin-top: 1rem;
+}

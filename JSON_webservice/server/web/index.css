@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Helvetica, Arial;
+}
+
+/* should remove id and use class name instead for the entire app */
+
+.nav {
+  top: 0;
+  background: #000;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+}
+
+.chat-form {
+  background: #000;
+  padding: 0.6rem;
+  /* position: fixed; */
+  bottom: 0;
+  width: 100%;
+}
+
+.chat-form input {
+  border: 0;
+  padding: 1.1rem;
+  width: 100vw;
+  color: inherit;
+}
+
+.chat-form input:focus {
+  color: #121212;
+}
+
+.chat-form button {
+  background: black;
+  border: none;
+  padding: none;
+}
+
+#connect {
+  padding: 0.5rem;
+  border: 1px solid #08c;
+}
+
+.sign-up {
+  padding: 0.5rem;
+  border: 1px solid #efefef;
+}
+
+#messages {
+  list-style-type: none;
+  margin: 5.7rem 0 0 0;
+  padding: 0;
+  min-height: calc(100vh - 11rem);
+}
+
+#messages li {
+  padding: 1.6rem;
+}

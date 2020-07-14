@@ -1,0 +1,15 @@
+.border-radius-half {
+    border-radius: 0.5rem;
+}
+
+.border-radius-one {
+    border-radius: 1rem;
+}
+
+.border-radius-circle {
+    border-radius: 50%;
+}
+
+.border-bottom-white-black {
+    border-bottom: 0.2rem solid #efefef;
+}

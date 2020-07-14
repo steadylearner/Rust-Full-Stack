@@ -1,0 +1,26 @@
+[package]
+name = "tera"
+version = "0.0.0"
+authors = ["https://www.steadylearner.com"]
+edition = "2018"
+autobins = false
+
+# `cargo run --bin name` will point to the path we define here(Should use autobins = false)
+[[bin]]
+name = "main" # Use web or whatever later.
+path = "src/main.rs"
+
+[dependencies]
+console = "0.10.0"
+
+# Web app with Warp
+# https://www.steadylearner.com/blog/read/How-to-use-Rust-Warp
+
+tokio = { version = "0.2", features = ["macros"] }
+warp = "0.2.2"
+
+# Tera
+tera = "1.2.0"
+lazy_static = "1.4.0"
+
+

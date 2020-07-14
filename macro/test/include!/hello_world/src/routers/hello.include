@@ -1,0 +1,2 @@
+hello_route::hello()
+    .and_then(hello_handler::hello)

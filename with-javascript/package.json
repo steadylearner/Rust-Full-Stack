@@ -1,0 +1,15 @@
+{
+  "name": "parcel-rust-javascript",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT", 
+  "devDependencies": { 
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "serve": "parcel serve src/index.html",
+    "build": "parcel build src/index.html"
+  },
+  "author": "Steadylearner (https://www.steadylearner.com)"
+}

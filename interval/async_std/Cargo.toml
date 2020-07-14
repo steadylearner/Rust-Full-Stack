@@ -1,0 +1,16 @@
+[package]
+name = "async_std"
+version = "0.1.0"
+authors = ["steadylearner <32325099+steadylearner@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+# Use unstable to use interval feature.
+# $cargo doc -p async-std --open is not helpful.
+# Visit https://docs.rs/async-std/1.4.0/async_std/
+# It is much more useful even though the version used there is "1.0.0" for the example.
+[dependencies.async-std]
+version = "1.4.0"
+features = ["unstable"]
+
