@@ -141,7 +141,7 @@ Use them if you need a personal help or need a new developer in your company.
 
 ## The current state of this repository
 
-I am working [while learning blockchain technologies.](https://github.com/steadylearner/ethdev-diary) There will be less update than before. 
+I am working [while learning blockchain technologies.](https://github.com/steadylearner/ethdev-diary) There will be less updates than before. 
 
 ```console
 Python
@@ -151,12 +151,6 @@ Python
 * Include email verification for the login process.
 * (Refer to this. https://github.com/eightBEC/fastapi-ml-skeleton)
 * Use httpx to make async request inside it.
-
-Rust
-
-* tinydb
-* Include regex to the production code and test it work at with-javascript/
-* Read [leftpad](https://github.com/steadylearner/leftpad-rs) and [cargo-wipe](https://github.com/steadylearner/cargo-wipe) and [a blog post](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/). Then, make a cargo binary to share.
 
 Golang
 
