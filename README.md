@@ -397,9 +397,8 @@ Payload is background/ part.
 
 [![React Chrome minimal example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/react_chrome_extension.png)](https://github.com/steadylearner/Rust-Full-Stack/tree/master/browser-extensions/chrome/react)
 
-* [Start](https://github.com/steadylearner/Rust-Full-Stack/tree/master/browser-extensions/chrome/react)
+* [Start](https://github.com/steadylearner/Rust-Full-Stack/tree/master/browser-extensions/chrome/start)
 * [React](https://github.com/steadylearner/Rust-Full-Stack/tree/master/browser-extensions/chrome/react)
-
 
 ## Resume
 
