@@ -132,6 +132,10 @@ Everything is simple with examples but it is not easy to make them with Rust.
 
 [![React Rust demo](https://img.youtube.com/vi/I1iNhOuXESQ/0.jpg)](https://www.youtube.com/watch?v=I1iNhOuXESQ)
 
+## Smart compose demo with React
+
+[![Smart compose demo with React](https://img.youtube.com/vi/WA4icZw_5tA/0.jpg)](https://www.youtube.com/watch?v=WA4icZw_5tA)
+
 ## Contact
 
 Use them if you need a personal help or need a new developer in your company.
@@ -393,7 +397,7 @@ You can find microservices examples built with **Warp**, **Tonic**, **Postgresql
 
 ### Chrome
 
-Payload is chrome api and mainfest.json file.
+Payload is [chrome api](https://developer.chrome.com/extensions/webRequest) and [mainfest.json](https://developer.chrome.com/extensions/manifest) file.
 
 [![React Chrome minimal example](https://github.com/steadylearner/Rust-Full-Stack/blob/master/react_chrome_extension.png)](https://github.com/steadylearner/Rust-Full-Stack/tree/master/browser-extensions/chrome/react)
 
