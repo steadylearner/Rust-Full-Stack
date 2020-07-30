@@ -1,0 +1,25 @@
+{
+  "name": "gulp4-webpack-sass",
+  "version": "1.0.0",
+  "description": "A modern ES6 Gulp workflow combined with Webpack",
+  "scripts": {
+    "dev": "gulp --require @babel/register --gulpfile tasks --mode=development",
+    "build": "gulp build --require @babel/register --gulpfile tasks"
+  },
+  "author": "Steadylearner",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@babel/register": "^7.4.0",
+    "browser-sync": "^2.26.3",
+    "del": "^5.1.0",
+    "gulp": "^4.0.0",
+    "webpack": "^4.30.0",
+    "webpack-dev-middleware": "^3.6.2"
+  }
+}

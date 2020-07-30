@@ -1,0 +1,11 @@
+[package]
+name = "tinydb_rs"
+version = "0.1.0"
+authors = ["steadylearner <32325099+steadylearner@users.noreply.github.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tinydb = "0.0.7"
+serde = "1.0.112"

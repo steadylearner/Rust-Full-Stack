@@ -1,0 +1,8 @@
+[package]
+name = "chat_app_with_rust_by_steadylearner"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+ws = "0.8.1"
+rocket = "0.4.1"

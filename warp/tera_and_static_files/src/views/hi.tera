@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>warp-example-app</title>
+</head>
+
+<body>
+    <h1>Hi, {{name}}!</h1>
+</body>
+
+</html>

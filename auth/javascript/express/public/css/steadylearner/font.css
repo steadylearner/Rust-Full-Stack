@@ -1,0 +1,97 @@
+.font-one {
+    font-size: 1rem;
+}
+
+.font-one-quarter {
+    font-size: 1.25rem;
+}
+
+.font-one-and-a-half {
+    font-size: 1.5rem;
+}
+
+.font-normal {
+    font-size: 1.6rem;
+}
+
+.font-one-and-eight {
+    font-size: 1.8rem;
+}
+
+.font-two {
+    font-size: 2rem;
+}
+
+.font-two-and-a-half {
+    font-size: 2.5rem;
+}
+
+.font-two-and-eight {
+    font-size: 2.8rem;
+}
+
+.font-three-and-a-point {
+    font-size: 3.1rem;
+}
+
+.font-three-and-four {
+    font-size: 3.4rem;
+}
+
+.font-three-and-six {
+    font-size: 3.6rem;
+}
+
+.font--helvetica {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.font--cursive {
+    font-family: cursive;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+/* color */
+
+.red {
+    color: red;
+}
+
+.red-white {
+    color: #ff7676;
+}
+
+.blue {
+    color: #08c;
+}
+
+.brown {
+    color: brown;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: yellow;
+}
+
+.yellow-green {
+    color: yellowgreen;
+}
+
+.black {
+    color: #121212;
+}
+
+.white {
+    color: white;
+}

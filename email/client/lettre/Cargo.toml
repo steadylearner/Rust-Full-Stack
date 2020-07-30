@@ -1,0 +1,20 @@
+[package]
+name = "email"
+version = "0.1.0"
+authors = ["www.steadylearner.com"]
+edition = "2018"
+
+# Use this in main function with Requests and async await later
+# https://github.com/async-rs/async-std
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+# https://github.com/lettre/lettre/issues/373
+[dependencies]
+lettre = { git = "https://github.com/lettre/lettre", rev = "0f3f27f" }
+uuid = { version = "0.8", features = ["v4"] }
+dotenv = "0.15.0"
+console = "0.9.1"
+mime = "0.3.14"
+# serde = "1.0.104"
+# serde_json = "1.0.44"
+# requests = "0.0.30"

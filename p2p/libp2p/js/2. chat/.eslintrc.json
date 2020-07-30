@@ -1,0 +1,71 @@
+{
+    "env": {
+        "commonjs": true,
+        "es6": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:node/recommended"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    },
+    "rules": {
+        "indent": [
+            "error",
+            "tab"
+        ],
+        "quotes": [
+            2,
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "node/exports-style": [
+            "error",
+            "module.exports"
+        ],
+        "node/file-extension-in-import": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/buffer": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/console": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/process": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/url-search-params": [
+            "error",
+            "always"
+        ],
+        "node/prefer-global/url": [
+            "error",
+            "always"
+        ],
+        "node/no-unpublished-require": [
+            "error",
+            {
+                "allowModules": [
+                    "tape",
+                    "supertest",
+                    "faker"
+                ]
+            }
+        ],
+        "node/prefer-promises/dns": "error",
+        "node/prefer-promises/fs": "error"
+    }
+}
