@@ -400,7 +400,9 @@ You can find microservices examples built with **Warp**, **Tonic**, **Postgresql
 
 ## Golang
 
-* [How to structure Golang projects.](https://github.com/golang-standards/project-layout) Watch [a video](https://www.youtube.com/watch?v=oL6JBUk6tj0) and read [a blog](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1) for that also.
+Refactor a private project and include tests there. Make an open source porject refering to that.
+
+* [How to structure Golang projects.](https://github.com/golang-standards/project-layout) Watch [a video](https://www.youtube.com/watch?v=oL6JBUk6tj0) and read [a blog](https://medium.com/@benbjohnson/standard-package-layout-7cdbc8391fc1) and [another blog](https://peter.bourgon.org/go-best-practices-2016/) for that also.
 * Include some IPFS, Docker etc relevant projects here and production projects in private repositories.
 
 ## Blockchain
