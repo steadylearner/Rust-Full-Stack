@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font: 16px Helvetica, Arial;
+  }
+
+  .nav {
+    top: 0;
+    background: #000;
+    padding: 1rem;
+    font-size: 2rem;
+    position: fixed;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .chat-input {
+    background: #000;
+    padding: 0.6rem;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+  }
+
+  .chat-input input {
+    border: 0;
+    padding: 1rem;
+    width: 80%;
+    margin-right: 1%;
+    color: inherit;
+  }
+
+  .chat-input input:focus {
+    color: red;
+  }
+
+  .chat-input button {
+    width: 8%;
+    background: white
+    border: none;
+    padding: 0.5rem 1rem;
+  }
+
+  #exit {
+    padding: 0.5rem;
+    border: 1px solid white;
+  }
+
+  #messages {
+    list-style-type: none;
+    margin: 5.7rem 0 0 0;
+    padding: 0;
+    min-height: calc(100vh - 11rem);
+  }
+
+  #messages li {
+    padding: 1.6rem;
+  }
+
+  .rust-icon {
+    width: 2.5rem;
+    border-radius: 50%;
+    background: white;
+    margin-right: 1rem;
+  }
+
+  /* #messages li:nth-child(even) {
+    background: #eee;
+  } */

@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block title %}<title> {{ lang }} Blog Posts </title>{% endblock %}
+{% block content %}
+    <section class="main-width flex-column center-auto-margin">
+        <section class="flex separate" >
+            <h1 class="list-title width-percent right-auto">
+                {{ lang }} Blog Posts
+            </h1>
+            <a
+                class="no-text-decoration hover center black bold transition margin-right-one font-two-and-a-half"
+                href="https://www.steadylearner.com/blog"
+                title="Follow me at Twitter if you want more contents similar to this"
+            >
+                ©ode
+            </a>
+            <a
+                class="no-text-decoration hover center blue transition margin-right-one"
+                href="https://github.com/steadylearner/blog/tree/master/posts/{{ lang }}"
+                title="Follow me at Twitter if you want more contents similar to this"
+            >
+                <i class="fab fa-twitter font-two-and-a-half"></i>
+            </a>
+            <a
+                class="no-text-decoration hover center black transition margin-right-one"
+                href="https://github.com/steadylearner/blog/tree/master/posts/{{ lang }}"
+                title="{{ lang }} Blog Posts at GitHub"
+            >
+                <i class="fab fa-github font-two-and-a-half"></i>
+            </a>
+            <a
+                class="no-text-decoration hover center blue transition font-two-and-a-half margin-right-one"
+                href="https://www.linkedin.com/in/steady-learner-3151b7164/"
+                title="Contact me with LinkedIn if you need a help."
+            >
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </section>
+        <ul class="margin-top-two margin-bottom-two">
+            {% for post in posts %}
+                <a
+                    class="no-text-decoration hover transition"
+                    href="/blog/{{ lang }}/{{ post }}"
+                    title="Read {{ post }}"
+                >
+                  <li class="red-white font-two no-list-style list">{{ post }}</li>
+                <a>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}

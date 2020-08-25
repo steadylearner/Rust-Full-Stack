@@ -1,0 +1,3 @@
+# The language of the repo should be Rust
+    *.js linguist-language=Rust
+

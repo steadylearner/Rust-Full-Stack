@@ -1,0 +1,25 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "config": "^3.2.4",
+    "express": "^4.17.1",
+    "express-pino-logger": "^4.0.0",
+    "express-promise-router": "^3.0.3",
+    "mongoose": "^5.8.1",
+    "mongoose-type-email": "^1.0.11",
+    "nodemon": "^2.0.2",
+    "pino": "^6.0.0",
+    "pino-tee": "^0.3.0"
+  },
+  "devDependencies": {
+    "pino-pretty": "1.17.3"
+  },
+  "scripts": {
+    "dev": "nodemon server",
+    "debug": "LOG_LEVEL=debug node server | ./node_modules/.bin/pino-pretty"
+  }
+}

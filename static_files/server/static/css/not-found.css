@@ -1,0 +1,27 @@
+body {
+    margin: 0;
+}
+
+.not-found {
+
+    /* flex-column center width-percent max-width height-vh */
+
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+
+    /* font-normal  */
+
+    font-size: 1.6rem; 
+}
+
+@media all and (max-width: 768px) {
+    .not-found--title, .not-found--content {
+        /* font-one-and-quarter */
+        font-size: 1.25rem;
+    }
+}

@@ -1,0 +1,14 @@
+[package]
+name = "login"
+version = "0.1.0"
+authors = ["www.steadylearner.com/blog/search/Rust"]
+edition = "2018"
+
+[dependencies]
+thirtyfour = {version = "0.13.0", features = ["blocking"]}
+
+# https://doc.rust-lang.org/cargo/reference/features.html#the-features-section
+# https://github.com/stevepryde/thirtyfour#feature-flags
+# https://rust-random.github.io/book/features.html		
+
+

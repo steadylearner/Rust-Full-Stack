@@ -1,0 +1,30 @@
+{
+  "name": "rust-frontend-by-steadylearner",
+  "author": "www.steadylearner.com",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build:js": "rollup -c",
+    "build:rs": "cargo web deploy --release",
+    "build:copy": "cp target/deploy/index.css release/ && cp target/deploy/index.wasm release/ && cp target/deploy/index.html release/ && cp target/deploy/favicon.ico release/",
+    "build": "run-s clean:deploy build:rs build:js build:copy",
+    "clean:deploy": "rm -rf /release",
+    "prod": "run-s build serve",
+    "serve": "serve -p 8080 release",
+    "watch:rs": "cargo web start --port 8080 --release",
+    "test": "echo \"Error: no tests!\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "autoprefixer": "^9.3.1",
+    "nodemon": "^1.18.6",
+    "npm-run-all": "^4.1.3",
+    "rollup": "^0.67.3",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-uglify": "^6.0.0",
+    "rollup-plugin-wasm": "^3.0.0",
+    "serve": "^11.0.2"
+  }
+}

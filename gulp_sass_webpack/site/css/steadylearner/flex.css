@@ -1,0 +1,40 @@
+.flex {
+    display: flex;
+}
+
+.flex-flow-column {
+    flex-flow: column;
+}
+
+.flex-flow-row {
+    flex-flow: row;
+}
+
+.flex-row-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-column-center {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.margin-auto {
+    margin: auto;
+}
+
+.margin-center-auto {
+    margin: 0 auto;
+}
+
+.margin-left-auto {
+    margin-left: auto;
+}
+
+.margin-right-auto {
+    margin-right: auto;
+}

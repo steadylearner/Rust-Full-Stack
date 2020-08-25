@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Rust Chat App by Steadylearner(www.steadylearner.com)</title>
+  <link rel=icon href="https://www.steadylearner.com/static/images/code/Rust_b.png" />
+
+  <link rel="stylesheet" href="/static/css/normalize.css" />
+  <link rel="stylesheet" href="/static/css/steadylearner.css" />
+  <link rel="stylesheet" href="/static/chat/index.css" />
+</head>
+
+<body>
+  <section>
+    <nav id="nav" class="nav flex center">
+      <a
+        href="https://www.steadylearner.com/blog"
+        title="Click it to learn how to code this."
+        class="flex no-text-decoration hover cursor-pointer transition-half right-auto"
+      >
+        <span class="white" >Rust Chat App</span>
+      </a>
+      <!-- You can ignore this part -->
+      <ul class="no-list-style no-text-decoration flex right-auto">
+        <li class="navbar__list cursor-pointer transition-half hover margin-right-one"><a href="https://twitter.com/steadylearner_p" class=" no-text-decoration white hover " target="_blank" rel="noopener noreferrer" title="Steadylearner Twitter link"><i class="fa fa-twitter"></i></a></li>
+        <li class="navbar__list cursor-pointer transition-half hover margin-right-one"><a href="https://www.steadylearner.com" class=" no-text-decoration white hover " target="_blank" rel="noopener noreferrer" title="Steadylearner Website"><span class="bold">©</span> Steadylearner</a></li>
+        <li class="navbar__list cursor-pointer transition-half hover"><a href="https://www.linkedin.com/in/steady-learner-3151b7164/" class="no-text-decoration white hover" title="Steadylearner LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a></li>
+        <li class="navbar__list cursor-pointer transition-half hover "><a href="https://github.com/steadylearner/Chat" class=" no-text-decoration white hover transition-half margin-left-one " target="_blank" rel="noopener noreferrer" title="Steadylearner GitHub"><i class="fab fa-github"></i></a></li>
+      </ul>
+      <!-- / -->
+      <span
+        id="exit"
+        class="margin-right-one white cursor-pointer hover transition"
+      >
+        Exit
+      </span>
+    </nav>
+    <ul
+      id="messages"
+    >
+      <!-- JavaScript will make <li> messages here -->
+    </ul>
+    <form id="form" class="chat-input flex center">
+      <img
+        id="code"
+        class="flex center rust-icon hover cursor-pointer transition-half"
+        title="Click this to use markdown or not"
+        src="/static/images/Rust.svg"
+      />
+      <input
+        id="msg"
+        type="text"
+        placeholder="Type here to start to talk with others."
+        autocomplete="off"
+      >
+      <button class="blue cursor-pointer" >Send</button>
+      <button
+        id="clear"
+        type="button"
+        class="margin-left-one red-white cursor-pointer"
+      >
+        Clear
+      </button>
+    </form>
+  </section>
+  <script
+    src="/static/chat/bundle.js"
+    type="text/javascript"
+  >
+  </script>
+</body>
+</html>

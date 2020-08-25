@@ -1,0 +1,7 @@
+.transition {
+    transition: 1s;
+}
+
+.transition-half {
+    transition: 0.5s;
+}

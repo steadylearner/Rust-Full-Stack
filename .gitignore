@@ -1,0 +1,100 @@
+# Dependencies and results
+target/
+node_modules/
+release/
+
+# production folder and its files
+production/
+targets.txt
+
+# .env for api keys and configuration variables
+.env
+set_env.sh
+
+flask/
+actix_full_stack_reference/
+
+config/
+*.conf
+*.agent
+
+# gRPC client
+bloomrpc/
+
+# From session-file-store
+session/
+
+# profile images at auth/
+profile/*.png
+
+# Should use version control systems instead.
+before/
+
+# refer folders are just to help when the author
+refer/
+
+# Files with Cypress credentials
+cypress.json
+cypress.video.json
+cypress/
+record-video.bash
+
+# You can make it easily
+dist/
+
+# AWS
+ecs-params.yml
+
+# Heavy Python and its venv files and from dependencies.
+__pycache__
+python/
+admin/
+
+# Files for email
+cv.pdf
+resume.html
+
+# Cloned repository
+ta-rs/
+
+# .swp files from vim
+*.swp
+
+# Python with venv files
+tkinter/
+
+# db files
+*.db
+
+# static/ and public/ in React_Rust except django
+# Please, someone commit here if there is a general solution for this.
+
+React_Rust/server/*/static/
+React_Rust/server/*/public/
+
+# parcel
+
+.cache/
+
+# Bots should be in production/
+
+# video files for Moviepy/
+
+*.mp4
+
+praw/
+graw/
+read/
+
+*.cache
+
+# manifest.json for browser extensions
+
+manifest.json
+build/
+
+# binary files from Golang, C or C++
+
+main
+
+go-to-do-app/

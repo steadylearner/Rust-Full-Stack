@@ -1,0 +1,29 @@
+/* Background for colors */
+
+.theme-black {
+    background-color: #121212;
+}
+
+.theme-white {
+    background-color: white;
+}
+
+.theme-black-white {
+    background-color: #efefef;
+}
+
+.theme-green {
+    background-color: green;
+}
+
+.theme-red {
+    background-color: red;
+}
+
+.theme-blue {
+    background-color: #08c;
+}
+
+.theme-youtube {
+    background-color: #bb0000;
+}
