@@ -224,6 +224,7 @@ If you want to make some apps, refer to [the official documenation](https://rust
 * [Rust on the command line](https://asquera.de/blog/2018-01-20/getting-started-with-rust-on-the-command-line/), [clap](https://github.com/clap-rs/clap#using-derive-macros) and [the blog post for it](https://kbknapp.dev/rust-cli/)
 * [Communicating with humans](https://rust-cli.github.io/book/in-depth/human-communication.html)
 * [Communicating with machines](https://rust-cli.github.io/book/in-depth/machine-communication.html)
+* [Real projects](https://zaiste.net/posts/shell-commands-rust/)
 
 ## Cargo packages
 
