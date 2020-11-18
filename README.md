@@ -160,27 +160,11 @@ I am working [while learning blockchain technologies.](https://github.com/steady
 Rust
 
 * Update Steadylearner with [a new Rocket async code](https://github.com/SergioBenitez/Rocket) and share some parts of it here.
-
-Python
-
-* Transaction(Paypal, Stripe), Visa, Mastercard and Cryptocurrencies.
-* Make a full stack app with FAST API and deploy.
-* Include email verification for the login process.
-* (Refer to this. https://github.com/eightBEC/fastapi-ml-skeleton)
-* Use httpx to make async request inside it.
-
-Golang
-
-* Docker, ipfs, aws etc with it.
-* Make concurrent requests with go channels for targets. 
-
-TypeScript
-
-* [type-graphql](https://github.com/MichalLytek/type-graphql/tree/master/examples)
 ```
 
 ## Interesting projects and blog posts from others
 
+* [Rust-Performance](https://github.com/nnethercote/perf-book)
 * [envconfig-rs](https://github.com/greyblake/envconfig-rs)
 * [Redelete](https://github.com/ardeaf/redelete)
 * [Blog with Rust Yew Frontend](https://github.com/ahmad2smile/portfolio)
@@ -463,9 +447,9 @@ I do what I want here. **It is a personal repository** to learn and prototype ne
 
 ## READ MORE
 
-You have to know C and C++. They help you to learn and use Rust better.
+They help you to learn and use Rust better.
 
+* [Haskell](https://github.com/steadylearner/Haskell)
 * [C](https://www.google.com/search?&q=the+c+programming+language)
 * [C++](https://www.learncpp.com)
 * [Rust](https://www.google.com/search?&q=programming+rust)
-* [How arc works in Rust](https://medium.com/@DylanKerler1/how-arc-works-in-rust-b06192acd0a6), [Explaning atomics in Rust](https://cfsamsonbooks.gitbook.io/explaining-atomics-in-rust/#acquire)
