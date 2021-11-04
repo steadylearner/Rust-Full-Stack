@@ -104,12 +104,6 @@ Read Rust [API guideline](https://rust-lang.github.io/api-guidelines/). Test cod
 
 [If you need or know someone to hire a full stack developer, please contact me](https://www.linkedin.com/in/steady-learner-3151b7164/). I also do freelance.
 
-You can support this repository with Bitcoin.
-
-```console
-1ESPcN8eQs8mXYYgbYysg9whzY4k3scSpy
-```
-
 If you want the similar one for Ethereum, visit [eth-diary](https://github.com/steadylearner/ethdev-diary) repository.
 
 [![Rust full stack chat app](https://www.steadylearner.com/static/images/post/web/full-stack-rust-chat-app-by-steadylearner.png)](https://www.steadylearner.com/blog/read/Fullstack-Rust-with-Yew)
