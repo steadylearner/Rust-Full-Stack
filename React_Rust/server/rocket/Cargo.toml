@@ -5,6 +5,6 @@ authors = ["www.steadylearner.com"]
 edition = "2018"
 
 [dependencies]
-rocket = "0.4.2"
+rocket = "0.4.7"
 
 
