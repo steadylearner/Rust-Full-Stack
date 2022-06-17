@@ -18,6 +18,6 @@ serde_derive = "1.0.101"
 json = "0.12.0"
 console = "0.9.0"
 # Postgresl
-diesel = { version = "1.4.3", features = ["postgres", "r2d2"] }
+diesel = { version = "1.4.6", features = ["postgres", "r2d2"] }
 dotenv = "0.15.0"
 r2d2 = "0.8.6"
