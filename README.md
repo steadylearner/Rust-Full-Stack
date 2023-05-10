@@ -54,7 +54,7 @@ yarn watch:rs for devlopment then yarn prod(include build) for production
 
 [How to install Rust]: https://www.steadylearner.com/blog/read/How-to-install-Rust
 [Rust Chat App]: https://www.steadylearner.com/blog/read/How-to-start-Rust-Chat-App
-[Steadylearner Rust Blog Posts]: https://www.steadylearner.com/blog/search/Rust
+[Steadylearner Rust Blog Posts]: https://www.steadylearner.com/blog
 [Yew Counter]: https://www.steadylearner.com/yew_counter
 [How to use Rust Yew]: https://www.steadylearner.com/blog/read/How-to-use-Rust-Yew
 [How to deploy Rust Web App]: https://www.steadylearner.com/blog/read/How-to-deploy-Rust-Web-App
