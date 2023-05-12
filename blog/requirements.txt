@@ -15,7 +15,7 @@ python-dateutil==2.8.1
 pytzdata==2019.3
 six==1.13.0
 traitlets==4.3.3
-ujson==1.35
+ujson==5.4.0
 uvloop==0.14.0
 vibora==0.0.6
 wcwidth==0.1.7
