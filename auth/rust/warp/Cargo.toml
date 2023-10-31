@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 warp = { git = "https://github.com/seanmonstar/warp" }
-tokio = "0.2.0-alpha.6"
+tokio = "1.8.4"
 serde = { version = "1.0", features = ["derive"] }
 rand = "0.7.2"
 rust-argon2 = "0.6.0"
