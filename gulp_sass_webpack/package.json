@@ -10,7 +10,7 @@
   "license": "MIT",
   "devDependencies": {
     "gulp-sass": "^4.0.2",
-    "node-sass": "^4.13.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
