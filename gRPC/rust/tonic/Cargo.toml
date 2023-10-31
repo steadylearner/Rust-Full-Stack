@@ -22,7 +22,7 @@ path = "src/user/client.rs"
 [dependencies]
 tonic = { version = "0.1.0-alpha.1", features = ["rustls"] }
 bytes = "0.4"
-prost = "0.5"
+prost = "0.6"
 prost-derive = "0.5"
 tokio = "=0.2.0-alpha.6"
 futures-preview = { version = "=0.3.0-alpha.19", default-features = false, features = ["alloc"]}
