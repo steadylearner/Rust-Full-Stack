@@ -1,6 +1,6 @@
 backcall==0.1.0
 decorator==4.4.1
-ipython==7.9.0
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.15.1
 parso==0.5.1
