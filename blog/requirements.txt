@@ -10,7 +10,7 @@ pickleshare==0.7.5
 pkg-resources==0.0.0
 prompt-toolkit==2.0.10
 ptyprocess==0.6.0
-Pygments==2.4.2
+Pygments==2.7.4
 python-dateutil==2.8.1
 pytzdata==2019.3
 six==1.13.0
